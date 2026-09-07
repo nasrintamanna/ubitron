@@ -1,0 +1,8 @@
+updated_cv_5_folds  (seed=1000, n_val=8, 56 users from segmented_4s)
+
+ fold  n_train  n_val  n_test  %usr_train  %usr_val  %usr_test  %seg_train  %seg_val  %seg_test  train_run  val_run  test_run
+    0       36      8      12        64.3      14.3       21.4        62.1      19.8       18.1       5596     2905       847
+    1       36      8      12        64.3      14.3       21.4        62.4      16.7       20.9       7376     1450       522
+    2       37      8      11        66.1      14.3       19.6        58.6      13.4       27.9       5503      430      3415
+    3       36      8      12        64.3      14.3       21.4        64.6      12.5       22.9       4919      415      4014
+    4       39      8       9        69.6      14.3       16.1        74.5      15.4       10.1       7106     1692       550

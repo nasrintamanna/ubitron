@@ -1,0 +1,66 @@
+{
+ "pooled": {
+  "accuracy": 0.473292260849023,
+  "macro_f1": 0.3336743491200207,
+  "balanced_accuracy": 0.35661989472434985,
+  "kappa": 0.20960583827418922
+ },
+ "per_class": {
+  "Lying down": {
+   "precision": 0.6343637050223877,
+   "recall": 0.2548431069568666,
+   "f1": 0.3636121886397474,
+   "ovr_accuracy": 0.6913076574059839,
+   "ovr_balanced_accuracy": 0.588557397402533,
+   "support": 461429
+  },
+  "Sitting": {
+   "precision": 0.5195855374055464,
+   "recall": 0.7133017305580021,
+   "f1": 0.6012249013106745,
+   "ovr_accuracy": 0.5826453129745803,
+   "ovr_balanced_accuracy": 0.596420160350256,
+   "support": 588134
+  },
+  "Walking": {
+   "precision": 0.37247655407650526,
+   "recall": 0.5804379068391242,
+   "f1": 0.4537647821758867,
+   "ovr_accuracy": 0.9008238245407468,
+   "ovr_balanced_accuracy": 0.7528681825420154,
+   "support": 94632
+  },
+  "Running": {
+   "precision": 0.1285591026747196,
+   "recall": 0.08966900702106319,
+   "f1": 0.1056487827936658,
+   "ovr_accuracy": 0.9943243476337075,
+   "ovr_balanced_accuracy": 0.543694059527785,
+   "support": 4985
+  },
+  "Bicycling": {
+   "precision": 0.5217283848910491,
+   "recall": 0.6081528784750564,
+   "f1": 0.5616353316778999,
+   "ovr_accuracy": 0.9851719082206215,
+   "ovr_balanced_accuracy": 0.7996534976899901,
+   "support": 20827
+  },
+  "Standing in place": {
+   "precision": 0.07517919112639056,
+   "recall": 0.06491360721386766,
+   "f1": 0.06967028343001412,
+   "ovr_accuracy": 0.9535733436327025,
+   "ovr_balanced_accuracy": 0.5214701086236325,
+   "support": 35709
+  },
+  "Standing and moving": {
+   "precision": 0.17555578672056113,
+   "recall": 0.18502102600646833,
+   "f1": 0.18016417381225622,
+   "ovr_accuracy": 0.8387381272897035,
+   "ovr_balanced_accuracy": 0.5464976044907818,
+   "support": 127699
+  }
+ }
+}

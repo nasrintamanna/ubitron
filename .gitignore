@@ -1,0 +1,22 @@
+# Raw ExtraSensory data and every regenerable pipeline artifact.
+# These are produced from scratch by data_processing.ipynb — see README.
+# Do not commit the raw dataset itself, only the code that builds it.
+raw_acc/
+proc_gyro/
+acc_32Hz/
+gyro_32Hz/
+merged_acc_gyro/
+labeled_acc_gyro/
+segmented_4s/
+balanced_folds/
+rf_features/
+original_labels/
+feature_labels/
+
+# Jupyter / Python housekeeping
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+
+# OS / editor cruft
+.DS_Store
