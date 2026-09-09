@@ -1,0 +1,46 @@
+{
+ "per_type": {
+  "comparison": {
+   "n": 72,
+   "accuracy": 0.8194444444444444,
+   "mae": null,
+   "median_iou": null
+  },
+  "count": {
+   "n": 67,
+   "accuracy": 0.029850746268656716,
+   "mae": 128.9402985074627,
+   "median_iou": null
+  },
+  "duration": {
+   "n": 67,
+   "accuracy": 0.07462686567164178,
+   "mae": 24878.119402985074,
+   "median_iou": 0.1541050064610173
+  },
+  "grounding": {
+   "n": 67,
+   "accuracy": 0.1791044776119403,
+   "mae": 35234.07692307692,
+   "median_iou": 0.0
+  },
+  "identification": {
+   "n": 72,
+   "accuracy": 0.5277777777777778,
+   "mae": null,
+   "median_iou": 0.49693877551020404
+  },
+  "open_world": {
+   "n": 36,
+   "accuracy": 0.75,
+   "mae": null,
+   "median_iou": 0.03932509631991497
+  },
+  "verification": {
+   "n": 72,
+   "accuracy": 0.7222222222222222,
+   "mae": null,
+   "median_iou": 0.6302521008403361
+  }
+ }
+}
