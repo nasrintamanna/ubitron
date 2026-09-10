@@ -1,11 +1,9 @@
-# ExtraSensory → 32 Hz Activity Recognition Dataset
+# Activity Question Answering from Wearable Signals
 
 Processing pipeline that turns the raw ExtraSensory accelerometer and gyroscope
 recordings into fixed-length, labelled, class-balanced training sets for 7-class
 human activity recognition.
 
-All steps live in [`data_processing.ipynb`](data_processing.ipynb), cells 1–10.
-Every cell is idempotent and safe to re-run.
 
 ---
 
@@ -13,10 +11,10 @@ Every cell is idempotent and safe to re-run.
 
 | | |
 |---|---|
-| **Final artefact** | `balanced_folds/` — 5 cross-validation folds, ready to train |
+| **Final artefact** | `balanced_folds/` 5 cross-validation folds, ready to train |
 | **Segments** | 2,551,686 fixed 4-second windows (128 samples @ 32 Hz, 6 channels) |
 | **Users** | 56 |
-| **Classes** | 7, indexed 0–6 |
+| **Classes** | 7, indexed 0-6 |
 | **Class balance** | 1.5 : 1 (from 120 : 1 in the source) |
 
 ### Activity classes
@@ -31,39 +29,21 @@ Every cell is idempotent and safe to re-run.
 | 5 | Standing in place | `original_label:STANDING_IN_PLACE` | 7,821 |
 | 6 | Standing and moving | `original_label:STANDING_AND_MOVING` | 28,003 |
 
-Labels 1–7 in the parquet folders, 0–6 in `balanced_folds/*.npy`.
+Labels 1-7 in the parquet folders, 0-6 in `balanced_folds/*.npy`.
 See `balanced_folds/label_map.json`.
 
 ---
 
 ## Pipeline
 
-```
-raw_acc/ + proc_gyro/          60 + 57 users, variable sampling rate
-        │
-        ▼  cells 1-2   resample to a uniform 32 Hz grid
-acc_32Hz/ + gyro_32Hz/         60 + 57 users, 736,968 CSV files
-        │
-        ▼  cell 3      normalise accelerometer units to g
-acc_32Hz/                      59 users (1 dropped)
-        │
-        ▼  cell 5      merge acc + gyro on the accelerometer clock
-merged_acc_gyro/               56 users, 236,457,636 rows
-        │
-        ▼  cell 6      attach the 7 activity labels
-labeled_acc_gyro/              56 users, 288,340 windows
-        │
-        ▼  cell 7      cut into fixed 4 s segments
-segmented_4s/                  2,551,686 segments
-        │
-        ▼  cells 8-10  fold splits, undersample, augment, reindex
-balanced_folds/                5 folds × (train / val / test)
-```
+<img width="700" height="400" alt="Gemini_Generated_Image_o6id0bo6id0bo6id" src="https://github.com/user-attachments/assets/3069b4c7-6eb9-4266-873e-da0de4a7c9fb" />
 
-### 1 · Resample to 32 Hz — cells 1–2
+
+
+### 1 · Resample to 32 Hz: cells 1–2
 
 Source rates varied far more than the nominal figures: accelerometer
-13.8–233.9 Hz (median 34.7), gyroscope 14.8–202.3 Hz (median 40.0).
+13.8–233.9 Hz (median 34.7), gyroscope 14.8-202.3 Hz (median 40.0).
 
 - **Below 32 Hz** (9.4% of acc files, 2.4% of gyro) → linear interpolation up.
 - **Above 32 Hz** → zero-phase 4th-order Butterworth low-pass at 14.4 Hz before
@@ -76,10 +56,10 @@ longest run), and a window whose span still exceeds 300 s is rejected. Without
 these, one all-zero padding row in a file using epoch timestamps implied a
 1.44-billion-second span and a 343 GiB allocation.
 
-### 2 · Normalise accelerometer units — cell 3
+### 2 · Normalise accelerometer units: cell 3
 
 ExtraSensory did not use one unit convention. **26 users logged m/s², 34 logged
-g** — the split is exactly Android vs iPhone. Mixing them makes every
+g** - the split is exactly Android vs iPhone. Mixing them makes every
 scale-sensitive feature ~9.8× larger for one group, which a model uses to
 identify the *user* rather than the activity.
 
@@ -90,7 +70,7 @@ One user (`BEF6C611`) was **dropped**: only ~50% of its files agree on any singl
 scale, with per-file magnitudes running continuously from 0.21 to 19.0. No single
 factor corrects it. Removed from both sensors; the raw source is untouched.
 
-### 3 · Merge accelerometer + gyroscope — cell 5
+### 3 · Merge accelerometer + gyroscope: cell 5
 
 Gyroscope is resampled onto the **accelerometer's timestamps**, which are left
 unchanged.
@@ -101,7 +81,7 @@ extrapolated rather than interpolated.
 
 **AR extrapolation.** An AR(16) is fitted to the nearest 256 gyro samples and
 iterated forward on the gyroscope's own grid. Coefficients come from Yule-Walker
-solved by Levinson-Durbin, which always yields a **stable** model — so the
+solved by Levinson-Durbin, which always yields a **stable** model - so the
 forecast provably decays toward the signal's mean instead of diverging.
 
 Measured against the linear extrapolation it replaced:
@@ -112,34 +92,34 @@ Measured against the linear extrapolation it replaced:
 | p99.9 | 6.007 | 3.372 | 67.810 |
 | max | 21.95 | 32.57 | **203.17** |
 
-Rows above 10 rad/s fell from 2.490% to 0.003% — below the measured rate of
+Rows above 10 rad/s fell from 2.490% to 0.003% - below the measured rate of
 0.008%. `merged_acc_gyro/` carries a `gyro_extrapolated` boolean marking these
 rows.
 
 418 accelerometer windows have no gyroscope counterpart and are skipped.
 
-### 4 · Attach labels — cell 6
+### 4 · Attach labels: cell 6
 
 Labels are per-minute, keyed by the epoch `timestamp` that is also each window's
 filename, so the join is direct.
 
-**Zero windows carry more than one of the 7 labels** — verified across all
+**Zero windows carry more than one of the 7 labels** - verified across all
 356,461 — so a single integer is unambiguous. The code raises if a multi-label
 window ever appears rather than silently choosing one.
 
 68,121 windows (19%) carry none of the 7 and are dropped.
 
-### 5 · Fixed 4-second segments — cell 7
+### 5 · Fixed 4-second segments: cell 7
 
 128 samples = 4.0 s at 32 Hz, stride 64 (50% overlap). Only 15 of 288,340
 windows were too short. Tails that don't fill a segment are dropped, never
-padded — padding recreates the flat-line artefact that distorts variance and
+padded - padding recreates the flat-line artefact that distorts variance and
 energy features.
 
 `seg_start % 128 == 0` recovers the non-overlapping subset for evaluation, so no
 regeneration is needed to change stride.
 
-### 6 · Train / validation / test splits — cell 8
+### 6 · Train / validation / test splits: cell 8
 
 Built on ExtraSensory's own `cv_5_folds/`: subject-wise, platform-stratified,
 every user in exactly one test fold.
@@ -147,31 +127,31 @@ every user in exactly one test fold.
 - Fold lists intersected with the 56 available users. The 4 missing users are
   **all Android**, shifting platform balance from 26/34 to 22/34.
 - 8 validation users carved from each training pool, **requiring ≥2 Running and
-  ≥2 Bicycling users** — a random draw often contains zero Running, which makes
+  ≥2 Bicycling users** - a random draw often contains zero Running, which makes
   early stopping on macro-F1 meaningless.
 - Modest rare-class contributors are preferred for validation, keeping heavy
   ones in training.
 
 Roughly 65 / 15 / 20 by users. Deterministic on `SEED = 1000`.
 
-### 7 · Balance and augment — cells 9–10
+### 7 · Balance and augment: cells 9–10
 
 **Training data only.** Validation and test keep the natural class distribution
 and non-overlapping segments.
 
-*Undersampling* — majority classes keep only non-overlapping segments, then an
+*Undersampling* - majority classes keep only non-overlapping segments, then an
 equal per-user quota with water-filling redistribution caps heavy contributors.
 Within a user, segments are picked spread across the session, not randomly.
 
-*Augmentation* — all label-preserving:
+*Augmentation* - all label-preserving:
 
 1. **Rotation about the estimated gravity axis.** A free 3D rotation would move
    gravity in the sensor frame and can turn Sitting into something resembling
    Lying down while keeping the Sitting label. Rotating about gravity varies
    only heading. Verified: gravity magnitude unchanged to 4 decimals.
 2. Small free rotation, ≤15°, for orientation tolerance.
-3. Time warping — cadence variation, directly relevant to Running and Bicycling.
-4. Scaling of the **dynamic component only** — scaling total acceleration would
+3. Time warping - cadence variation, directly relevant to Running and Bicycling.
+4. Scaling of the **dynamic component only** - scaling total acceleration would
    make gravity read something other than 1 g.
 5. Jitter proportional to each channel's own standard deviation.
 
@@ -239,23 +219,23 @@ five prediction sets into one confusion matrix**. Do not average five fold
 scores: fold 4's test set is 133k segments and fold 2's is 371k.
 
 **Do not ensemble the five models.** Four of them trained on any given fold's
-test users — averaging their predictions leaks.
+test users - averaging their predictions leaks.
 
 For a deployable model afterwards, train once more on all 56 users. The
 cross-validation estimate already tells you what to expect from it.
 
 ### Before the first run
 
-1. **Apply normalisation** — `(X - norm_mean) / norm_std`, per fold. Not
+1. **Apply normalisation** - `(X - norm_mean) / norm_std`, per fold. Not
    pre-applied, so the arrays stay traceable to `segmented_4s`.
-2. **Class weights** — from `class_weights.json`. Running is the only class
+2. **Class weights** - from `class_weights.json`. Running is the only class
    lifted (1.11–1.60 across folds).
-3. **Load with `mmap_mode="r"`** — `X_train` is ~1 GB per fold.
+3. **Load with `mmap_mode="r"`** - `X_train` is ~1 GB per fold.
 4. **Metric: macro-F1 or balanced accuracy.** Validation and test are at the
    natural 120:1 distribution; a model predicting only Sitting and Lying down
    scores 79% accuracy while being useless.
 5. **Fix torch/NumPy.** torch 2.2.0 is compiled against NumPy 1.x and
-   `torch.from_numpy` fails on NumPy 2.4.6 — every path from `.npy` into PyTorch
+   `torch.from_numpy` fails on NumPy 2.4.6 - every path from `.npy` into PyTorch
    is blocked. Upgrade torch to 2.3+. TensorFlow 2.21 is unaffected.
 
 ---
@@ -268,7 +248,7 @@ cannot flatten a class with no surplus to trim. Report per-user metric
 distributions alongside the pooled number.
 
 **Rare classes are thin per fold.** Bicycling appears in 23 of 56 users. Test
-folds hold 522–4,014 Running segments — an 8× spread — so single-fold rare-class
+folds hold 522–4,014 Running segments - an 8× spread - so single-fold rare-class
 numbers are noise. With ~5 test users per fold, the honest confidence interval on
 Running recall is roughly ±43 points; pooled across folds, ±19.
 
@@ -292,5 +272,3 @@ accelerometer-only baseline with all 12 test users per fold.
 numpy 2.4.6 · pandas 3.0.5 · scipy 1.17.1 · pyarrow 25.0.1 · Python 3.11.5
 ```
 
-Cells parallelise across 24 workers. Full rebuild is roughly 1 hour;
-`balanced_folds` alone is ~25 minutes.
