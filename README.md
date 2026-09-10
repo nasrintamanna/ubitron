@@ -1,4 +1,4 @@
-# Activity Question Answering from Wearable Signals
+# UbiQ : Activity Question Answering from Wearable Signals
 
 Processing pipeline that turns the raw ExtraSensory accelerometer and gyroscope
 recordings into fixed-length, labelled, class-balanced training sets for 7-class
@@ -95,7 +95,7 @@ Labels are per-minute, keyed by the epoch `timestamp` that is also each window's
 filename, so the join is direct.
 
 **Zero windows carry more than one of the 7 labels** - verified across all
-356,461 — so a single integer is unambiguous. The code raises if a multi-label
+356,461 - so a single integer is unambiguous. The code raises if a multi-label
 window ever appears rather than silently choosing one.
 
 68,121 windows (19%) carry none of the 7 and are dropped.
@@ -215,7 +215,7 @@ for i in range(5):
     preds[i] = model.predict(fold_i.X_test)
 ```
 
-Each model predicts only its own test fold — the users it never saw. The five
+Each model predicts only its own test fold - the users it never saw. The five
 test sets are disjoint and cover all 56 users exactly once, so **concatenate the
 five prediction sets into one confusion matrix**. Do not average five fold
 scores: fold 4's test set is 133k segments and fold 2's is 371k.
@@ -250,7 +250,7 @@ cannot flatten a class with no surplus to trim. Report per-user metric
 distributions alongside the pooled number.
 
 **Rare classes are thin per fold.** Bicycling appears in 23 of 56 users. Test
-folds hold 522–4,014 Running segments - an 8× spread - so single-fold rare-class
+folds hold 522-4,014 Running segments - an 8× spread - so single-fold rare-class
 numbers are noise. With ~5 test users per fold, the honest confidence interval on
 Running recall is roughly ±43 points; pooled across folds, ±19.
 
