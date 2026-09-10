@@ -7,16 +7,6 @@ human activity recognition.
 
 ---
 
-## Result
-
-| | |
-|---|---|
-| **Final artefact** | `balanced_folds/` 5 cross-validation folds, ready to train |
-| **Segments** | 2,551,686 fixed 4-second windows (128 samples @ 32 Hz, 6 channels) |
-| **Users** | 56 |
-| **Classes** | 7, indexed 0-6 |
-| **Class balance** | 1.5 : 1 (from 120 : 1 in the source) |
-
 ### Activity classes
 
 | index | activity | source column | windows |
@@ -36,11 +26,12 @@ See `balanced_folds/label_map.json`.
 
 ## Pipeline
 
-<img width="700" height="400" alt="Gemini_Generated_Image_o6id0bo6id0bo6id" src="https://github.com/user-attachments/assets/3069b4c7-6eb9-4266-873e-da0de4a7c9fb" />
+<img width="700" height="400" alt="Gemini_Generated_Image_jqjcpsjqjcpsjqjc" src="https://github.com/user-attachments/assets/85f4f5d6-2e2d-4bd2-82c6-6b92bd9d702d" />
 
 
 
-### 1 · Resample to 32 Hz: cells 1–2
+
+### 1 · Resample to 32 Hz: cells 1-2
 
 Source rates varied far more than the nominal figures: accelerometer
 13.8–233.9 Hz (median 34.7), gyroscope 14.8-202.3 Hz (median 40.0).
@@ -134,7 +125,7 @@ every user in exactly one test fold.
 
 Roughly 65 / 15 / 20 by users. Deterministic on `SEED = 1000`.
 
-### 7 · Balance and augment: cells 9–10
+### 7 · Balance and augment: cells 9-10
 
 **Training data only.** Validation and test keep the natural class distribution
 and non-overlapping segments.
@@ -168,6 +159,17 @@ that doesn't reach the target.
 | 5 | Standing in place | 50,000 | 50,000 | 50,000 | 50,000 | 50,000 |
 | 6 | Standing and moving | 50,000 | 50,000 | 50,000 | 50,000 | 50,000 |
 | | **total** | 333,576 | 344,256 | 333,018 | 329,514 | 342,636 |
+
+
+## Result
+
+| | |
+|---|---|
+| **Final artefact** | `balanced_folds/` 5 cross-validation folds, ready to train |
+| **Segments** | 2,551,686 fixed 4-second windows (128 samples @ 32 Hz, 6 channels) |
+| **Users** | 56 |
+| **Classes** | 7, indexed 0-6 |
+| **Class balance** | 1.5 : 1 (from 120 : 1 in the source) |
 
 ---
 
