@@ -64,6 +64,20 @@ VERB_FORMS = {
 # how many intervals of evidence to show the model when it writes an explanation
 MAX_EVIDENCE_INTERVALS = 3
 
+# One rule for "did this activity actually happen?", shared by EVERY question
+# type. Without it, "did the user cycle?" answered Yes from three 8-12 s
+# classifier blips while "wheeled mode?" answered No - the same evidence, two
+# thresholds, opposite answers. 60 s is one full ExtraSensory window.
+MIN_EPISODE_S = 60.0
+MAX_GAP_S = 120.0
+
+# "Prolonged" = one continuous stretch of at least 8 minutes.
+PROLONGED_S = 480.0
+
+PROLONGED_WORDS = ("prolonged", "long time", "long period", "extended period",
+                   "long stretch", "for long", "lengthy", "long while")
+WHEELED_WORDS = ("wheeled", "pedal", "cycl", "bicycl", "bike", "biking")
+
 PARSE_SYSTEM = """You convert questions about a wearable-sensor recording into JSON.
 
 Activities: Lying down, Sitting, Walking, Running, Bicycling, Standing in place, Standing and moving
@@ -129,6 +143,11 @@ class QwenEngine:
                  quantization: str | None = None):
         from transformers import AutoModelForCausalLM, AutoTokenizer
         import torch
+        try:                                   # HF_TOKEN from the git-ignored .env
+            from dotenv import load_dotenv
+            load_dotenv()
+        except ImportError:
+            pass
 
         self.model_id = model_id
         self.tok = AutoTokenizer.from_pretrained(model_id)
@@ -228,13 +247,14 @@ def normalise_intent(raw: str, query: str = "") -> dict:
     # The 3B model reliably mislabels them as "grounding", which produces an
     # answer of the wrong shape ("began at 6395 seconds" instead of "Likely yes").
     ql = query.lower()
-    if any(k in ql for k in ("prolonged", "wheeled", "pedal-based", "pedal based",
-                             "mostly at rest", "mostly active", "physically active")):
+    if (any(w in ql for w in PROLONGED_WORDS)
+            or any(k in ql for k in ("wheeled", "pedal-based", "pedal based",
+                                     "mostly at rest", "mostly active", "physically active"))):
         intent = "open_world"
 
     if intent == "comparison" and len(acts) < 2:
         intent = "duration" if acts else "unsupported"
-    return {"intent": intent, "activities": acts, "time_s": t, "raw": raw}
+    return {"intent": intent, "activities": acts, "time_s": t, "raw": raw, "query": query}
 
 
 def _rule_intent(q: str) -> str:
@@ -253,6 +273,94 @@ def _rule_intent(q: str) -> str:
     if "what activity" in s or "what is" in s or "doing" in s:
         return "identification"
     return "unsupported"
+
+
+# ------------------------------------------------------- timeline cleaning --
+def _coalesce(iv, max_gap_s):
+    """Merge neighbouring intervals of the same activity separated by <= max_gap_s."""
+    out = []
+    for x in iv:
+        if out and out[-1]["activity"] == x["activity"] \
+                and x["start_s"] - out[-1]["end_s"] <= max_gap_s:
+            y = out[-1]
+            keep_ev = y if y["duration_s"] >= x["duration_s"] else x
+            y.update({"end_s": max(y["end_s"], x["end_s"]),
+                      "observed_s": y.get("observed_s", 0) + x.get("observed_s", 0),
+                      "n_segments": y.get("n_segments", 0) + x.get("n_segments", 0)})
+            y["duration_s"] = y["end_s"] - y["start_s"]
+            if keep_ev.get("evidence"):
+                y["evidence"] = keep_ev["evidence"]
+        else:
+            out.append(dict(x))
+    return out
+
+
+def clean_timeline(tl: dict, min_episode_s: float = MIN_EPISODE_S,
+                   max_gap_s: float = MAX_GAP_S) -> dict:
+    """Absorb episodes too short to be real into their neighbours.
+
+    The shortest sub-minimum interval is repeatedly relabelled as its longer
+    adjacent neighbour and merged into it; an isolated one with no neighbour
+    within ``max_gap_s`` is dropped. Totals, counts and transitions are then
+    recomputed, so every question type reads the same cleaned timeline and can
+    no longer contradict another. The uncleaned intervals are kept as
+    ``_raw_intervals`` so a "No" can still cite the candidates it rejected.
+    """
+    if tl.get("_cleaned"):
+        return tl
+    raw = sorted((dict(x) for x in tl["intervals"]), key=lambda x: x["start_s"])
+    iv = _coalesce([dict(x) for x in raw], max_gap_s)
+    while len(iv) > 1:
+        short = [i for i, x in enumerate(iv) if x["duration_s"] < min_episode_s]
+        if not short:
+            break
+        i = min(short, key=lambda k: iv[k]["duration_s"])
+        cands = []
+        if i > 0 and iv[i]["start_s"] - iv[i - 1]["end_s"] <= max_gap_s:
+            cands.append(iv[i - 1])
+        if i + 1 < len(iv) and iv[i + 1]["start_s"] - iv[i]["end_s"] <= max_gap_s:
+            cands.append(iv[i + 1])
+        if not cands:
+            iv.pop(i)                      # isolated blip, nothing to absorb it
+            continue
+        nb = max(cands, key=lambda x: x["duration_s"])
+        iv[i]["activity"], iv[i]["label"] = nb["activity"], nb["label"]
+        iv[i].pop("evidence", None)        # its signal was never this activity's
+        iv = _coalesce(iv, max_gap_s)
+    if len(iv) == 1 and iv[0]["duration_s"] < min_episode_s:
+        iv = []
+
+    totals, counts = {}, {}
+    for x in iv:
+        totals[x["activity"]] = round(totals.get(x["activity"], 0.0) + x["duration_s"], 1)
+        counts[x["activity"]] = counts.get(x["activity"], 0) + 1
+    out = dict(tl)
+    out.update({"intervals": iv, "totals_s": totals, "counts": counts,
+                "transitions": [{"from": iv[k]["activity"], "to": iv[k + 1]["activity"],
+                                 "at_s": iv[k + 1]["start_s"]} for k in range(len(iv) - 1)],
+                "_raw_intervals": raw, "_cleaned": True,
+                "min_episode_s": min_episode_s})
+    return out
+
+
+def _longest_raw(tl, activity):
+    c = [x for x in tl.get("_raw_intervals", []) if x["activity"] == activity]
+    return max(c, key=lambda x: x["duration_s"]) if c else None
+
+
+def _describe(x) -> str:
+    """Plain-English evidence for one interval, from its measured features only."""
+    e = x.get("evidence") or {}
+    bits = []
+    if e.get("acc_mag_mean") is not None and e.get("acc_mag_std") is not None:
+        bits.append(f"acceleration magnitude {e['acc_mag_mean']:.3f} ± {e['acc_mag_std']:.3f} g")
+    if e.get("gyro_mag_mean") is not None:
+        bits.append(f"gyroscope activity {e['gyro_mag_mean']:.3f} rad/s")
+    if e.get("step_freq_hz") is not None and (e.get("step_freq_share") or 0) >= 0.15:
+        bits.append(f"a periodic component at {e['step_freq_hz']:.2f} Hz")
+    if len(bits) > 1:
+        return ", ".join(bits[:-1]) + " and " + bits[-1]
+    return bits[0] if bits else ""
 
 
 # ------------------------------------------- deterministic resolution layer --
@@ -327,6 +435,23 @@ def resolve(intent: dict, tl: dict) -> dict:
         else:
             cited = _spans(iv, a, MAX_EVIDENCE_INTERVALS)
             yes = bool(cited)
+        if not yes:
+            if t is not None:
+                hit = _at(iv, t)
+                why = (f"At {t:.0f} s the detected activity is {hit['activity'].lower()}, "
+                       f"not {a.lower()}." if hit else
+                       f"No activity was detected at {t:.0f} s.")
+            else:
+                cand = _longest_raw(tl, a)
+                why = (f"No {a.lower()} episode lasting at least {MIN_EPISODE_S:.0f} s was "
+                       f"detected. The longest candidate was {cand['duration_s']:.0f} s "
+                       f"({cand['start_s']:.0f} to {cand['end_s']:.0f} s), too brief to "
+                       f"indicate sustained {a.lower()} and consistent with a transient "
+                       f"misclassification." if cand else
+                       f"No {a.lower()} was detected anywhere in the recording.")
+            return {"answer": "No", "activity_event": a, "timestamps": None,
+                    "modality": MODALITY, "channels": CHANNELS, "facts": {},
+                    "explanation": why}
         return {"answer": "Yes" if yes else "No", "activity_event": a,
                 "timestamps": [(x["start_s"], x["end_s"]) for x in cited] or None,
                 "modality": MODALITY, "channels": CHANNELS,
@@ -383,29 +508,76 @@ def resolve(intent: dict, tl: dict) -> dict:
                 "facts": _facts([first], {"onset_s": first["start_s"]})}
 
     # open_world
+    q = intent.get("query", "").lower()
     a = acts[0] if acts else None
-    if a == "Lying down" or "lie down" in str(intent.get("raw", "")).lower():
-        hits = [x for x in iv if x["activity"] == "Lying down" and x["duration_s"] >= 600]
-        hits.sort(key=lambda x: -x["duration_s"])
-        return {"answer": "Likely yes" if hits else "No",
-                "activity_event": "Prolonged lying down",
-                "timestamps": [(x["start_s"], x["end_s"]) for x in hits[:3]] or None,
-                "modality": MODALITY, "channels": CHANNELS,
-                "facts": _facts(hits[:3], {"longest_s": hits[0]["duration_s"] if hits else 0})}
-    if a == "Bicycling":
-        hits = [x for x in iv if x["activity"] == "Bicycling" and x["duration_s"] >= 120]
-        hits.sort(key=lambda x: -x["duration_s"])
-        return {"answer": "Yes" if hits else "No",
-                "activity_event": ("Unknown outdoor physical activity, consistent with cycling"
-                                   if hits else NA),
-                "timestamps": [(x["start_s"], x["end_s"]) for x in hits[:3]] or None,
-                "modality": MODALITY, "channels": CHANNELS, "facts": _facts(hits[:3])}
-    s = sum(v for k, v in totals.items() if k in STATIC)
-    d = sum(v for k, v in totals.items() if k in DYNAMIC)
-    return {"answer": "Mostly at rest" if s >= d else "Mostly physically active",
+    prolonged = any(w in q for w in PROLONGED_WORDS)
+    wheeled = any(w in q for w in WHEELED_WORDS) or a == "Bicycling"
+
+    if prolonged:
+        if a is None:                      # "prolonged rest" with no label named
+            a = max((k for k in totals if k in STATIC), key=lambda k: totals[k], default=None)
+        if a is None:
+            return blank
+        hits = sorted((x for x in iv if x["activity"] == a), key=lambda x: -x["duration_s"])
+        long_ = [x for x in hits if x["duration_s"] >= PROLONGED_S]
+        if long_:
+            x = long_[0]
+            verb = "reaches" if x["duration_s"] <= PROLONGED_S else "exceeds"
+            why = (f"A continuous {a.lower()} interval of {x['duration_s']:.0f} s "
+                   f"({x['start_s']:.0f} to {x['end_s']:.0f} s) {verb} the "
+                   f"{PROLONGED_S:.0f} s ({PROLONGED_S / 60:.0f} min) threshold for a "
+                   f"prolonged period")
+            d = _describe(x)
+            why += f", with {d}." if d else "."
+            if len(long_) > 1:
+                why += f" {len(long_)} such intervals were found in total."
+            return {"answer": "Yes", "activity_event": f"Prolonged {a.lower()}",
+                    "timestamps": [(y["start_s"], y["end_s"]) for y in long_[:MAX_EVIDENCE_INTERVALS]],
+                    "modality": MODALITY, "channels": CHANNELS,
+                    "facts": _facts(long_[:MAX_EVIDENCE_INTERVALS]), "explanation": why}
+        x = hits[0] if hits else None
+        why = (f"The longest continuous {a.lower()} interval lasts {x['duration_s']:.0f} s "
+               f"({x['start_s']:.0f} to {x['end_s']:.0f} s), short of the "
+               f"{PROLONGED_S:.0f} s ({PROLONGED_S / 60:.0f} min) needed to count as prolonged."
+               if x else f"No {a.lower()} interval was detected in the recording.")
+        return {"answer": "No", "activity_event": f"Prolonged {a.lower()}",
+                "timestamps": [(x["start_s"], x["end_s"])] if x else None,
+                "modality": MODALITY, "channels": CHANNELS, "facts": {}, "explanation": why}
+
+    if wheeled:
+        hits = sorted((x for x in iv if x["activity"] == "Bicycling"), key=lambda x: -x["duration_s"])
+        if hits:
+            x = hits[0]
+            tot = totals.get("Bicycling", 0.0)
+            why = (f"{len(hits)} bicycling episode{'s' if len(hits) > 1 else ''} totalling "
+                   f"{tot:.0f} s were detected; the longest runs {x['duration_s']:.0f} s "
+                   f"({x['start_s']:.0f} to {x['end_s']:.0f} s)")
+            d = _describe(x)
+            why += (f", with {d}, consistent with sustained pedal-driven movement." if d
+                    else ", consistent with sustained pedal-driven movement.")
+            return {"answer": "Yes",
+                    "activity_event": "Unknown outdoor physical activity, consistent with cycling",
+                    "timestamps": [(y["start_s"], y["end_s"]) for y in hits[:MAX_EVIDENCE_INTERVALS]],
+                    "modality": MODALITY, "channels": CHANNELS,
+                    "facts": _facts(hits[:MAX_EVIDENCE_INTERVALS]), "explanation": why}
+        cand = _longest_raw(tl, "Bicycling")
+        why = (f"No bicycling episode lasting at least {MIN_EPISODE_S:.0f} s was detected. "
+               f"The longest candidate segment was {cand['duration_s']:.0f} s "
+               f"({cand['start_s']:.0f} to {cand['end_s']:.0f} s), too brief to indicate "
+               f"sustained pedalling and consistent with a transient misclassification."
+               if cand else "No segment in the recording was classified as bicycling.")
+        return {"answer": "No", "activity_event": "No wheeled or pedal-based movement",
+                "timestamps": None, "modality": MODALITY, "channels": CHANNELS,
+                "facts": {}, "explanation": why}
+
+    s_ = sum(v for k, v in totals.items() if k in STATIC)
+    d_ = sum(v for k, v in totals.items() if k in DYNAMIC)
+    return {"answer": "Mostly at rest" if s_ >= d_ else "Mostly physically active",
             "activity_event": "Overall activity level", "timestamps": None,
             "modality": MODALITY, "channels": CHANNELS,
-            "facts": {"static_total_s": round(s, 1), "dynamic_total_s": round(d, 1)}}
+            "facts": {}, "explanation":
+            f"Static activities (lying, sitting, standing in place) account for "
+            f"{s_:.0f} s against {d_:.0f} s of movement."}
 
 
 # ------------------------------------------------------------- formatting ---
@@ -432,10 +604,15 @@ def answer_query(query: str, tl: dict, engine: QwenEngine | None = None,
                  explain: bool = True) -> dict:
     """Full pipeline for one question."""
     t0 = time.perf_counter()
+    tl = clean_timeline(tl)
     intent = engine.parse_intent(query) if engine else normalise_intent("", query)
     res = resolve(intent, tl)
     expl = NA
-    if explain and engine and res["answer"] != NA:
-        expl = engine.explain(res["answer"], res["activity_event"], res.get("facts", {}))
+    if res.get("explanation"):
+        # deterministic, built only from measured values - never hand these to
+        # the model, which rationalises whatever it is given
+        expl = res["explanation"]
+    elif explain and engine and res["answer"] != NA and res.get("facts"):
+        expl = engine.explain(res["answer"], res["activity_event"], res["facts"])
     return {"query": query, "intent": intent, "result": res, "explanation": expl,
             "text": format_answer(res, expl), "seconds": time.perf_counter() - t0}

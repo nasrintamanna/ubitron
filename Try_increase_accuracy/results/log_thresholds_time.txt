@@ -1,0 +1,5 @@
+
+=== threshold tuning on top of 'time' ===
+  argmax  VAL F1 0.3604 | POOLED TEST acc 0.6265 F1 0.4032 bal 0.4114 kappa 0.4381
+  prior   VAL F1 0.3738 | POOLED TEST acc 0.6516 F1 0.3682 bal 0.3401 kappa 0.4270
+  tuned   VAL F1 0.4313 | POOLED TEST acc 0.6597 F1 0.4382 bal 0.3979 kappa 0.4744

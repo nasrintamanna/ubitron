@@ -1,0 +1,7802 @@
+{
+ "user": "27E04243-B138-4F40-A164-F40B60165CF3",
+ "t0_epoch": 1448317231,
+ "time_base": "seconds from the start of the recording",
+ "sample_rate_hz": 32.0,
+ "window_seconds": 4.0,
+ "recording_span_s": 639864.0,
+ "n_segments": 7189,
+ "config": {
+  "smooth": "mode",
+  "mode_k": 5,
+  "p_stay": 0.95,
+  "max_gap_s": 120.0,
+  "min_interval_s": 8.0
+ },
+ "intervals": [
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 0.0,
+   "end_s": 186.0,
+   "duration_s": 186.0,
+   "observed_s": 16.0,
+   "n_segments": 4,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9927,
+    "acc_mag_std": 0.0041,
+    "dynamic_acc_std": 0.0051,
+    "gyro_mag_mean": 0.0083,
+    "gyro_mag_std": 0.0369,
+    "step_freq_hz": 0.5,
+    "step_freq_share": 0.106,
+    "gravity_dir": [
+     -0.013,
+     0.024,
+     1.0
+    ],
+    "gravity_mag_g": 0.9927,
+    "dominant_channel": "gyro_z",
+    "channel_std": {
+     "acc_x": 0.0065,
+     "acc_y": 0.0049,
+     "acc_z": 0.0041,
+     "gyro_x": 0.0039,
+     "gyro_y": 0.002,
+     "gyro_z": 0.0375
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 2171.0,
+   "end_s": 2238.0,
+   "duration_s": 67.0,
+   "observed_s": 8.0,
+   "n_segments": 2,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.996,
+    "acc_mag_std": 0.03,
+    "dynamic_acc_std": 0.0492,
+    "gyro_mag_mean": 0.2462,
+    "gyro_mag_std": 0.1973,
+    "step_freq_hz": 2.5,
+    "step_freq_share": 0.116,
+    "gravity_dir": [
+     0.02,
+     0.164,
+     0.986
+    ],
+    "gravity_mag_g": 0.9916,
+    "dominant_channel": "gyro_x",
+    "channel_std": {
+     "acc_x": 0.0545,
+     "acc_y": 0.0733,
+     "acc_z": 0.0349,
+     "gyro_x": 0.2316,
+     "gyro_y": 0.1801,
+     "gyro_z": 0.1156
+    }
+   }
+  },
+  {
+   "activity": "Standing in place",
+   "label": 5,
+   "start_s": 2297.0,
+   "end_s": 2356.0,
+   "duration_s": 59.0,
+   "observed_s": 8.0,
+   "n_segments": 2,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9973,
+    "acc_mag_std": 0.0826,
+    "dynamic_acc_std": 0.0974,
+    "gyro_mag_mean": 0.7504,
+    "gyro_mag_std": 0.4806,
+    "step_freq_hz": 1.25,
+    "step_freq_share": 0.161,
+    "gravity_dir": [
+     0.01,
+     0.133,
+     0.991
+    ],
+    "gravity_mag_g": 0.9857,
+    "dominant_channel": "gyro_z",
+    "channel_std": {
+     "acc_x": 0.1164,
+     "acc_y": 0.0941,
+     "acc_z": 0.0865,
+     "gyro_x": 0.2715,
+     "gyro_y": 0.396,
+     "gyro_z": 0.5687
+    }
+   }
+  },
+  {
+   "activity": "Walking",
+   "label": 2,
+   "start_s": 2419.0,
+   "end_s": 2476.0,
+   "duration_s": 57.0,
+   "observed_s": 8.0,
+   "n_segments": 2,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0087,
+    "acc_mag_std": 0.286,
+    "dynamic_acc_std": 0.1903,
+    "gyro_mag_mean": 0.587,
+    "gyro_mag_std": 0.3746,
+    "step_freq_hz": 1.75,
+    "step_freq_share": 0.16,
+    "gravity_dir": [
+     -0.006,
+     0.245,
+     0.969
+    ],
+    "gravity_mag_g": 0.9949,
+    "dominant_channel": "gyro_x",
+    "channel_std": {
+     "acc_x": 0.1062,
+     "acc_y": 0.13,
+     "acc_z": 0.2851,
+     "gyro_x": 0.4386,
+     "gyro_y": 0.426,
+     "gyro_z": 0.3309
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 2534.0,
+   "end_s": 3101.0,
+   "duration_s": 567.0,
+   "observed_s": 40.0,
+   "n_segments": 10,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.995,
+    "acc_mag_std": 0.0485,
+    "dynamic_acc_std": 0.0791,
+    "gyro_mag_mean": 0.2261,
+    "gyro_mag_std": 0.4342,
+    "step_freq_hz": 2.0,
+    "step_freq_share": 0.09,
+    "gravity_dir": [
+     -0.037,
+     0.1,
+     0.994
+    ],
+    "gravity_mag_g": 0.9832,
+    "dominant_channel": "gyro_x",
+    "channel_std": {
+     "acc_x": 0.1025,
+     "acc_y": 0.0957,
+     "acc_z": 0.0776,
+     "gyro_x": 0.33,
+     "gyro_y": 0.326,
+     "gyro_z": 0.1548
+    }
+   }
+  },
+  {
+   "activity": "Walking",
+   "label": 2,
+   "start_s": 3139.0,
+   "end_s": 3259.0,
+   "duration_s": 120.0,
+   "observed_s": 12.0,
+   "n_segments": 3,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0095,
+    "acc_mag_std": 0.2336,
+    "dynamic_acc_std": 0.1864,
+    "gyro_mag_mean": 0.804,
+    "gyro_mag_std": 0.5226,
+    "step_freq_hz": 1.75,
+    "step_freq_share": 0.262,
+    "gravity_dir": [
+     0.415,
+     0.301,
+     0.859
+    ],
+    "gravity_mag_g": 0.6897,
+    "dominant_channel": "gyro_x",
+    "channel_std": {
+     "acc_x": 0.5056,
+     "acc_y": 0.1358,
+     "acc_z": 0.5692,
+     "gyro_x": 0.7094,
+     "gyro_y": 0.5133,
+     "gyro_z": 0.3822
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 5074.0,
+   "end_s": 5561.0,
+   "duration_s": 487.0,
+   "observed_s": 32.0,
+   "n_segments": 8,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9967,
+    "acc_mag_std": 0.0453,
+    "dynamic_acc_std": 0.0762,
+    "gyro_mag_mean": 0.1894,
+    "gyro_mag_std": 0.3901,
+    "step_freq_hz": 1.25,
+    "step_freq_share": 0.099,
+    "gravity_dir": [
+     -0.008,
+     0.265,
+     0.964
+    ],
+    "gravity_mag_g": 0.9725,
+    "dominant_channel": "gyro_y",
+    "channel_std": {
+     "acc_x": 0.1402,
+     "acc_y": 0.1525,
+     "acc_z": 0.0822,
+     "gyro_x": 0.2009,
+     "gyro_y": 0.3476,
+     "gyro_z": 0.1589
+    }
+   }
+  },
+  {
+   "activity": "Walking",
+   "label": 2,
+   "start_s": 5616.0,
+   "end_s": 5861.0,
+   "duration_s": 245.0,
+   "observed_s": 20.0,
+   "n_segments": 5,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.021,
+    "acc_mag_std": 0.2112,
+    "dynamic_acc_std": 0.1528,
+    "gyro_mag_mean": 0.9476,
+    "gyro_mag_std": 0.8161,
+    "step_freq_hz": 1.75,
+    "step_freq_share": 0.192,
+    "gravity_dir": [
+     -0.72,
+     -0.249,
+     0.648
+    ],
+    "gravity_mag_g": 0.8511,
+    "dominant_channel": "gyro_x",
+    "channel_std": {
+     "acc_x": 0.4721,
+     "acc_y": 0.1492,
+     "acc_z": 0.3427,
+     "gyro_x": 0.8869,
+     "gyro_y": 0.5835,
+     "gyro_z": 0.6571
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 6509.0,
+   "end_s": 6642.0,
+   "duration_s": 133.0,
+   "observed_s": 12.0,
+   "n_segments": 3,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9901,
+    "acc_mag_std": 0.0032,
+    "dynamic_acc_std": 0.0027,
+    "gyro_mag_mean": 0.0394,
+    "gyro_mag_std": 0.002,
+    "step_freq_hz": 0.5,
+    "step_freq_share": 0.099,
+    "gravity_dir": [
+     -0.042,
+     0.018,
+     0.999
+    ],
+    "gravity_mag_g": 0.9901,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0025,
+     "acc_y": 0.0022,
+     "acc_z": 0.0032,
+     "gyro_x": 0.0022,
+     "gyro_y": 0.0015,
+     "gyro_z": 0.002
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 8514.0,
+   "end_s": 13404.0,
+   "duration_s": 4890.0,
+   "observed_s": 1168.0,
+   "n_segments": 292,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9912,
+    "acc_mag_std": 0.0086,
+    "dynamic_acc_std": 0.0098,
+    "gyro_mag_mean": 0.0131,
+    "gyro_mag_std": 0.0583,
+    "step_freq_hz": 2.25,
+    "step_freq_share": 0.078,
+    "gravity_dir": [
+     -0.019,
+     0.021,
+     1.0
+    ],
+    "gravity_mag_g": 0.9908,
+    "dominant_channel": "gyro_x",
+    "channel_std": {
+     "acc_x": 0.0164,
+     "acc_y": 0.0236,
+     "acc_z": 0.01,
+     "gyro_x": 0.0413,
+     "gyro_y": 0.0368,
+     "gyro_z": 0.0221
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 16233.0,
+   "end_s": 16952.0,
+   "duration_s": 719.0,
+   "observed_s": 148.0,
+   "n_segments": 37,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9945,
+    "acc_mag_std": 0.0115,
+    "dynamic_acc_std": 0.0141,
+    "gyro_mag_mean": 0.0329,
+    "gyro_mag_std": 0.0706,
+    "step_freq_hz": 3.0,
+    "step_freq_share": 0.085,
+    "gravity_dir": [
+     -0.031,
+     0.136,
+     0.99
+    ],
+    "gravity_mag_g": 0.8834,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.2398,
+     "acc_y": 0.2412,
+     "acc_z": 0.3049,
+     "gyro_x": 0.0526,
+     "gyro_y": 0.0479,
+     "gyro_z": 0.0298
+    }
+   }
+  },
+  {
+   "activity": "Standing and moving",
+   "label": 6,
+   "start_s": 17006.0,
+   "end_s": 17315.0,
+   "duration_s": 309.0,
+   "observed_s": 24.0,
+   "n_segments": 6,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0121,
+    "acc_mag_std": 0.0147,
+    "dynamic_acc_std": 0.0344,
+    "gyro_mag_mean": 0.0997,
+    "gyro_mag_std": 0.1271,
+    "step_freq_hz": 3.25,
+    "step_freq_share": 0.115,
+    "gravity_dir": [
+     -0.033,
+     0.935,
+     0.352
+    ],
+    "gravity_mag_g": 0.9878,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.1225,
+     "acc_y": 0.0847,
+     "acc_z": 0.1632,
+     "gyro_x": 0.0902,
+     "gyro_y": 0.1,
+     "gyro_z": 0.0863
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 17498.0,
+   "end_s": 17609.0,
+   "duration_s": 111.0,
+   "observed_s": 12.0,
+   "n_segments": 3,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0007,
+    "acc_mag_std": 0.0318,
+    "dynamic_acc_std": 0.0819,
+    "gyro_mag_mean": 0.2961,
+    "gyro_mag_std": 0.3986,
+    "step_freq_hz": 3.5,
+    "step_freq_share": 0.101,
+    "gravity_dir": [
+     0.579,
+     0.798,
+     0.165
+    ],
+    "gravity_mag_g": 0.882,
+    "dominant_channel": "acc_x",
+    "channel_std": {
+     "acc_x": 0.3765,
+     "acc_y": 0.2072,
+     "acc_z": 0.1995,
+     "gyro_x": 0.2199,
+     "gyro_y": 0.3405,
+     "gyro_z": 0.2647
+    }
+   }
+  },
+  {
+   "activity": "Standing and moving",
+   "label": 6,
+   "start_s": 17710.0,
+   "end_s": 18510.0,
+   "duration_s": 800.0,
+   "observed_s": 60.0,
+   "n_segments": 15,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0036,
+    "acc_mag_std": 0.0718,
+    "dynamic_acc_std": 0.1345,
+    "gyro_mag_mean": 0.5971,
+    "gyro_mag_std": 0.5267,
+    "step_freq_hz": 2.25,
+    "step_freq_share": 0.076,
+    "gravity_dir": [
+     0.58,
+     0.769,
+     0.269
+    ],
+    "gravity_mag_g": 0.9371,
+    "dominant_channel": "gyro_x",
+    "channel_std": {
+     "acc_x": 0.2262,
+     "acc_y": 0.1676,
+     "acc_z": 0.2344,
+     "gyro_x": 0.5002,
+     "gyro_y": 0.4843,
+     "gyro_z": 0.3476
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 18566.0,
+   "end_s": 18750.0,
+   "duration_s": 184.0,
+   "observed_s": 16.0,
+   "n_segments": 4,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9971,
+    "acc_mag_std": 0.0148,
+    "dynamic_acc_std": 0.0466,
+    "gyro_mag_mean": 0.1023,
+    "gyro_mag_std": 0.2044,
+    "step_freq_hz": 2.75,
+    "step_freq_share": 0.162,
+    "gravity_dir": [
+     0.102,
+     0.295,
+     0.95
+    ],
+    "gravity_mag_g": 0.8236,
+    "dominant_channel": "acc_y",
+    "channel_std": {
+     "acc_x": 0.1898,
+     "acc_y": 0.383,
+     "acc_z": 0.3653,
+     "gyro_x": 0.1033,
+     "gyro_y": 0.1466,
+     "gyro_z": 0.1375
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 21060.0,
+   "end_s": 25171.0,
+   "duration_s": 4111.0,
+   "observed_s": 1096.0,
+   "n_segments": 274,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9919,
+    "acc_mag_std": 0.0099,
+    "dynamic_acc_std": 0.0129,
+    "gyro_mag_mean": 0.0102,
+    "gyro_mag_std": 0.1282,
+    "step_freq_hz": 0.75,
+    "step_freq_share": 0.079,
+    "gravity_dir": [
+     -0.008,
+     0.015,
+     1.0
+    ],
+    "gravity_mag_g": 0.9912,
+    "dominant_channel": "gyro_z",
+    "channel_std": {
+     "acc_x": 0.0163,
+     "acc_y": 0.0311,
+     "acc_z": 0.0136,
+     "gyro_x": 0.0563,
+     "gyro_y": 0.073,
+     "gyro_z": 0.0896
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 25175.0,
+   "end_s": 25410.0,
+   "duration_s": 235.0,
+   "observed_s": 64.0,
+   "n_segments": 16,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9975,
+    "acc_mag_std": 0.0283,
+    "dynamic_acc_std": 0.0412,
+    "gyro_mag_mean": 0.1723,
+    "gyro_mag_std": 0.2376,
+    "step_freq_hz": 3.5,
+    "step_freq_share": 0.093,
+    "gravity_dir": [
+     -0.134,
+     0.15,
+     0.98
+    ],
+    "gravity_mag_g": 0.9905,
+    "dominant_channel": "gyro_y",
+    "channel_std": {
+     "acc_x": 0.0934,
+     "acc_y": 0.0696,
+     "acc_z": 0.0342,
+     "gyro_x": 0.1558,
+     "gyro_y": 0.2212,
+     "gyro_z": 0.1128
+    }
+   }
+  },
+  {
+   "activity": "Standing in place",
+   "label": 5,
+   "start_s": 25410.0,
+   "end_s": 25456.0,
+   "duration_s": 46.0,
+   "observed_s": 12.0,
+   "n_segments": 3,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9946,
+    "acc_mag_std": 0.0543,
+    "dynamic_acc_std": 0.0584,
+    "gyro_mag_mean": 0.2956,
+    "gyro_mag_std": 0.2719,
+    "step_freq_hz": 3.0,
+    "step_freq_share": 0.108,
+    "gravity_dir": [
+     0.22,
+     0.167,
+     0.961
+    ],
+    "gravity_mag_g": 0.9791,
+    "dominant_channel": "gyro_y",
+    "channel_std": {
+     "acc_x": 0.1074,
+     "acc_y": 0.1347,
+     "acc_z": 0.0619,
+     "gyro_x": 0.2024,
+     "gyro_y": 0.2853,
+     "gyro_z": 0.1965
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 25456.0,
+   "end_s": 32644.0,
+   "duration_s": 7188.0,
+   "observed_s": 1796.0,
+   "n_segments": 449,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9942,
+    "acc_mag_std": 0.0171,
+    "dynamic_acc_std": 0.0329,
+    "gyro_mag_mean": 0.0395,
+    "gyro_mag_std": 0.2208,
+    "step_freq_hz": 2.5,
+    "step_freq_share": 0.078,
+    "gravity_dir": [
+     -0.01,
+     0.063,
+     0.998
+    ],
+    "gravity_mag_g": 0.9822,
+    "dominant_channel": "gyro_y",
+    "channel_std": {
+     "acc_x": 0.0524,
+     "acc_y": 0.1321,
+     "acc_z": 0.0616,
+     "gyro_x": 0.123,
+     "gyro_y": 0.1427,
+     "gyro_z": 0.1217
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 45294.0,
+   "end_s": 45476.0,
+   "duration_s": 182.0,
+   "observed_s": 16.0,
+   "n_segments": 4,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0032,
+    "acc_mag_std": 0.1364,
+    "dynamic_acc_std": 0.211,
+    "gyro_mag_mean": 0.4941,
+    "gyro_mag_std": 1.019,
+    "step_freq_hz": 1.0,
+    "step_freq_share": 0.153,
+    "gravity_dir": [
+     0.045,
+     0.083,
+     0.996
+    ],
+    "gravity_mag_g": 0.9289,
+    "dominant_channel": "gyro_y",
+    "channel_std": {
+     "acc_x": 0.2803,
+     "acc_y": 0.1484,
+     "acc_z": 0.2483,
+     "gyro_x": 0.6578,
+     "gyro_y": 0.6619,
+     "gyro_z": 0.6121
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 45594.0,
+   "end_s": 45863.0,
+   "duration_s": 269.0,
+   "observed_s": 20.0,
+   "n_segments": 5,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.037,
+    "acc_mag_std": 0.1997,
+    "dynamic_acc_std": 0.2366,
+    "gyro_mag_mean": 0.735,
+    "gyro_mag_std": 1.2379,
+    "step_freq_hz": 1.75,
+    "step_freq_share": 0.156,
+    "gravity_dir": [
+     0.285,
+     0.218,
+     0.933
+    ],
+    "gravity_mag_g": 0.7015,
+    "dominant_channel": "gyro_x",
+    "channel_std": {
+     "acc_x": 0.4455,
+     "acc_y": 0.4395,
+     "acc_z": 0.4813,
+     "gyro_x": 0.9229,
+     "gyro_y": 0.6598,
+     "gyro_z": 0.8774
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 46090.0,
+   "end_s": 46268.0,
+   "duration_s": 178.0,
+   "observed_s": 24.0,
+   "n_segments": 6,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.992,
+    "acc_mag_std": 0.0036,
+    "dynamic_acc_std": 0.003,
+    "gyro_mag_mean": 0.0476,
+    "gyro_mag_std": 0.0039,
+    "step_freq_hz": 1.25,
+    "step_freq_share": 0.092,
+    "gravity_dir": [
+     -0.012,
+     0.026,
+     1.0
+    ],
+    "gravity_mag_g": 0.992,
+    "dominant_channel": "gyro_z",
+    "channel_std": {
+     "acc_x": 0.0028,
+     "acc_y": 0.0026,
+     "acc_z": 0.0036,
+     "gyro_x": 0.0017,
+     "gyro_y": 0.0014,
+     "gyro_z": 0.0039
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 46451.0,
+   "end_s": 47346.0,
+   "duration_s": 895.0,
+   "observed_s": 256.0,
+   "n_segments": 64,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9919,
+    "acc_mag_std": 0.0038,
+    "dynamic_acc_std": 0.0032,
+    "gyro_mag_mean": 0.0283,
+    "gyro_mag_std": 0.0243,
+    "step_freq_hz": 2.5,
+    "step_freq_share": 0.078,
+    "gravity_dir": [
+     -0.012,
+     0.026,
+     1.0
+    ],
+    "gravity_mag_g": 0.9919,
+    "dominant_channel": "gyro_z",
+    "channel_std": {
+     "acc_x": 0.0029,
+     "acc_y": 0.0028,
+     "acc_z": 0.0038,
+     "gyro_x": 0.0018,
+     "gyro_y": 0.0022,
+     "gyro_z": 0.0263
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 48062.0,
+   "end_s": 48078.0,
+   "duration_s": 16.0,
+   "observed_s": 16.0,
+   "n_segments": 4,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9929,
+    "acc_mag_std": 0.004,
+    "dynamic_acc_std": 0.0033,
+    "gyro_mag_mean": 0.0139,
+    "gyro_mag_std": 0.002,
+    "step_freq_hz": 0.5,
+    "step_freq_share": 0.116,
+    "gravity_dir": [
+     -0.014,
+     0.042,
+     0.999
+    ],
+    "gravity_mag_g": 0.9929,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0028,
+     "acc_y": 0.003,
+     "acc_z": 0.004,
+     "gyro_x": 0.0016,
+     "gyro_y": 0.0014,
+     "gyro_z": 0.002
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 48370.0,
+   "end_s": 48386.0,
+   "duration_s": 16.0,
+   "observed_s": 16.0,
+   "n_segments": 4,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9936,
+    "acc_mag_std": 0.0037,
+    "dynamic_acc_std": 0.0032,
+    "gyro_mag_mean": 0.0183,
+    "gyro_mag_std": 0.0022,
+    "step_freq_hz": 3.0,
+    "step_freq_share": 0.107,
+    "gravity_dir": [
+     -0.014,
+     0.042,
+     0.999
+    ],
+    "gravity_mag_g": 0.9936,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0028,
+     "acc_y": 0.0031,
+     "acc_z": 0.0037,
+     "gyro_x": 0.0016,
+     "gyro_y": 0.0014,
+     "gyro_z": 0.0022
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 48750.0,
+   "end_s": 50414.0,
+   "duration_s": 1664.0,
+   "observed_s": 448.0,
+   "n_segments": 112,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9929,
+    "acc_mag_std": 0.004,
+    "dynamic_acc_std": 0.0033,
+    "gyro_mag_mean": 0.0054,
+    "gyro_mag_std": 0.006,
+    "step_freq_hz": 1.0,
+    "step_freq_share": 0.076,
+    "gravity_dir": [
+     -0.01,
+     0.032,
+     0.999
+    ],
+    "gravity_mag_g": 0.9929,
+    "dominant_channel": "gyro_z",
+    "channel_std": {
+     "acc_x": 0.0046,
+     "acc_y": 0.0038,
+     "acc_z": 0.004,
+     "gyro_x": 0.0015,
+     "gyro_y": 0.0015,
+     "gyro_z": 0.0074
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 54849.0,
+   "end_s": 54865.0,
+   "duration_s": 16.0,
+   "observed_s": 16.0,
+   "n_segments": 4,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9932,
+    "acc_mag_std": 0.0036,
+    "dynamic_acc_std": 0.0031,
+    "gyro_mag_mean": 0.0026,
+    "gyro_mag_std": 0.0011,
+    "step_freq_hz": 1.5,
+    "step_freq_share": 0.104,
+    "gravity_dir": [
+     -0.003,
+     0.028,
+     1.0
+    ],
+    "gravity_mag_g": 0.9932,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.003,
+     "acc_y": 0.0028,
+     "acc_z": 0.0036,
+     "gyro_x": 0.0013,
+     "gyro_y": 0.0013,
+     "gyro_z": 0.002
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 55698.0,
+   "end_s": 56406.0,
+   "duration_s": 708.0,
+   "observed_s": 208.0,
+   "n_segments": 52,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9927,
+    "acc_mag_std": 0.004,
+    "dynamic_acc_std": 0.0034,
+    "gyro_mag_mean": 0.0035,
+    "gyro_mag_std": 0.0017,
+    "step_freq_hz": 2.25,
+    "step_freq_share": 0.078,
+    "gravity_dir": [
+     -0.004,
+     0.027,
+     1.0
+    ],
+    "gravity_mag_g": 0.9927,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0032,
+     "acc_y": 0.0032,
+     "acc_z": 0.004,
+     "gyro_x": 0.0015,
+     "gyro_y": 0.0015,
+     "gyro_z": 0.0031
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 57533.0,
+   "end_s": 57549.0,
+   "duration_s": 16.0,
+   "observed_s": 16.0,
+   "n_segments": 4,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9927,
+    "acc_mag_std": 0.0036,
+    "dynamic_acc_std": 0.0033,
+    "gyro_mag_mean": 0.0039,
+    "gyro_mag_std": 0.0017,
+    "step_freq_hz": 0.5,
+    "step_freq_share": 0.096,
+    "gravity_dir": [
+     -0.003,
+     0.027,
+     1.0
+    ],
+    "gravity_mag_g": 0.9927,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0032,
+     "acc_y": 0.0031,
+     "acc_z": 0.0036,
+     "gyro_x": 0.0014,
+     "gyro_y": 0.0014,
+     "gyro_z": 0.0021
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 57676.0,
+   "end_s": 57804.0,
+   "duration_s": 128.0,
+   "observed_s": 48.0,
+   "n_segments": 12,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9931,
+    "acc_mag_std": 0.0038,
+    "dynamic_acc_std": 0.0032,
+    "gyro_mag_mean": 0.0029,
+    "gyro_mag_std": 0.0013,
+    "step_freq_hz": 0.75,
+    "step_freq_share": 0.09,
+    "gravity_dir": [
+     -0.003,
+     0.027,
+     1.0
+    ],
+    "gravity_mag_g": 0.9931,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.003,
+     "acc_y": 0.0029,
+     "acc_z": 0.0038,
+     "gyro_x": 0.0015,
+     "gyro_y": 0.0015,
+     "gyro_z": 0.0023
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 58133.0,
+   "end_s": 58468.0,
+   "duration_s": 335.0,
+   "observed_s": 80.0,
+   "n_segments": 20,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9925,
+    "acc_mag_std": 0.0048,
+    "dynamic_acc_std": 0.0039,
+    "gyro_mag_mean": 0.0033,
+    "gyro_mag_std": 0.0015,
+    "step_freq_hz": 1.5,
+    "step_freq_share": 0.081,
+    "gravity_dir": [
+     -0.003,
+     0.028,
+     1.0
+    ],
+    "gravity_mag_g": 0.9925,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0033,
+     "acc_y": 0.0037,
+     "acc_z": 0.0048,
+     "gyro_x": 0.0015,
+     "gyro_y": 0.0015,
+     "gyro_z": 0.0023
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 58619.0,
+   "end_s": 59078.0,
+   "duration_s": 459.0,
+   "observed_s": 128.0,
+   "n_segments": 32,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9927,
+    "acc_mag_std": 0.0037,
+    "dynamic_acc_std": 0.0032,
+    "gyro_mag_mean": 0.0033,
+    "gyro_mag_std": 0.0016,
+    "step_freq_hz": 2.25,
+    "step_freq_share": 0.077,
+    "gravity_dir": [
+     -0.003,
+     0.028,
+     1.0
+    ],
+    "gravity_mag_g": 0.9927,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0031,
+     "acc_y": 0.0028,
+     "acc_z": 0.0037,
+     "gyro_x": 0.0015,
+     "gyro_y": 0.0015,
+     "gyro_z": 0.0025
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 59426.0,
+   "end_s": 59442.0,
+   "duration_s": 16.0,
+   "observed_s": 16.0,
+   "n_segments": 4,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9928,
+    "acc_mag_std": 0.0038,
+    "dynamic_acc_std": 0.0033,
+    "gyro_mag_mean": 0.0033,
+    "gyro_mag_std": 0.0015,
+    "step_freq_hz": 0.5,
+    "step_freq_share": 0.099,
+    "gravity_dir": [
+     -0.003,
+     0.028,
+     1.0
+    ],
+    "gravity_mag_g": 0.9928,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0031,
+     "acc_y": 0.003,
+     "acc_z": 0.0038,
+     "gyro_x": 0.0014,
+     "gyro_y": 0.0015,
+     "gyro_z": 0.0023
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 59614.0,
+   "end_s": 59835.0,
+   "duration_s": 221.0,
+   "observed_s": 80.0,
+   "n_segments": 20,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.993,
+    "acc_mag_std": 0.0036,
+    "dynamic_acc_std": 0.0032,
+    "gyro_mag_mean": 0.004,
+    "gyro_mag_std": 0.0019,
+    "step_freq_hz": 1.25,
+    "step_freq_share": 0.095,
+    "gravity_dir": [
+     -0.004,
+     0.028,
+     1.0
+    ],
+    "gravity_mag_g": 0.993,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0032,
+     "acc_y": 0.0028,
+     "acc_z": 0.0036,
+     "gyro_x": 0.0014,
+     "gyro_y": 0.0014,
+     "gyro_z": 0.0027
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 60515.0,
+   "end_s": 60673.0,
+   "duration_s": 158.0,
+   "observed_s": 64.0,
+   "n_segments": 16,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.993,
+    "acc_mag_std": 0.0044,
+    "dynamic_acc_std": 0.0082,
+    "gyro_mag_mean": 0.0127,
+    "gyro_mag_std": 0.0335,
+    "step_freq_hz": 3.5,
+    "step_freq_share": 0.084,
+    "gravity_dir": [
+     -0.002,
+     0.07,
+     0.998
+    ],
+    "gravity_mag_g": 0.9915,
+    "dominant_channel": "acc_y",
+    "channel_std": {
+     "acc_x": 0.0148,
+     "acc_y": 0.0533,
+     "acc_z": 0.0058,
+     "gyro_x": 0.0279,
+     "gyro_y": 0.0206,
+     "gyro_z": 0.0078
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 60738.0,
+   "end_s": 60754.0,
+   "duration_s": 16.0,
+   "observed_s": 16.0,
+   "n_segments": 4,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.995,
+    "acc_mag_std": 0.0039,
+    "dynamic_acc_std": 0.0061,
+    "gyro_mag_mean": 0.0113,
+    "gyro_mag_std": 0.0131,
+    "step_freq_hz": 2.5,
+    "step_freq_share": 0.087,
+    "gravity_dir": [
+     -0.007,
+     0.142,
+     0.99
+    ],
+    "gravity_mag_g": 0.995,
+    "dominant_channel": "gyro_x",
+    "channel_std": {
+     "acc_x": 0.0054,
+     "acc_y": 0.0091,
+     "acc_z": 0.0041,
+     "gyro_x": 0.0143,
+     "gyro_y": 0.009,
+     "gyro_z": 0.0033
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 60817.0,
+   "end_s": 60833.0,
+   "duration_s": 16.0,
+   "observed_s": 16.0,
+   "n_segments": 4,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9957,
+    "acc_mag_std": 0.0035,
+    "dynamic_acc_std": 0.003,
+    "gyro_mag_mean": 0.0032,
+    "gyro_mag_std": 0.0016,
+    "step_freq_hz": 1.75,
+    "step_freq_share": 0.104,
+    "gravity_dir": [
+     -0.009,
+     0.168,
+     0.986
+    ],
+    "gravity_mag_g": 0.9957,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0029,
+     "acc_y": 0.0028,
+     "acc_z": 0.0035,
+     "gyro_x": 0.0019,
+     "gyro_y": 0.0017,
+     "gyro_z": 0.0024
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 60863.0,
+   "end_s": 60875.0,
+   "duration_s": 12.0,
+   "observed_s": 12.0,
+   "n_segments": 3,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9958,
+    "acc_mag_std": 0.0035,
+    "dynamic_acc_std": 0.0032,
+    "gyro_mag_mean": 0.0032,
+    "gyro_mag_std": 0.0015,
+    "step_freq_hz": 2.5,
+    "step_freq_share": 0.117,
+    "gravity_dir": [
+     -0.008,
+     0.168,
+     0.986
+    ],
+    "gravity_mag_g": 0.9958,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0032,
+     "acc_y": 0.0031,
+     "acc_z": 0.0035,
+     "gyro_x": 0.0019,
+     "gyro_y": 0.0017,
+     "gyro_z": 0.0024
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 60875.0,
+   "end_s": 61443.0,
+   "duration_s": 568.0,
+   "observed_s": 140.0,
+   "n_segments": 35,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9949,
+    "acc_mag_std": 0.0036,
+    "dynamic_acc_std": 0.0031,
+    "gyro_mag_mean": 0.0038,
+    "gyro_mag_std": 0.0018,
+    "step_freq_hz": 0.5,
+    "step_freq_share": 0.087,
+    "gravity_dir": [
+     0.002,
+     0.151,
+     0.989
+    ],
+    "gravity_mag_g": 0.9946,
+    "dominant_channel": "acc_y",
+    "channel_std": {
+     "acc_x": 0.0116,
+     "acc_y": 0.0196,
+     "acc_z": 0.0042,
+     "gyro_x": 0.0017,
+     "gyro_y": 0.0017,
+     "gyro_z": 0.0028
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 61443.0,
+   "end_s": 61451.0,
+   "duration_s": 8.0,
+   "observed_s": 8.0,
+   "n_segments": 2,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9947,
+    "acc_mag_std": 0.0038,
+    "dynamic_acc_std": 0.0083,
+    "gyro_mag_mean": 0.0096,
+    "gyro_mag_std": 0.0082,
+    "step_freq_hz": 0.75,
+    "step_freq_share": 0.088,
+    "gravity_dir": [
+     -0.004,
+     0.112,
+     0.994
+    ],
+    "gravity_mag_g": 0.9946,
+    "dominant_channel": "acc_y",
+    "channel_std": {
+     "acc_x": 0.0034,
+     "acc_y": 0.0163,
+     "acc_z": 0.0042,
+     "gyro_x": 0.0103,
+     "gyro_y": 0.0022,
+     "gyro_z": 0.0023
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 61495.0,
+   "end_s": 61561.0,
+   "duration_s": 66.0,
+   "observed_s": 20.0,
+   "n_segments": 5,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9942,
+    "acc_mag_std": 0.0033,
+    "dynamic_acc_std": 0.0032,
+    "gyro_mag_mean": 0.0036,
+    "gyro_mag_std": 0.0016,
+    "step_freq_hz": 1.5,
+    "step_freq_share": 0.11,
+    "gravity_dir": [
+     -0.005,
+     0.128,
+     0.992
+    ],
+    "gravity_mag_g": 0.9942,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0033,
+     "acc_y": 0.0029,
+     "acc_z": 0.0033,
+     "gyro_x": 0.0017,
+     "gyro_y": 0.0016,
+     "gyro_z": 0.003
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 61561.0,
+   "end_s": 61684.0,
+   "duration_s": 123.0,
+   "observed_s": 36.0,
+   "n_segments": 9,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9939,
+    "acc_mag_std": 0.0037,
+    "dynamic_acc_std": 0.0033,
+    "gyro_mag_mean": 0.003,
+    "gyro_mag_std": 0.0014,
+    "step_freq_hz": 3.0,
+    "step_freq_share": 0.078,
+    "gravity_dir": [
+     -0.006,
+     0.08,
+     0.997
+    ],
+    "gravity_mag_g": 0.9933,
+    "dominant_channel": "acc_y",
+    "channel_std": {
+     "acc_x": 0.0035,
+     "acc_y": 0.0336,
+     "acc_z": 0.0046,
+     "gyro_x": 0.0016,
+     "gyro_y": 0.0015,
+     "gyro_z": 0.0024
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 61684.0,
+   "end_s": 61752.0,
+   "duration_s": 68.0,
+   "observed_s": 24.0,
+   "n_segments": 6,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9934,
+    "acc_mag_std": 0.0035,
+    "dynamic_acc_std": 0.0031,
+    "gyro_mag_mean": 0.0032,
+    "gyro_mag_std": 0.0015,
+    "step_freq_hz": 2.25,
+    "step_freq_share": 0.096,
+    "gravity_dir": [
+     -0.008,
+     0.054,
+     0.999
+    ],
+    "gravity_mag_g": 0.9934,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0029,
+     "acc_y": 0.0031,
+     "acc_z": 0.0035,
+     "gyro_x": 0.0016,
+     "gyro_y": 0.0016,
+     "gyro_z": 0.0027
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 61838.0,
+   "end_s": 61966.0,
+   "duration_s": 128.0,
+   "observed_s": 40.0,
+   "n_segments": 10,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9933,
+    "acc_mag_std": 0.0035,
+    "dynamic_acc_std": 0.0031,
+    "gyro_mag_mean": 0.005,
+    "gyro_mag_std": 0.0024,
+    "step_freq_hz": 2.0,
+    "step_freq_share": 0.1,
+    "gravity_dir": [
+     -0.008,
+     0.052,
+     0.999
+    ],
+    "gravity_mag_g": 0.9933,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0031,
+     "acc_y": 0.0029,
+     "acc_z": 0.0035,
+     "gyro_x": 0.0018,
+     "gyro_y": 0.0018,
+     "gyro_z": 0.0028
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 61966.0,
+   "end_s": 61986.0,
+   "duration_s": 20.0,
+   "observed_s": 16.0,
+   "n_segments": 4,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9933,
+    "acc_mag_std": 0.0035,
+    "dynamic_acc_std": 0.0031,
+    "gyro_mag_mean": 0.004,
+    "gyro_mag_std": 0.0016,
+    "step_freq_hz": 3.0,
+    "step_freq_share": 0.092,
+    "gravity_dir": [
+     -0.008,
+     0.051,
+     0.999
+    ],
+    "gravity_mag_g": 0.9933,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.003,
+     "acc_y": 0.003,
+     "acc_z": 0.0035,
+     "gyro_x": 0.0016,
+     "gyro_y": 0.0015,
+     "gyro_z": 0.0017
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 61986.0,
+   "end_s": 62071.0,
+   "duration_s": 85.0,
+   "observed_s": 16.0,
+   "n_segments": 4,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9933,
+    "acc_mag_std": 0.0092,
+    "dynamic_acc_std": 0.009,
+    "gyro_mag_mean": 0.005,
+    "gyro_mag_std": 0.0032,
+    "step_freq_hz": 1.0,
+    "step_freq_share": 0.095,
+    "gravity_dir": [
+     -0.008,
+     0.053,
+     0.999
+    ],
+    "gravity_mag_g": 0.9932,
+    "dominant_channel": "acc_y",
+    "channel_std": {
+     "acc_x": 0.0038,
+     "acc_y": 0.0125,
+     "acc_z": 0.0089,
+     "gyro_x": 0.0019,
+     "gyro_y": 0.0017,
+     "gyro_z": 0.0037
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 62071.0,
+   "end_s": 62169.0,
+   "duration_s": 98.0,
+   "observed_s": 36.0,
+   "n_segments": 9,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9933,
+    "acc_mag_std": 0.0035,
+    "dynamic_acc_std": 0.0031,
+    "gyro_mag_mean": 0.0034,
+    "gyro_mag_std": 0.0017,
+    "step_freq_hz": 1.5,
+    "step_freq_share": 0.086,
+    "gravity_dir": [
+     -0.008,
+     0.051,
+     0.999
+    ],
+    "gravity_mag_g": 0.9933,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0029,
+     "acc_y": 0.003,
+     "acc_z": 0.0035,
+     "gyro_x": 0.0019,
+     "gyro_y": 0.0017,
+     "gyro_z": 0.0027
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 62169.0,
+   "end_s": 62220.0,
+   "duration_s": 51.0,
+   "observed_s": 8.0,
+   "n_segments": 2,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9937,
+    "acc_mag_std": 0.0037,
+    "dynamic_acc_std": 0.0032,
+    "gyro_mag_mean": 0.0042,
+    "gyro_mag_std": 0.0016,
+    "step_freq_hz": 1.25,
+    "step_freq_share": 0.116,
+    "gravity_dir": [
+     -0.008,
+     0.05,
+     0.999
+    ],
+    "gravity_mag_g": 0.9937,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0031,
+     "acc_y": 0.0029,
+     "acc_z": 0.0037,
+     "gyro_x": 0.0018,
+     "gyro_y": 0.0018,
+     "gyro_z": 0.0036
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 62220.0,
+   "end_s": 62292.0,
+   "duration_s": 72.0,
+   "observed_s": 28.0,
+   "n_segments": 7,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9934,
+    "acc_mag_std": 0.0036,
+    "dynamic_acc_std": 0.0032,
+    "gyro_mag_mean": 0.0032,
+    "gyro_mag_std": 0.0015,
+    "step_freq_hz": 1.0,
+    "step_freq_share": 0.1,
+    "gravity_dir": [
+     -0.008,
+     0.051,
+     0.999
+    ],
+    "gravity_mag_g": 0.9934,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.003,
+     "acc_y": 0.0029,
+     "acc_z": 0.0037,
+     "gyro_x": 0.0016,
+     "gyro_y": 0.0017,
+     "gyro_z": 0.0022
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 62340.0,
+   "end_s": 62352.0,
+   "duration_s": 12.0,
+   "observed_s": 12.0,
+   "n_segments": 3,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9934,
+    "acc_mag_std": 0.0037,
+    "dynamic_acc_std": 0.0033,
+    "gyro_mag_mean": 0.0032,
+    "gyro_mag_std": 0.0014,
+    "step_freq_hz": 1.5,
+    "step_freq_share": 0.089,
+    "gravity_dir": [
+     -0.008,
+     0.051,
+     0.999
+    ],
+    "gravity_mag_g": 0.9934,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.003,
+     "acc_y": 0.0031,
+     "acc_z": 0.0037,
+     "gyro_x": 0.0017,
+     "gyro_y": 0.0017,
+     "gyro_z": 0.0019
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 62396.0,
+   "end_s": 62492.0,
+   "duration_s": 96.0,
+   "observed_s": 32.0,
+   "n_segments": 8,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9934,
+    "acc_mag_std": 0.0037,
+    "dynamic_acc_std": 0.0032,
+    "gyro_mag_mean": 0.0045,
+    "gyro_mag_std": 0.0024,
+    "step_freq_hz": 1.5,
+    "step_freq_share": 0.102,
+    "gravity_dir": [
+     -0.008,
+     0.05,
+     0.999
+    ],
+    "gravity_mag_g": 0.9934,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0029,
+     "acc_y": 0.003,
+     "acc_z": 0.0037,
+     "gyro_x": 0.0018,
+     "gyro_y": 0.0017,
+     "gyro_z": 0.0026
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 62531.0,
+   "end_s": 62547.0,
+   "duration_s": 16.0,
+   "observed_s": 16.0,
+   "n_segments": 4,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9934,
+    "acc_mag_std": 0.0038,
+    "dynamic_acc_std": 0.0032,
+    "gyro_mag_mean": 0.0054,
+    "gyro_mag_std": 0.002,
+    "step_freq_hz": 2.25,
+    "step_freq_share": 0.087,
+    "gravity_dir": [
+     -0.007,
+     0.05,
+     0.999
+    ],
+    "gravity_mag_g": 0.9934,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.003,
+     "acc_y": 0.003,
+     "acc_z": 0.0038,
+     "gyro_x": 0.0013,
+     "gyro_y": 0.0012,
+     "gyro_z": 0.0021
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 62586.0,
+   "end_s": 64537.0,
+   "duration_s": 1951.0,
+   "observed_s": 504.0,
+   "n_segments": 126,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0262,
+    "acc_mag_std": 0.0083,
+    "dynamic_acc_std": 0.0032,
+    "gyro_mag_mean": 0.0042,
+    "gyro_mag_std": 0.0024,
+    "step_freq_hz": 0.5,
+    "step_freq_share": 0.074,
+    "gravity_dir": [
+     0.107,
+     0.045,
+     -0.993
+    ],
+    "gravity_mag_g": 0.932,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0264,
+     "acc_y": 0.0041,
+     "acc_z": 0.4288,
+     "gyro_x": 0.0018,
+     "gyro_y": 0.0017,
+     "gyro_z": 0.004
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 64541.0,
+   "end_s": 64563.0,
+   "duration_s": 22.0,
+   "observed_s": 12.0,
+   "n_segments": 3,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9928,
+    "acc_mag_std": 0.0036,
+    "dynamic_acc_std": 0.0031,
+    "gyro_mag_mean": 0.009,
+    "gyro_mag_std": 0.0018,
+    "step_freq_hz": 2.5,
+    "step_freq_share": 0.107,
+    "gravity_dir": [
+     -0.035,
+     0.023,
+     0.999
+    ],
+    "gravity_mag_g": 0.9928,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0029,
+     "acc_y": 0.0027,
+     "acc_z": 0.0036,
+     "gyro_x": 0.0017,
+     "gyro_y": 0.0016,
+     "gyro_z": 0.0018
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 64563.0,
+   "end_s": 64627.0,
+   "duration_s": 64.0,
+   "observed_s": 20.0,
+   "n_segments": 5,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9929,
+    "acc_mag_std": 0.0034,
+    "dynamic_acc_std": 0.003,
+    "gyro_mag_mean": 0.0059,
+    "gyro_mag_std": 0.0033,
+    "step_freq_hz": 0.75,
+    "step_freq_share": 0.102,
+    "gravity_dir": [
+     -0.035,
+     0.023,
+     0.999
+    ],
+    "gravity_mag_g": 0.9929,
+    "dominant_channel": "gyro_z",
+    "channel_std": {
+     "acc_x": 0.003,
+     "acc_y": 0.0026,
+     "acc_z": 0.0034,
+     "gyro_x": 0.0013,
+     "gyro_y": 0.0014,
+     "gyro_z": 0.0038
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 64627.0,
+   "end_s": 64693.0,
+   "duration_s": 66.0,
+   "observed_s": 20.0,
+   "n_segments": 5,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9931,
+    "acc_mag_std": 0.0038,
+    "dynamic_acc_std": 0.0031,
+    "gyro_mag_mean": 0.0047,
+    "gyro_mag_std": 0.0024,
+    "step_freq_hz": 1.75,
+    "step_freq_share": 0.101,
+    "gravity_dir": [
+     -0.034,
+     0.023,
+     0.999
+    ],
+    "gravity_mag_g": 0.9931,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0028,
+     "acc_y": 0.0027,
+     "acc_z": 0.0038,
+     "gyro_x": 0.002,
+     "gyro_y": 0.0018,
+     "gyro_z": 0.0031
+    }
+   }
+  },
+  {
+   "activity": "Standing in place",
+   "label": 5,
+   "start_s": 64743.0,
+   "end_s": 64755.0,
+   "duration_s": 12.0,
+   "observed_s": 12.0,
+   "n_segments": 3,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0035,
+    "acc_mag_std": 0.0833,
+    "dynamic_acc_std": 0.1332,
+    "gyro_mag_mean": 0.7137,
+    "gyro_mag_std": 0.6712,
+    "step_freq_hz": 3.25,
+    "step_freq_share": 0.109,
+    "gravity_dir": [
+     -0.47,
+     0.207,
+     0.858
+    ],
+    "gravity_mag_g": 0.9665,
+    "dominant_channel": "gyro_y",
+    "channel_std": {
+     "acc_x": 0.1955,
+     "acc_y": 0.1111,
+     "acc_z": 0.1707,
+     "gyro_x": 0.4147,
+     "gyro_y": 0.8011,
+     "gyro_z": 0.3785
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 64755.0,
+   "end_s": 64950.0,
+   "duration_s": 195.0,
+   "observed_s": 36.0,
+   "n_segments": 9,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.998,
+    "acc_mag_std": 0.0268,
+    "dynamic_acc_std": 0.0342,
+    "gyro_mag_mean": 0.0947,
+    "gyro_mag_std": 0.1743,
+    "step_freq_hz": 4.0,
+    "step_freq_share": 0.105,
+    "gravity_dir": [
+     -0.246,
+     0.083,
+     0.966
+    ],
+    "gravity_mag_g": 0.9739,
+    "dominant_channel": "acc_x",
+    "channel_std": {
+     "acc_x": 0.201,
+     "acc_y": 0.058,
+     "acc_z": 0.0674,
+     "gyro_x": 0.108,
+     "gyro_y": 0.1515,
+     "gyro_z": 0.0685
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 64977.0,
+   "end_s": 65588.0,
+   "duration_s": 611.0,
+   "observed_s": 172.0,
+   "n_segments": 43,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9928,
+    "acc_mag_std": 0.0036,
+    "dynamic_acc_std": 0.003,
+    "gyro_mag_mean": 0.0062,
+    "gyro_mag_std": 0.0029,
+    "step_freq_hz": 1.0,
+    "step_freq_share": 0.075,
+    "gravity_dir": [
+     -0.029,
+     0.02,
+     0.999
+    ],
+    "gravity_mag_g": 0.9928,
+    "dominant_channel": "gyro_z",
+    "channel_std": {
+     "acc_x": 0.0028,
+     "acc_y": 0.0025,
+     "acc_z": 0.0036,
+     "gyro_x": 0.0015,
+     "gyro_y": 0.0015,
+     "gyro_z": 0.0049
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 65588.0,
+   "end_s": 65681.0,
+   "duration_s": 93.0,
+   "observed_s": 20.0,
+   "n_segments": 5,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.993,
+    "acc_mag_std": 0.0035,
+    "dynamic_acc_std": 0.0029,
+    "gyro_mag_mean": 0.0119,
+    "gyro_mag_std": 0.0028,
+    "step_freq_hz": 1.0,
+    "step_freq_share": 0.102,
+    "gravity_dir": [
+     -0.029,
+     0.02,
+     0.999
+    ],
+    "gravity_mag_g": 0.9929,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0029,
+     "acc_y": 0.0025,
+     "acc_z": 0.0035,
+     "gyro_x": 0.0018,
+     "gyro_y": 0.0017,
+     "gyro_z": 0.0028
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 65709.0,
+   "end_s": 65895.0,
+   "duration_s": 186.0,
+   "observed_s": 60.0,
+   "n_segments": 15,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.993,
+    "acc_mag_std": 0.0037,
+    "dynamic_acc_std": 0.0029,
+    "gyro_mag_mean": 0.0124,
+    "gyro_mag_std": 0.0026,
+    "step_freq_hz": 1.25,
+    "step_freq_share": 0.08,
+    "gravity_dir": [
+     -0.028,
+     0.02,
+     0.999
+    ],
+    "gravity_mag_g": 0.993,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0026,
+     "acc_y": 0.0024,
+     "acc_z": 0.0037,
+     "gyro_x": 0.0017,
+     "gyro_y": 0.0016,
+     "gyro_z": 0.0026
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 65895.0,
+   "end_s": 65950.0,
+   "duration_s": 55.0,
+   "observed_s": 12.0,
+   "n_segments": 3,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9926,
+    "acc_mag_std": 0.0035,
+    "dynamic_acc_std": 0.0029,
+    "gyro_mag_mean": 0.013,
+    "gyro_mag_std": 0.0029,
+    "step_freq_hz": 0.75,
+    "step_freq_share": 0.086,
+    "gravity_dir": [
+     -0.029,
+     0.02,
+     0.999
+    ],
+    "gravity_mag_g": 0.9926,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0027,
+     "acc_y": 0.0024,
+     "acc_z": 0.0035,
+     "gyro_x": 0.0016,
+     "gyro_y": 0.0016,
+     "gyro_z": 0.0029
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 65950.0,
+   "end_s": 66011.0,
+   "duration_s": 61.0,
+   "observed_s": 16.0,
+   "n_segments": 4,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9931,
+    "acc_mag_std": 0.0037,
+    "dynamic_acc_std": 0.0029,
+    "gyro_mag_mean": 0.0134,
+    "gyro_mag_std": 0.0023,
+    "step_freq_hz": 2.0,
+    "step_freq_share": 0.114,
+    "gravity_dir": [
+     -0.028,
+     0.02,
+     0.999
+    ],
+    "gravity_mag_g": 0.9931,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0027,
+     "acc_y": 0.0023,
+     "acc_z": 0.0037,
+     "gyro_x": 0.0014,
+     "gyro_y": 0.0015,
+     "gyro_z": 0.0023
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 66011.0,
+   "end_s": 66060.0,
+   "duration_s": 49.0,
+   "observed_s": 12.0,
+   "n_segments": 3,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9931,
+    "acc_mag_std": 0.0033,
+    "dynamic_acc_std": 0.0029,
+    "gyro_mag_mean": 0.0133,
+    "gyro_mag_std": 0.0026,
+    "step_freq_hz": 2.0,
+    "step_freq_share": 0.098,
+    "gravity_dir": [
+     -0.029,
+     0.02,
+     0.999
+    ],
+    "gravity_mag_g": 0.9931,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0031,
+     "acc_y": 0.0024,
+     "acc_z": 0.0033,
+     "gyro_x": 0.0013,
+     "gyro_y": 0.0013,
+     "gyro_z": 0.0026
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 66064.0,
+   "end_s": 66309.0,
+   "duration_s": 245.0,
+   "observed_s": 68.0,
+   "n_segments": 17,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9931,
+    "acc_mag_std": 0.0035,
+    "dynamic_acc_std": 0.0029,
+    "gyro_mag_mean": 0.0148,
+    "gyro_mag_std": 0.0028,
+    "step_freq_hz": 2.25,
+    "step_freq_share": 0.083,
+    "gravity_dir": [
+     -0.029,
+     0.02,
+     0.999
+    ],
+    "gravity_mag_g": 0.9931,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0027,
+     "acc_y": 0.0025,
+     "acc_z": 0.0035,
+     "gyro_x": 0.0017,
+     "gyro_y": 0.0017,
+     "gyro_z": 0.0028
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 66309.0,
+   "end_s": 66425.0,
+   "duration_s": 116.0,
+   "observed_s": 28.0,
+   "n_segments": 7,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9937,
+    "acc_mag_std": 0.0037,
+    "dynamic_acc_std": 0.003,
+    "gyro_mag_mean": 0.0161,
+    "gyro_mag_std": 0.0027,
+    "step_freq_hz": 3.0,
+    "step_freq_share": 0.092,
+    "gravity_dir": [
+     -0.029,
+     0.02,
+     0.999
+    ],
+    "gravity_mag_g": 0.9937,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0028,
+     "acc_y": 0.0026,
+     "acc_z": 0.0037,
+     "gyro_x": 0.0014,
+     "gyro_y": 0.0015,
+     "gyro_z": 0.0027
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 66425.0,
+   "end_s": 66621.0,
+   "duration_s": 196.0,
+   "observed_s": 52.0,
+   "n_segments": 13,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9934,
+    "acc_mag_std": 0.0038,
+    "dynamic_acc_std": 0.003,
+    "gyro_mag_mean": 0.0168,
+    "gyro_mag_std": 0.0028,
+    "step_freq_hz": 1.5,
+    "step_freq_share": 0.092,
+    "gravity_dir": [
+     -0.028,
+     0.02,
+     0.999
+    ],
+    "gravity_mag_g": 0.9933,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0027,
+     "acc_y": 0.0025,
+     "acc_z": 0.0038,
+     "gyro_x": 0.0016,
+     "gyro_y": 0.0016,
+     "gyro_z": 0.0029
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 66683.0,
+   "end_s": 67080.0,
+   "duration_s": 397.0,
+   "observed_s": 92.0,
+   "n_segments": 23,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9932,
+    "acc_mag_std": 0.0037,
+    "dynamic_acc_std": 0.003,
+    "gyro_mag_mean": 0.0062,
+    "gyro_mag_std": 0.0045,
+    "step_freq_hz": 0.75,
+    "step_freq_share": 0.079,
+    "gravity_dir": [
+     -0.029,
+     0.02,
+     0.999
+    ],
+    "gravity_mag_g": 0.9932,
+    "dominant_channel": "gyro_z",
+    "channel_std": {
+     "acc_x": 0.0028,
+     "acc_y": 0.0025,
+     "acc_z": 0.0037,
+     "gyro_x": 0.0016,
+     "gyro_y": 0.0017,
+     "gyro_z": 0.0072
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 67125.0,
+   "end_s": 67176.0,
+   "duration_s": 51.0,
+   "observed_s": 20.0,
+   "n_segments": 5,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9928,
+    "acc_mag_std": 0.0033,
+    "dynamic_acc_std": 0.0028,
+    "gyro_mag_mean": 0.0044,
+    "gyro_mag_std": 0.0018,
+    "step_freq_hz": 3.0,
+    "step_freq_share": 0.092,
+    "gravity_dir": [
+     -0.029,
+     0.02,
+     0.999
+    ],
+    "gravity_mag_g": 0.9928,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0027,
+     "acc_y": 0.0026,
+     "acc_z": 0.0033,
+     "gyro_x": 0.0013,
+     "gyro_y": 0.0015,
+     "gyro_z": 0.0023
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 67176.0,
+   "end_s": 67376.0,
+   "duration_s": 200.0,
+   "observed_s": 48.0,
+   "n_segments": 12,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9933,
+    "acc_mag_std": 0.0037,
+    "dynamic_acc_std": 0.003,
+    "gyro_mag_mean": 0.0059,
+    "gyro_mag_std": 0.0025,
+    "step_freq_hz": 1.75,
+    "step_freq_share": 0.086,
+    "gravity_dir": [
+     -0.029,
+     0.021,
+     0.999
+    ],
+    "gravity_mag_g": 0.9933,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0027,
+     "acc_y": 0.0026,
+     "acc_z": 0.0037,
+     "gyro_x": 0.0016,
+     "gyro_y": 0.0016,
+     "gyro_z": 0.0029
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 67376.0,
+   "end_s": 67384.0,
+   "duration_s": 8.0,
+   "observed_s": 8.0,
+   "n_segments": 2,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9937,
+    "acc_mag_std": 0.0035,
+    "dynamic_acc_std": 0.0029,
+    "gyro_mag_mean": 0.0035,
+    "gyro_mag_std": 0.0014,
+    "step_freq_hz": 1.25,
+    "step_freq_share": 0.105,
+    "gravity_dir": [
+     -0.029,
+     0.021,
+     0.999
+    ],
+    "gravity_mag_g": 0.9937,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0026,
+     "acc_y": 0.0025,
+     "acc_z": 0.0035,
+     "gyro_x": 0.0015,
+     "gyro_y": 0.0016,
+     "gyro_z": 0.0018
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 67384.0,
+   "end_s": 67577.0,
+   "duration_s": 193.0,
+   "observed_s": 56.0,
+   "n_segments": 14,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9932,
+    "acc_mag_std": 0.0037,
+    "dynamic_acc_std": 0.003,
+    "gyro_mag_mean": 0.0058,
+    "gyro_mag_std": 0.0024,
+    "step_freq_hz": 1.25,
+    "step_freq_share": 0.083,
+    "gravity_dir": [
+     -0.029,
+     0.021,
+     0.999
+    ],
+    "gravity_mag_g": 0.9932,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0028,
+     "acc_y": 0.0024,
+     "acc_z": 0.0037,
+     "gyro_x": 0.0017,
+     "gyro_y": 0.0017,
+     "gyro_z": 0.0026
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 67581.0,
+   "end_s": 67650.0,
+   "duration_s": 69.0,
+   "observed_s": 24.0,
+   "n_segments": 6,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9929,
+    "acc_mag_std": 0.0037,
+    "dynamic_acc_std": 0.003,
+    "gyro_mag_mean": 0.0057,
+    "gyro_mag_std": 0.002,
+    "step_freq_hz": 2.5,
+    "step_freq_share": 0.08,
+    "gravity_dir": [
+     -0.029,
+     0.02,
+     0.999
+    ],
+    "gravity_mag_g": 0.9929,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0027,
+     "acc_y": 0.0025,
+     "acc_z": 0.0037,
+     "gyro_x": 0.0014,
+     "gyro_y": 0.0014,
+     "gyro_z": 0.0022
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 67694.0,
+   "end_s": 68177.0,
+   "duration_s": 483.0,
+   "observed_s": 132.0,
+   "n_segments": 33,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.993,
+    "acc_mag_std": 0.0035,
+    "dynamic_acc_std": 0.003,
+    "gyro_mag_mean": 0.0051,
+    "gyro_mag_std": 0.0023,
+    "step_freq_hz": 1.0,
+    "step_freq_share": 0.084,
+    "gravity_dir": [
+     -0.029,
+     0.021,
+     0.999
+    ],
+    "gravity_mag_g": 0.993,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0028,
+     "acc_y": 0.0025,
+     "acc_z": 0.0035,
+     "gyro_x": 0.0015,
+     "gyro_y": 0.0016,
+     "gyro_z": 0.0028
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 68177.0,
+   "end_s": 68249.0,
+   "duration_s": 72.0,
+   "observed_s": 16.0,
+   "n_segments": 4,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9927,
+    "acc_mag_std": 0.004,
+    "dynamic_acc_std": 0.0031,
+    "gyro_mag_mean": 0.004,
+    "gyro_mag_std": 0.0018,
+    "step_freq_hz": 0.5,
+    "step_freq_share": 0.117,
+    "gravity_dir": [
+     -0.029,
+     0.021,
+     0.999
+    ],
+    "gravity_mag_g": 0.9927,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0027,
+     "acc_y": 0.0025,
+     "acc_z": 0.004,
+     "gyro_x": 0.0014,
+     "gyro_y": 0.0013,
+     "gyro_z": 0.0028
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 68249.0,
+   "end_s": 70256.0,
+   "duration_s": 2007.0,
+   "observed_s": 528.0,
+   "n_segments": 132,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9926,
+    "acc_mag_std": 0.0122,
+    "dynamic_acc_std": 0.0115,
+    "gyro_mag_mean": 0.0132,
+    "gyro_mag_std": 0.0953,
+    "step_freq_hz": 3.5,
+    "step_freq_share": 0.076,
+    "gravity_dir": [
+     -0.026,
+     0.024,
+     0.999
+    ],
+    "gravity_mag_g": 0.9911,
+    "dominant_channel": "gyro_y",
+    "channel_std": {
+     "acc_x": 0.0509,
+     "acc_y": 0.0178,
+     "acc_z": 0.0135,
+     "gyro_x": 0.0534,
+     "gyro_y": 0.0721,
+     "gyro_z": 0.0347
+    }
+   }
+  },
+  {
+   "activity": "Standing in place",
+   "label": 5,
+   "start_s": 70256.0,
+   "end_s": 70268.0,
+   "duration_s": 12.0,
+   "observed_s": 12.0,
+   "n_segments": 3,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9865,
+    "acc_mag_std": 0.0377,
+    "dynamic_acc_std": 0.0379,
+    "gyro_mag_mean": 0.1841,
+    "gyro_mag_std": 0.2089,
+    "step_freq_hz": 1.25,
+    "step_freq_share": 0.126,
+    "gravity_dir": [
+     0.07,
+     -0.023,
+     0.997
+    ],
+    "gravity_mag_g": 0.9837,
+    "dominant_channel": "gyro_y",
+    "channel_std": {
+     "acc_x": 0.069,
+     "acc_y": 0.0274,
+     "acc_z": 0.0374,
+     "gyro_x": 0.1645,
+     "gyro_y": 0.1921,
+     "gyro_z": 0.1148
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 76211.0,
+   "end_s": 77527.0,
+   "duration_s": 1316.0,
+   "observed_s": 368.0,
+   "n_segments": 92,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9927,
+    "acc_mag_std": 0.0092,
+    "dynamic_acc_std": 0.0074,
+    "gyro_mag_mean": 0.0054,
+    "gyro_mag_std": 0.0188,
+    "step_freq_hz": 1.25,
+    "step_freq_share": 0.074,
+    "gravity_dir": [
+     -0.018,
+     0.033,
+     0.999
+    ],
+    "gravity_mag_g": 0.9926,
+    "dominant_channel": "gyro_x",
+    "channel_std": {
+     "acc_x": 0.0082,
+     "acc_y": 0.0054,
+     "acc_z": 0.0093,
+     "gyro_x": 0.0179,
+     "gyro_y": 0.0031,
+     "gyro_z": 0.0072
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 79036.0,
+   "end_s": 79052.0,
+   "duration_s": 16.0,
+   "observed_s": 16.0,
+   "n_segments": 4,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9989,
+    "acc_mag_std": 0.0567,
+    "dynamic_acc_std": 0.0812,
+    "gyro_mag_mean": 0.3472,
+    "gyro_mag_std": 0.3728,
+    "step_freq_hz": 3.75,
+    "step_freq_share": 0.09,
+    "gravity_dir": [
+     -0.057,
+     0.287,
+     0.956
+    ],
+    "gravity_mag_g": 0.9824,
+    "dominant_channel": "gyro_y",
+    "channel_std": {
+     "acc_x": 0.0756,
+     "acc_y": 0.1476,
+     "acc_z": 0.0915,
+     "gyro_x": 0.3104,
+     "gyro_y": 0.318,
+     "gyro_z": 0.2434
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 87350.0,
+   "end_s": 88982.0,
+   "duration_s": 1632.0,
+   "observed_s": 428.0,
+   "n_segments": 107,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9944,
+    "acc_mag_std": 0.0156,
+    "dynamic_acc_std": 0.0258,
+    "gyro_mag_mean": 0.0276,
+    "gyro_mag_std": 0.1945,
+    "step_freq_hz": 1.75,
+    "step_freq_share": 0.076,
+    "gravity_dir": [
+     -0.154,
+     0.046,
+     0.987
+    ],
+    "gravity_mag_g": 0.9891,
+    "dominant_channel": "gyro_y",
+    "channel_std": {
+     "acc_x": 0.0273,
+     "acc_y": 0.0938,
+     "acc_z": 0.0359,
+     "gyro_x": 0.1103,
+     "gyro_y": 0.132,
+     "gyro_z": 0.0948
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 90826.0,
+   "end_s": 92687.0,
+   "duration_s": 1861.0,
+   "observed_s": 512.0,
+   "n_segments": 128,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9916,
+    "acc_mag_std": 0.015,
+    "dynamic_acc_std": 0.0112,
+    "gyro_mag_mean": 0.0084,
+    "gyro_mag_std": 0.0581,
+    "step_freq_hz": 2.75,
+    "step_freq_share": 0.072,
+    "gravity_dir": [
+     -0.022,
+     0.018,
+     1.0
+    ],
+    "gravity_mag_g": 0.9912,
+    "dominant_channel": "gyro_y",
+    "channel_std": {
+     "acc_x": 0.0184,
+     "acc_y": 0.0223,
+     "acc_z": 0.0144,
+     "gyro_x": 0.0336,
+     "gyro_y": 0.0375,
+     "gyro_z": 0.03
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 98588.0,
+   "end_s": 98665.0,
+   "duration_s": 77.0,
+   "observed_s": 32.0,
+   "n_segments": 8,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9931,
+    "acc_mag_std": 0.0311,
+    "dynamic_acc_std": 0.0416,
+    "gyro_mag_mean": 0.1444,
+    "gyro_mag_std": 0.2725,
+    "step_freq_hz": 4.0,
+    "step_freq_share": 0.113,
+    "gravity_dir": [
+     -0.001,
+     0.153,
+     0.988
+    ],
+    "gravity_mag_g": 0.9789,
+    "dominant_channel": "gyro_y",
+    "channel_std": {
+     "acc_x": 0.0851,
+     "acc_y": 0.14,
+     "acc_z": 0.0472,
+     "gyro_x": 0.1997,
+     "gyro_y": 0.2003,
+     "gyro_z": 0.1222
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 105429.0,
+   "end_s": 106337.0,
+   "duration_s": 908.0,
+   "observed_s": 256.0,
+   "n_segments": 64,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9929,
+    "acc_mag_std": 0.03,
+    "dynamic_acc_std": 0.0429,
+    "gyro_mag_mean": 0.1492,
+    "gyro_mag_std": 0.267,
+    "step_freq_hz": 3.0,
+    "step_freq_share": 0.089,
+    "gravity_dir": [
+     0.053,
+     0.196,
+     0.979
+    ],
+    "gravity_mag_g": 0.9773,
+    "dominant_channel": "gyro_y",
+    "channel_std": {
+     "acc_x": 0.1536,
+     "acc_y": 0.072,
+     "acc_z": 0.0535,
+     "gyro_x": 0.1564,
+     "gyro_y": 0.2364,
+     "gyro_z": 0.1136
+    }
+   }
+  },
+  {
+   "activity": "Standing and moving",
+   "label": 6,
+   "start_s": 106391.0,
+   "end_s": 106407.0,
+   "duration_s": 16.0,
+   "observed_s": 16.0,
+   "n_segments": 4,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9903,
+    "acc_mag_std": 0.0289,
+    "dynamic_acc_std": 0.0285,
+    "gyro_mag_mean": 0.1401,
+    "gyro_mag_std": 0.1351,
+    "step_freq_hz": 3.75,
+    "step_freq_share": 0.112,
+    "gravity_dir": [
+     0.147,
+     0.338,
+     0.93
+    ],
+    "gravity_mag_g": 0.9895,
+    "dominant_channel": "gyro_x",
+    "channel_std": {
+     "acc_x": 0.0245,
+     "acc_y": 0.0286,
+     "acc_z": 0.0339,
+     "gyro_x": 0.1375,
+     "gyro_y": 0.1011,
+     "gyro_z": 0.0888
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 106451.0,
+   "end_s": 106685.0,
+   "duration_s": 234.0,
+   "observed_s": 68.0,
+   "n_segments": 17,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9946,
+    "acc_mag_std": 0.0383,
+    "dynamic_acc_std": 0.0604,
+    "gyro_mag_mean": 0.1992,
+    "gyro_mag_std": 0.268,
+    "step_freq_hz": 3.0,
+    "step_freq_share": 0.088,
+    "gravity_dir": [
+     -0.036,
+     0.215,
+     0.976
+    ],
+    "gravity_mag_g": 0.9685,
+    "dominant_channel": "gyro_y",
+    "channel_std": {
+     "acc_x": 0.1659,
+     "acc_y": 0.1376,
+     "acc_z": 0.0789,
+     "gyro_x": 0.2095,
+     "gyro_y": 0.2292,
+     "gyro_z": 0.1203
+    }
+   }
+  },
+  {
+   "activity": "Standing in place",
+   "label": 5,
+   "start_s": 106685.0,
+   "end_s": 106757.0,
+   "duration_s": 72.0,
+   "observed_s": 16.0,
+   "n_segments": 4,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9916,
+    "acc_mag_std": 0.0351,
+    "dynamic_acc_std": 0.0462,
+    "gyro_mag_mean": 0.2083,
+    "gyro_mag_std": 0.1812,
+    "step_freq_hz": 3.5,
+    "step_freq_share": 0.128,
+    "gravity_dir": [
+     0.006,
+     0.073,
+     0.997
+    ],
+    "gravity_mag_g": 0.9869,
+    "dominant_channel": "gyro_x",
+    "channel_std": {
+     "acc_x": 0.059,
+     "acc_y": 0.0752,
+     "acc_z": 0.037,
+     "gyro_x": 0.184,
+     "gyro_y": 0.1527,
+     "gyro_z": 0.1339
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 106757.0,
+   "end_s": 106889.0,
+   "duration_s": 132.0,
+   "observed_s": 44.0,
+   "n_segments": 11,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9907,
+    "acc_mag_std": 0.0717,
+    "dynamic_acc_std": 0.1035,
+    "gyro_mag_mean": 0.2225,
+    "gyro_mag_std": 0.5786,
+    "step_freq_hz": 2.0,
+    "step_freq_share": 0.102,
+    "gravity_dir": [
+     -0.044,
+     0.067,
+     0.997
+    ],
+    "gravity_mag_g": 0.9691,
+    "dominant_channel": "gyro_y",
+    "channel_std": {
+     "acc_x": 0.1167,
+     "acc_y": 0.1591,
+     "acc_z": 0.0924,
+     "gyro_x": 0.3508,
+     "gyro_y": 0.4177,
+     "gyro_z": 0.2934
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 108825.0,
+   "end_s": 108841.0,
+   "duration_s": 16.0,
+   "observed_s": 16.0,
+   "n_segments": 4,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9871,
+    "acc_mag_std": 0.0039,
+    "dynamic_acc_std": 0.0033,
+    "gyro_mag_mean": 0.0029,
+    "gyro_mag_std": 0.0014,
+    "step_freq_hz": 1.0,
+    "step_freq_share": 0.105,
+    "gravity_dir": [
+     0.009,
+     0.003,
+     1.0
+    ],
+    "gravity_mag_g": 0.9871,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0031,
+     "acc_y": 0.003,
+     "acc_z": 0.0039,
+     "gyro_x": 0.0015,
+     "gyro_y": 0.0013,
+     "gyro_z": 0.0025
+    }
+   }
+  },
+  {
+   "activity": "Standing in place",
+   "label": 5,
+   "start_s": 112358.0,
+   "end_s": 112366.0,
+   "duration_s": 8.0,
+   "observed_s": 8.0,
+   "n_segments": 2,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0042,
+    "acc_mag_std": 0.1288,
+    "dynamic_acc_std": 0.158,
+    "gyro_mag_mean": 0.8163,
+    "gyro_mag_std": 0.8095,
+    "step_freq_hz": 1.0,
+    "step_freq_share": 0.127,
+    "gravity_dir": [
+     0.117,
+     -0.013,
+     0.993
+    ],
+    "gravity_mag_g": 0.9738,
+    "dominant_channel": "gyro_y",
+    "channel_std": {
+     "acc_x": 0.2018,
+     "acc_y": 0.144,
+     "acc_z": 0.123,
+     "gyro_x": 0.5636,
+     "gyro_y": 0.7867,
+     "gyro_z": 0.5897
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 112366.0,
+   "end_s": 114229.0,
+   "duration_s": 1863.0,
+   "observed_s": 500.0,
+   "n_segments": 125,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9915,
+    "acc_mag_std": 0.0333,
+    "dynamic_acc_std": 0.031,
+    "gyro_mag_mean": 0.0201,
+    "gyro_mag_std": 0.1787,
+    "step_freq_hz": 1.5,
+    "step_freq_share": 0.095,
+    "gravity_dir": [
+     -0.0,
+     0.024,
+     1.0
+    ],
+    "gravity_mag_g": 0.9904,
+    "dominant_channel": "gyro_y",
+    "channel_std": {
+     "acc_x": 0.0355,
+     "acc_y": 0.0156,
+     "acc_z": 0.0429,
+     "gyro_x": 0.0979,
+     "gyro_y": 0.1391,
+     "gyro_z": 0.0576
+    }
+   }
+  },
+  {
+   "activity": "Standing and moving",
+   "label": 6,
+   "start_s": 116005.0,
+   "end_s": 116127.0,
+   "duration_s": 122.0,
+   "observed_s": 12.0,
+   "n_segments": 3,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0186,
+    "acc_mag_std": 0.1445,
+    "dynamic_acc_std": 0.2387,
+    "gyro_mag_mean": 0.8679,
+    "gyro_mag_std": 0.9268,
+    "step_freq_hz": 2.75,
+    "step_freq_share": 0.095,
+    "gravity_dir": [
+     0.526,
+     0.769,
+     0.364
+    ],
+    "gravity_mag_g": 0.806,
+    "dominant_channel": "gyro_z",
+    "channel_std": {
+     "acc_x": 0.4713,
+     "acc_y": 0.2719,
+     "acc_z": 0.3356,
+     "gyro_x": 0.7701,
+     "gyro_y": 0.5865,
+     "gyro_z": 0.8188
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 116195.0,
+   "end_s": 116790.0,
+   "duration_s": 595.0,
+   "observed_s": 56.0,
+   "n_segments": 14,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9819,
+    "acc_mag_std": 0.0031,
+    "dynamic_acc_std": 0.0029,
+    "gyro_mag_mean": 0.0103,
+    "gyro_mag_std": 0.0029,
+    "step_freq_hz": 0.5,
+    "step_freq_share": 0.08,
+    "gravity_dir": [
+     0.128,
+     -0.04,
+     0.991
+    ],
+    "gravity_mag_g": 0.9819,
+    "dominant_channel": "gyro_z",
+    "channel_std": {
+     "acc_x": 0.0034,
+     "acc_y": 0.0027,
+     "acc_z": 0.0031,
+     "gyro_x": 0.0021,
+     "gyro_y": 0.0014,
+     "gyro_z": 0.0059
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 116790.0,
+   "end_s": 116798.0,
+   "duration_s": 8.0,
+   "observed_s": 8.0,
+   "n_segments": 2,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9826,
+    "acc_mag_std": 0.0033,
+    "dynamic_acc_std": 0.0032,
+    "gyro_mag_mean": 0.0115,
+    "gyro_mag_std": 0.0014,
+    "step_freq_hz": 1.5,
+    "step_freq_share": 0.104,
+    "gravity_dir": [
+     0.127,
+     -0.04,
+     0.991
+    ],
+    "gravity_mag_g": 0.9826,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0032,
+     "acc_y": 0.0032,
+     "acc_z": 0.0033,
+     "gyro_x": 0.0015,
+     "gyro_y": 0.0013,
+     "gyro_z": 0.0014
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 116798.0,
+   "end_s": 116850.0,
+   "duration_s": 52.0,
+   "observed_s": 8.0,
+   "n_segments": 2,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9817,
+    "acc_mag_std": 0.0033,
+    "dynamic_acc_std": 0.0031,
+    "gyro_mag_mean": 0.0117,
+    "gyro_mag_std": 0.0023,
+    "step_freq_hz": 1.0,
+    "step_freq_share": 0.126,
+    "gravity_dir": [
+     0.127,
+     -0.04,
+     0.991
+    ],
+    "gravity_mag_g": 0.9817,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0032,
+     "acc_y": 0.0029,
+     "acc_z": 0.0033,
+     "gyro_x": 0.0017,
+     "gyro_y": 0.0014,
+     "gyro_z": 0.0022
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 116854.0,
+   "end_s": 117034.0,
+   "duration_s": 180.0,
+   "observed_s": 48.0,
+   "n_segments": 12,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.982,
+    "acc_mag_std": 0.0034,
+    "dynamic_acc_std": 0.0032,
+    "gyro_mag_mean": 0.0089,
+    "gyro_mag_std": 0.0048,
+    "step_freq_hz": 1.25,
+    "step_freq_share": 0.086,
+    "gravity_dir": [
+     0.127,
+     -0.04,
+     0.991
+    ],
+    "gravity_mag_g": 0.982,
+    "dominant_channel": "gyro_z",
+    "channel_std": {
+     "acc_x": 0.0033,
+     "acc_y": 0.0029,
+     "acc_z": 0.0034,
+     "gyro_x": 0.0016,
+     "gyro_y": 0.0014,
+     "gyro_z": 0.0077
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 117034.0,
+   "end_s": 117042.0,
+   "duration_s": 8.0,
+   "observed_s": 8.0,
+   "n_segments": 2,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9817,
+    "acc_mag_std": 0.0033,
+    "dynamic_acc_std": 0.0031,
+    "gyro_mag_mean": 0.0032,
+    "gyro_mag_std": 0.0011,
+    "step_freq_hz": 1.25,
+    "step_freq_share": 0.14,
+    "gravity_dir": [
+     0.127,
+     -0.04,
+     0.991
+    ],
+    "gravity_mag_g": 0.9817,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0031,
+     "acc_y": 0.003,
+     "acc_z": 0.0034,
+     "gyro_x": 0.0013,
+     "gyro_y": 0.0013,
+     "gyro_z": 0.0014
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 117086.0,
+   "end_s": 117720.0,
+   "duration_s": 634.0,
+   "observed_s": 176.0,
+   "n_segments": 44,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9821,
+    "acc_mag_std": 0.0042,
+    "dynamic_acc_std": 0.0037,
+    "gyro_mag_mean": 0.0033,
+    "gyro_mag_std": 0.0016,
+    "step_freq_hz": 1.0,
+    "step_freq_share": 0.076,
+    "gravity_dir": [
+     0.127,
+     -0.04,
+     0.991
+    ],
+    "gravity_mag_g": 0.9821,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0033,
+     "acc_y": 0.0037,
+     "acc_z": 0.0042,
+     "gyro_x": 0.0016,
+     "gyro_y": 0.0014,
+     "gyro_z": 0.0023
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 120174.0,
+   "end_s": 121337.0,
+   "duration_s": 1163.0,
+   "observed_s": 320.0,
+   "n_segments": 80,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9909,
+    "acc_mag_std": 0.0065,
+    "dynamic_acc_std": 0.0135,
+    "gyro_mag_mean": 0.0155,
+    "gyro_mag_std": 0.0765,
+    "step_freq_hz": 3.5,
+    "step_freq_share": 0.075,
+    "gravity_dir": [
+     -0.027,
+     0.023,
+     0.999
+    ],
+    "gravity_mag_g": 0.9897,
+    "dominant_channel": "gyro_x",
+    "channel_std": {
+     "acc_x": 0.0196,
+     "acc_y": 0.0443,
+     "acc_z": 0.0096,
+     "gyro_x": 0.059,
+     "gyro_y": 0.0418,
+     "gyro_z": 0.0294
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 122992.0,
+   "end_s": 125553.0,
+   "duration_s": 2561.0,
+   "observed_s": 684.0,
+   "n_segments": 171,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9876,
+    "acc_mag_std": 0.0043,
+    "dynamic_acc_std": 0.0036,
+    "gyro_mag_mean": 0.0035,
+    "gyro_mag_std": 0.0019,
+    "step_freq_hz": 0.75,
+    "step_freq_share": 0.078,
+    "gravity_dir": [
+     0.011,
+     -0.001,
+     1.0
+    ],
+    "gravity_mag_g": 0.9876,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0029,
+     "acc_y": 0.0036,
+     "acc_z": 0.0043,
+     "gyro_x": 0.0016,
+     "gyro_y": 0.0014,
+     "gyro_z": 0.0032
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 125553.0,
+   "end_s": 125645.0,
+   "duration_s": 92.0,
+   "observed_s": 36.0,
+   "n_segments": 9,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9874,
+    "acc_mag_std": 0.0038,
+    "dynamic_acc_std": 0.0031,
+    "gyro_mag_mean": 0.0034,
+    "gyro_mag_std": 0.0017,
+    "step_freq_hz": 3.25,
+    "step_freq_share": 0.084,
+    "gravity_dir": [
+     0.011,
+     -0.001,
+     1.0
+    ],
+    "gravity_mag_g": 0.9874,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0029,
+     "acc_y": 0.0028,
+     "acc_z": 0.0038,
+     "gyro_x": 0.0016,
+     "gyro_y": 0.0015,
+     "gyro_z": 0.0025
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 125690.0,
+   "end_s": 125702.0,
+   "duration_s": 12.0,
+   "observed_s": 12.0,
+   "n_segments": 3,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9874,
+    "acc_mag_std": 0.0039,
+    "dynamic_acc_std": 0.0033,
+    "gyro_mag_mean": 0.004,
+    "gyro_mag_std": 0.0018,
+    "step_freq_hz": 1.25,
+    "step_freq_share": 0.092,
+    "gravity_dir": [
+     0.011,
+     -0.001,
+     1.0
+    ],
+    "gravity_mag_g": 0.9874,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0029,
+     "acc_y": 0.0031,
+     "acc_z": 0.0039,
+     "gyro_x": 0.0015,
+     "gyro_y": 0.0014,
+     "gyro_z": 0.0019
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 125702.0,
+   "end_s": 125758.0,
+   "duration_s": 56.0,
+   "observed_s": 12.0,
+   "n_segments": 3,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.988,
+    "acc_mag_std": 0.0039,
+    "dynamic_acc_std": 0.0034,
+    "gyro_mag_mean": 0.004,
+    "gyro_mag_std": 0.002,
+    "step_freq_hz": 2.0,
+    "step_freq_share": 0.097,
+    "gravity_dir": [
+     0.011,
+     -0.001,
+     1.0
+    ],
+    "gravity_mag_g": 0.988,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.003,
+     "acc_y": 0.0031,
+     "acc_z": 0.0039,
+     "gyro_x": 0.0017,
+     "gyro_y": 0.0014,
+     "gyro_z": 0.0025
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 125758.0,
+   "end_s": 125814.0,
+   "duration_s": 56.0,
+   "observed_s": 12.0,
+   "n_segments": 3,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9877,
+    "acc_mag_std": 0.0035,
+    "dynamic_acc_std": 0.0031,
+    "gyro_mag_mean": 0.004,
+    "gyro_mag_std": 0.0018,
+    "step_freq_hz": 1.25,
+    "step_freq_share": 0.119,
+    "gravity_dir": [
+     0.011,
+     -0.001,
+     1.0
+    ],
+    "gravity_mag_g": 0.9876,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0028,
+     "acc_y": 0.0031,
+     "acc_z": 0.0035,
+     "gyro_x": 0.0016,
+     "gyro_y": 0.0015,
+     "gyro_z": 0.0022
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 125814.0,
+   "end_s": 125999.0,
+   "duration_s": 185.0,
+   "observed_s": 48.0,
+   "n_segments": 12,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9876,
+    "acc_mag_std": 0.0038,
+    "dynamic_acc_std": 0.0032,
+    "gyro_mag_mean": 0.0031,
+    "gyro_mag_std": 0.0016,
+    "step_freq_hz": 1.0,
+    "step_freq_share": 0.093,
+    "gravity_dir": [
+     0.011,
+     -0.001,
+     1.0
+    ],
+    "gravity_mag_g": 0.9876,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0028,
+     "acc_y": 0.003,
+     "acc_z": 0.0038,
+     "gyro_x": 0.0016,
+     "gyro_y": 0.0014,
+     "gyro_z": 0.0027
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 125999.0,
+   "end_s": 126072.0,
+   "duration_s": 73.0,
+   "observed_s": 24.0,
+   "n_segments": 6,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9879,
+    "acc_mag_std": 0.0035,
+    "dynamic_acc_std": 0.0031,
+    "gyro_mag_mean": 0.0032,
+    "gyro_mag_std": 0.0014,
+    "step_freq_hz": 0.5,
+    "step_freq_share": 0.102,
+    "gravity_dir": [
+     0.011,
+     -0.001,
+     1.0
+    ],
+    "gravity_mag_g": 0.9879,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0029,
+     "acc_y": 0.0031,
+     "acc_z": 0.0035,
+     "gyro_x": 0.0016,
+     "gyro_y": 0.0014,
+     "gyro_z": 0.0026
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 126072.0,
+   "end_s": 126187.0,
+   "duration_s": 115.0,
+   "observed_s": 24.0,
+   "n_segments": 6,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9885,
+    "acc_mag_std": 0.0038,
+    "dynamic_acc_std": 0.0032,
+    "gyro_mag_mean": 0.0055,
+    "gyro_mag_std": 0.0033,
+    "step_freq_hz": 0.75,
+    "step_freq_share": 0.091,
+    "gravity_dir": [
+     0.012,
+     -0.0,
+     1.0
+    ],
+    "gravity_mag_g": 0.9885,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0029,
+     "acc_y": 0.0029,
+     "acc_z": 0.0038,
+     "gyro_x": 0.0017,
+     "gyro_y": 0.0014,
+     "gyro_z": 0.0036
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 126187.0,
+   "end_s": 126234.0,
+   "duration_s": 47.0,
+   "observed_s": 16.0,
+   "n_segments": 4,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9888,
+    "acc_mag_std": 0.0034,
+    "dynamic_acc_std": 0.0031,
+    "gyro_mag_mean": 0.0092,
+    "gyro_mag_std": 0.0021,
+    "step_freq_hz": 1.75,
+    "step_freq_share": 0.107,
+    "gravity_dir": [
+     0.012,
+     -0.001,
+     1.0
+    ],
+    "gravity_mag_g": 0.9887,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0028,
+     "acc_y": 0.0032,
+     "acc_z": 0.0034,
+     "gyro_x": 0.0014,
+     "gyro_y": 0.0015,
+     "gyro_z": 0.0021
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 126234.0,
+   "end_s": 126295.0,
+   "duration_s": 61.0,
+   "observed_s": 20.0,
+   "n_segments": 5,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9888,
+    "acc_mag_std": 0.0035,
+    "dynamic_acc_std": 0.0031,
+    "gyro_mag_mean": 0.0099,
+    "gyro_mag_std": 0.0024,
+    "step_freq_hz": 2.75,
+    "step_freq_share": 0.106,
+    "gravity_dir": [
+     0.012,
+     -0.0,
+     1.0
+    ],
+    "gravity_mag_g": 0.9887,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0028,
+     "acc_y": 0.0029,
+     "acc_z": 0.0035,
+     "gyro_x": 0.0014,
+     "gyro_y": 0.0014,
+     "gyro_z": 0.0025
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 126295.0,
+   "end_s": 126376.0,
+   "duration_s": 81.0,
+   "observed_s": 16.0,
+   "n_segments": 4,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9891,
+    "acc_mag_std": 0.0038,
+    "dynamic_acc_std": 0.0032,
+    "gyro_mag_mean": 0.0119,
+    "gyro_mag_std": 0.0038,
+    "step_freq_hz": 0.5,
+    "step_freq_share": 0.098,
+    "gravity_dir": [
+     0.013,
+     -0.0,
+     1.0
+    ],
+    "gravity_mag_g": 0.9891,
+    "dominant_channel": "gyro_z",
+    "channel_std": {
+     "acc_x": 0.0029,
+     "acc_y": 0.003,
+     "acc_z": 0.0038,
+     "gyro_x": 0.0015,
+     "gyro_y": 0.0015,
+     "gyro_z": 0.0042
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 126376.0,
+   "end_s": 142977.0,
+   "duration_s": 16601.0,
+   "observed_s": 4240.0,
+   "n_segments": 1060,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9889,
+    "acc_mag_std": 0.0049,
+    "dynamic_acc_std": 0.0063,
+    "gyro_mag_mean": 0.0041,
+    "gyro_mag_std": 0.0285,
+    "step_freq_hz": 1.25,
+    "step_freq_share": 0.073,
+    "gravity_dir": [
+     0.013,
+     0.002,
+     1.0
+    ],
+    "gravity_mag_g": 0.9885,
+    "dominant_channel": "acc_y",
+    "channel_std": {
+     "acc_x": 0.0132,
+     "acc_y": 0.0223,
+     "acc_z": 0.0092,
+     "gyro_x": 0.0195,
+     "gyro_y": 0.0179,
+     "gyro_z": 0.0114
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 143033.0,
+   "end_s": 143143.0,
+   "duration_s": 110.0,
+   "observed_s": 12.0,
+   "n_segments": 3,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9971,
+    "acc_mag_std": 0.0355,
+    "dynamic_acc_std": 0.0418,
+    "gyro_mag_mean": 0.1344,
+    "gyro_mag_std": 0.147,
+    "step_freq_hz": 4.0,
+    "step_freq_share": 0.119,
+    "gravity_dir": [
+     -0.061,
+     0.303,
+     0.951
+    ],
+    "gravity_mag_g": 0.9803,
+    "dominant_channel": "acc_y",
+    "channel_std": {
+     "acc_x": 0.0495,
+     "acc_y": 0.1656,
+     "acc_z": 0.0679,
+     "gyro_x": 0.1345,
+     "gyro_y": 0.1085,
+     "gyro_z": 0.0917
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 143213.0,
+   "end_s": 144510.0,
+   "duration_s": 1297.0,
+   "observed_s": 260.0,
+   "n_segments": 65,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9922,
+    "acc_mag_std": 0.0036,
+    "dynamic_acc_std": 0.0031,
+    "gyro_mag_mean": 0.0201,
+    "gyro_mag_std": 0.0036,
+    "step_freq_hz": 1.0,
+    "step_freq_share": 0.075,
+    "gravity_dir": [
+     -0.001,
+     0.024,
+     1.0
+    ],
+    "gravity_mag_g": 0.9922,
+    "dominant_channel": "gyro_z",
+    "channel_std": {
+     "acc_x": 0.0031,
+     "acc_y": 0.0027,
+     "acc_z": 0.0036,
+     "gyro_x": 0.0015,
+     "gyro_y": 0.0015,
+     "gyro_z": 0.0066
+    }
+   }
+  },
+  {
+   "activity": "Standing and moving",
+   "label": 6,
+   "start_s": 144583.0,
+   "end_s": 144715.0,
+   "duration_s": 132.0,
+   "observed_s": 24.0,
+   "n_segments": 6,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0007,
+    "acc_mag_std": 0.0833,
+    "dynamic_acc_std": 0.0881,
+    "gyro_mag_mean": 0.3121,
+    "gyro_mag_std": 0.463,
+    "step_freq_hz": 2.25,
+    "step_freq_share": 0.091,
+    "gravity_dir": [
+     -0.051,
+     0.401,
+     0.915
+    ],
+    "gravity_mag_g": 0.9799,
+    "dominant_channel": "gyro_y",
+    "channel_std": {
+     "acc_x": 0.1128,
+     "acc_y": 0.1599,
+     "acc_z": 0.0993,
+     "gyro_x": 0.342,
+     "gyro_y": 0.3456,
+     "gyro_z": 0.2742
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 144735.0,
+   "end_s": 144858.0,
+   "duration_s": 123.0,
+   "observed_s": 12.0,
+   "n_segments": 3,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9978,
+    "acc_mag_std": 0.0498,
+    "dynamic_acc_std": 0.0657,
+    "gyro_mag_mean": 0.3016,
+    "gyro_mag_std": 0.3275,
+    "step_freq_hz": 2.75,
+    "step_freq_share": 0.119,
+    "gravity_dir": [
+     -0.092,
+     0.324,
+     0.942
+    ],
+    "gravity_mag_g": 0.991,
+    "dominant_channel": "gyro_x",
+    "channel_std": {
+     "acc_x": 0.0837,
+     "acc_y": 0.0672,
+     "acc_z": 0.0677,
+     "gyro_x": 0.2999,
+     "gyro_y": 0.2849,
+     "gyro_z": 0.1626
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 146688.0,
+   "end_s": 147147.0,
+   "duration_s": 459.0,
+   "observed_s": 92.0,
+   "n_segments": 23,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9943,
+    "acc_mag_std": 0.0905,
+    "dynamic_acc_std": 0.085,
+    "gyro_mag_mean": 0.1291,
+    "gyro_mag_std": 0.5637,
+    "step_freq_hz": 1.75,
+    "step_freq_share": 0.181,
+    "gravity_dir": [
+     0.027,
+     0.088,
+     0.996
+    ],
+    "gravity_mag_g": 0.9758,
+    "dominant_channel": "gyro_y",
+    "channel_std": {
+     "acc_x": 0.1631,
+     "acc_y": 0.0791,
+     "acc_z": 0.1079,
+     "gyro_x": 0.3165,
+     "gyro_y": 0.4048,
+     "gyro_z": 0.2654
+    }
+   }
+  },
+  {
+   "activity": "Standing and moving",
+   "label": 6,
+   "start_s": 147147.0,
+   "end_s": 147541.0,
+   "duration_s": 394.0,
+   "observed_s": 40.0,
+   "n_segments": 10,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0357,
+    "acc_mag_std": 0.2346,
+    "dynamic_acc_std": 0.2243,
+    "gyro_mag_mean": 1.1073,
+    "gyro_mag_std": 1.4101,
+    "step_freq_hz": 1.75,
+    "step_freq_share": 0.144,
+    "gravity_dir": [
+     -0.144,
+     0.965,
+     0.22
+    ],
+    "gravity_mag_g": 0.6981,
+    "dominant_channel": "gyro_z",
+    "channel_std": {
+     "acc_x": 0.3225,
+     "acc_y": 0.5688,
+     "acc_z": 0.4614,
+     "gyro_x": 1.0064,
+     "gyro_y": 1.046,
+     "gyro_z": 1.049
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 147727.0,
+   "end_s": 148497.0,
+   "duration_s": 770.0,
+   "observed_s": 56.0,
+   "n_segments": 14,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0022,
+    "acc_mag_std": 0.0501,
+    "dynamic_acc_std": 0.0633,
+    "gyro_mag_mean": 0.1427,
+    "gyro_mag_std": 0.288,
+    "step_freq_hz": 1.5,
+    "step_freq_share": 0.124,
+    "gravity_dir": [
+     0.276,
+     0.467,
+     0.84
+    ],
+    "gravity_mag_g": 0.98,
+    "dominant_channel": "gyro_y",
+    "channel_std": {
+     "acc_x": 0.1892,
+     "acc_y": 0.0739,
+     "acc_z": 0.0729,
+     "gyro_x": 0.1795,
+     "gyro_y": 0.23,
+     "gyro_z": 0.1337
+    }
+   }
+  },
+  {
+   "activity": "Walking",
+   "label": 2,
+   "start_s": 148556.0,
+   "end_s": 148795.0,
+   "duration_s": 239.0,
+   "observed_s": 20.0,
+   "n_segments": 5,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0314,
+    "acc_mag_std": 0.3093,
+    "dynamic_acc_std": 0.2558,
+    "gyro_mag_mean": 1.1657,
+    "gyro_mag_std": 0.9502,
+    "step_freq_hz": 1.75,
+    "step_freq_share": 0.156,
+    "gravity_dir": [
+     0.045,
+     0.95,
+     0.309
+    ],
+    "gravity_mag_g": 0.698,
+    "dominant_channel": "gyro_x",
+    "channel_std": {
+     "acc_x": 0.1486,
+     "acc_y": 0.4532,
+     "acc_z": 0.6668,
+     "gyro_x": 1.2573,
+     "gyro_y": 0.6157,
+     "gyro_z": 0.5482
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 150053.0,
+   "end_s": 157099.0,
+   "duration_s": 7046.0,
+   "observed_s": 1808.0,
+   "n_segments": 452,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.992,
+    "acc_mag_std": 0.0123,
+    "dynamic_acc_std": 0.0157,
+    "gyro_mag_mean": 0.0093,
+    "gyro_mag_std": 0.1158,
+    "step_freq_hz": 0.75,
+    "step_freq_share": 0.084,
+    "gravity_dir": [
+     0.952,
+     0.047,
+     0.301
+    ],
+    "gravity_mag_g": 0.9912,
+    "dominant_channel": "gyro_x",
+    "channel_std": {
+     "acc_x": 0.0136,
+     "acc_y": 0.0212,
+     "acc_z": 0.0333,
+     "gyro_x": 0.1001,
+     "gyro_y": 0.0512,
+     "gyro_z": 0.0295
+    }
+   }
+  },
+  {
+   "activity": "Standing and moving",
+   "label": 6,
+   "start_s": 157153.0,
+   "end_s": 157469.0,
+   "duration_s": 316.0,
+   "observed_s": 20.0,
+   "n_segments": 5,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9995,
+    "acc_mag_std": 0.0606,
+    "dynamic_acc_std": 0.0783,
+    "gyro_mag_mean": 0.3835,
+    "gyro_mag_std": 0.3367,
+    "step_freq_hz": 1.25,
+    "step_freq_share": 0.1,
+    "gravity_dir": [
+     0.998,
+     0.015,
+     -0.055
+    ],
+    "gravity_mag_g": 0.9901,
+    "dominant_channel": "gyro_x",
+    "channel_std": {
+     "acc_x": 0.0607,
+     "acc_y": 0.0813,
+     "acc_z": 0.1103,
+     "gyro_x": 0.4654,
+     "gyro_y": 0.1613,
+     "gyro_z": 0.1156
+    }
+   }
+  },
+  {
+   "activity": "Walking",
+   "label": 2,
+   "start_s": 157582.0,
+   "end_s": 157697.0,
+   "duration_s": 115.0,
+   "observed_s": 12.0,
+   "n_segments": 3,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0215,
+    "acc_mag_std": 0.3039,
+    "dynamic_acc_std": 0.2589,
+    "gyro_mag_mean": 1.1238,
+    "gyro_mag_std": 0.9519,
+    "step_freq_hz": 1.5,
+    "step_freq_share": 0.194,
+    "gravity_dir": [
+     0.328,
+     0.637,
+     0.698
+    ],
+    "gravity_mag_g": 0.6939,
+    "dominant_channel": "gyro_x",
+    "channel_std": {
+     "acc_x": 0.3348,
+     "acc_y": 0.4851,
+     "acc_z": 0.554,
+     "gyro_x": 1.0399,
+     "gyro_y": 0.8727,
+     "gyro_z": 0.5599
+    }
+   }
+  },
+  {
+   "activity": "Walking",
+   "label": 2,
+   "start_s": 157973.0,
+   "end_s": 158218.0,
+   "duration_s": 245.0,
+   "observed_s": 20.0,
+   "n_segments": 5,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.1184,
+    "acc_mag_std": 0.4871,
+    "dynamic_acc_std": 0.4298,
+    "gyro_mag_mean": 1.8351,
+    "gyro_mag_std": 1.3876,
+    "step_freq_hz": 1.75,
+    "step_freq_share": 0.15,
+    "gravity_dir": [
+     0.129,
+     0.989,
+     -0.079
+    ],
+    "gravity_mag_g": 0.9051,
+    "dominant_channel": "gyro_x",
+    "channel_std": {
+     "acc_x": 0.5234,
+     "acc_y": 0.5131,
+     "acc_z": 0.3628,
+     "gyro_x": 1.5952,
+     "gyro_y": 1.1308,
+     "gyro_z": 1.2003
+    }
+   }
+  },
+  {
+   "activity": "Standing and moving",
+   "label": 6,
+   "start_s": 158905.0,
+   "end_s": 159019.0,
+   "duration_s": 114.0,
+   "observed_s": 20.0,
+   "n_segments": 5,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0392,
+    "acc_mag_std": 0.113,
+    "dynamic_acc_std": 0.1573,
+    "gyro_mag_mean": 0.8917,
+    "gyro_mag_std": 0.8247,
+    "step_freq_hz": 1.25,
+    "step_freq_share": 0.128,
+    "gravity_dir": [
+     -0.051,
+     0.973,
+     -0.224
+    ],
+    "gravity_mag_g": 1.0025,
+    "dominant_channel": "gyro_y",
+    "channel_std": {
+     "acc_x": 0.1321,
+     "acc_y": 0.1273,
+     "acc_z": 0.2322,
+     "gyro_x": 0.7898,
+     "gyro_y": 0.814,
+     "gyro_z": 0.4209
+    }
+   }
+  },
+  {
+   "activity": "Standing in place",
+   "label": 5,
+   "start_s": 159076.0,
+   "end_s": 159238.0,
+   "duration_s": 162.0,
+   "observed_s": 12.0,
+   "n_segments": 3,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0423,
+    "acc_mag_std": 0.1776,
+    "dynamic_acc_std": 0.1687,
+    "gyro_mag_mean": 0.6481,
+    "gyro_mag_std": 1.0051,
+    "step_freq_hz": 1.75,
+    "step_freq_share": 0.246,
+    "gravity_dir": [
+     -0.02,
+     0.99,
+     -0.139
+    ],
+    "gravity_mag_g": 1.0099,
+    "dominant_channel": "gyro_x",
+    "channel_std": {
+     "acc_x": 0.0819,
+     "acc_y": 0.2019,
+     "acc_z": 0.2253,
+     "gyro_x": 0.9919,
+     "gyro_y": 0.5718,
+     "gyro_z": 0.3424
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 159772.0,
+   "end_s": 159977.0,
+   "duration_s": 205.0,
+   "observed_s": 12.0,
+   "n_segments": 3,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0327,
+    "acc_mag_std": 0.0282,
+    "dynamic_acc_std": 0.0242,
+    "gyro_mag_mean": 0.1157,
+    "gyro_mag_std": 0.1186,
+    "step_freq_hz": 4.0,
+    "step_freq_share": 0.26,
+    "gravity_dir": [
+     -0.168,
+     0.148,
+     -0.975
+    ],
+    "gravity_mag_g": 1.0282,
+    "dominant_channel": "gyro_x",
+    "channel_std": {
+     "acc_x": 0.0278,
+     "acc_y": 0.092,
+     "acc_z": 0.0273,
+     "gyro_x": 0.1295,
+     "gyro_y": 0.0552,
+     "gyro_z": 0.0869
+    }
+   }
+  },
+  {
+   "activity": "Walking",
+   "label": 2,
+   "start_s": 160337.0,
+   "end_s": 160457.0,
+   "duration_s": 120.0,
+   "observed_s": 12.0,
+   "n_segments": 3,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0559,
+    "acc_mag_std": 0.3651,
+    "dynamic_acc_std": 0.2808,
+    "gyro_mag_mean": 1.4722,
+    "gyro_mag_std": 0.8225,
+    "step_freq_hz": 1.5,
+    "step_freq_share": 0.159,
+    "gravity_dir": [
+     -0.005,
+     0.973,
+     -0.23
+    ],
+    "gravity_mag_g": 1.0043,
+    "dominant_channel": "gyro_x",
+    "channel_std": {
+     "acc_x": 0.1675,
+     "acc_y": 0.365,
+     "acc_z": 0.2799,
+     "gyro_x": 1.4012,
+     "gyro_y": 0.8162,
+     "gyro_z": 0.4574
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 160777.0,
+   "end_s": 163347.0,
+   "duration_s": 2570.0,
+   "observed_s": 576.0,
+   "n_segments": 144,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0326,
+    "acc_mag_std": 0.011,
+    "dynamic_acc_std": 0.0142,
+    "gyro_mag_mean": 0.0675,
+    "gyro_mag_std": 0.1358,
+    "step_freq_hz": 3.0,
+    "step_freq_share": 0.113,
+    "gravity_dir": [
+     -0.326,
+     0.092,
+     -0.941
+    ],
+    "gravity_mag_g": 1.0277,
+    "dominant_channel": "gyro_z",
+    "channel_std": {
+     "acc_x": 0.0801,
+     "acc_y": 0.0552,
+     "acc_z": 0.0275,
+     "gyro_x": 0.0688,
+     "gyro_y": 0.0465,
+     "gyro_z": 0.1269
+    }
+   }
+  },
+  {
+   "activity": "Standing and moving",
+   "label": 6,
+   "start_s": 163347.0,
+   "end_s": 163444.0,
+   "duration_s": 97.0,
+   "observed_s": 12.0,
+   "n_segments": 3,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0374,
+    "acc_mag_std": 0.0108,
+    "dynamic_acc_std": 0.021,
+    "gyro_mag_mean": 0.1218,
+    "gyro_mag_std": 0.1246,
+    "step_freq_hz": 2.75,
+    "step_freq_share": 0.101,
+    "gravity_dir": [
+     -0.421,
+     0.229,
+     -0.878
+    ],
+    "gravity_mag_g": 1.0321,
+    "dominant_channel": "gyro_x",
+    "channel_std": {
+     "acc_x": 0.0198,
+     "acc_y": 0.0965,
+     "acc_z": 0.0376,
+     "gyro_x": 0.123,
+     "gyro_y": 0.0403,
+     "gyro_z": 0.1148
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 163444.0,
+   "end_s": 163525.0,
+   "duration_s": 81.0,
+   "observed_s": 12.0,
+   "n_segments": 3,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0383,
+    "acc_mag_std": 0.0062,
+    "dynamic_acc_std": 0.0038,
+    "gyro_mag_mean": 0.0081,
+    "gyro_mag_std": 0.0146,
+    "step_freq_hz": 1.25,
+    "step_freq_share": 0.101,
+    "gravity_dir": [
+     -0.381,
+     0.273,
+     -0.883
+    ],
+    "gravity_mag_g": 1.0288,
+    "dominant_channel": "acc_x",
+    "channel_std": {
+     "acc_x": 0.0923,
+     "acc_y": 0.0903,
+     "acc_z": 0.0545,
+     "gyro_x": 0.0074,
+     "gyro_y": 0.0066,
+     "gyro_z": 0.0132
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 163880.0,
+   "end_s": 164064.0,
+   "duration_s": 184.0,
+   "observed_s": 12.0,
+   "n_segments": 3,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0226,
+    "acc_mag_std": 0.0551,
+    "dynamic_acc_std": 0.0877,
+    "gyro_mag_mean": 0.2528,
+    "gyro_mag_std": 0.3271,
+    "step_freq_hz": 2.25,
+    "step_freq_share": 0.132,
+    "gravity_dir": [
+     -0.473,
+     0.489,
+     -0.733
+    ],
+    "gravity_mag_g": 0.4289,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.2949,
+     "acc_y": 0.1079,
+     "acc_z": 0.8753,
+     "gyro_x": 0.2045,
+     "gyro_y": 0.2038,
+     "gyro_z": 0.2899
+    }
+   }
+  },
+  {
+   "activity": "Standing and moving",
+   "label": 6,
+   "start_s": 164120.0,
+   "end_s": 164193.0,
+   "duration_s": 73.0,
+   "observed_s": 8.0,
+   "n_segments": 2,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0075,
+    "acc_mag_std": 0.048,
+    "dynamic_acc_std": 0.0565,
+    "gyro_mag_mean": 0.2563,
+    "gyro_mag_std": 0.3828,
+    "step_freq_hz": 4.0,
+    "step_freq_share": 0.111,
+    "gravity_dir": [
+     0.054,
+     0.752,
+     0.656
+    ],
+    "gravity_mag_g": 0.7915,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0651,
+     "acc_y": 0.418,
+     "acc_z": 0.4604,
+     "gyro_x": 0.2411,
+     "gyro_y": 0.364,
+     "gyro_z": 0.1265
+    }
+   }
+  },
+  {
+   "activity": "Walking",
+   "label": 2,
+   "start_s": 164378.0,
+   "end_s": 164567.0,
+   "duration_s": 189.0,
+   "observed_s": 16.0,
+   "n_segments": 4,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0563,
+    "acc_mag_std": 0.3741,
+    "dynamic_acc_std": 0.2873,
+    "gyro_mag_mean": 1.3202,
+    "gyro_mag_std": 0.9892,
+    "step_freq_hz": 1.75,
+    "step_freq_share": 0.25,
+    "gravity_dir": [
+     -0.066,
+     0.985,
+     0.157
+    ],
+    "gravity_mag_g": 1.003,
+    "dominant_channel": "gyro_x",
+    "channel_std": {
+     "acc_x": 0.1708,
+     "acc_y": 0.3892,
+     "acc_z": 0.2627,
+     "gyro_x": 1.3953,
+     "gyro_y": 0.7808,
+     "gyro_z": 0.3896
+    }
+   }
+  },
+  {
+   "activity": "Standing and moving",
+   "label": 6,
+   "start_s": 164685.0,
+   "end_s": 164869.0,
+   "duration_s": 184.0,
+   "observed_s": 16.0,
+   "n_segments": 4,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0223,
+    "acc_mag_std": 0.0722,
+    "dynamic_acc_std": 0.098,
+    "gyro_mag_mean": 0.6039,
+    "gyro_mag_std": 0.6147,
+    "step_freq_hz": 3.25,
+    "step_freq_share": 0.107,
+    "gravity_dir": [
+     -0.054,
+     0.954,
+     0.296
+    ],
+    "gravity_mag_g": 0.9167,
+    "dominant_channel": "gyro_y",
+    "channel_std": {
+     "acc_x": 0.1261,
+     "acc_y": 0.2467,
+     "acc_z": 0.365,
+     "gyro_x": 0.4519,
+     "gyro_y": 0.6549,
+     "gyro_z": 0.3173
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 164914.0,
+   "end_s": 165024.0,
+   "duration_s": 110.0,
+   "observed_s": 12.0,
+   "n_segments": 3,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9975,
+    "acc_mag_std": 0.0351,
+    "dynamic_acc_std": 0.0653,
+    "gyro_mag_mean": 0.1919,
+    "gyro_mag_std": 0.2252,
+    "step_freq_hz": 3.25,
+    "step_freq_share": 0.131,
+    "gravity_dir": [
+     0.013,
+     0.422,
+     0.906
+    ],
+    "gravity_mag_g": 0.9891,
+    "dominant_channel": "gyro_y",
+    "channel_std": {
+     "acc_x": 0.1073,
+     "acc_y": 0.0643,
+     "acc_z": 0.0487,
+     "gyro_x": 0.1573,
+     "gyro_y": 0.2121,
+     "gyro_z": 0.1174
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 165286.0,
+   "end_s": 165470.0,
+   "duration_s": 184.0,
+   "observed_s": 16.0,
+   "n_segments": 4,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9989,
+    "acc_mag_std": 0.0304,
+    "dynamic_acc_std": 0.0417,
+    "gyro_mag_mean": 0.1416,
+    "gyro_mag_std": 0.1834,
+    "step_freq_hz": 3.75,
+    "step_freq_share": 0.108,
+    "gravity_dir": [
+     -0.007,
+     0.421,
+     0.907
+    ],
+    "gravity_mag_g": 0.9955,
+    "dominant_channel": "gyro_x",
+    "channel_std": {
+     "acc_x": 0.0425,
+     "acc_y": 0.0602,
+     "acc_z": 0.0462,
+     "gyro_x": 0.1796,
+     "gyro_y": 0.1355,
+     "gyro_z": 0.0551
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 165638.0,
+   "end_s": 165962.0,
+   "duration_s": 324.0,
+   "observed_s": 24.0,
+   "n_segments": 6,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9934,
+    "acc_mag_std": 0.0431,
+    "dynamic_acc_std": 0.0611,
+    "gyro_mag_mean": 0.275,
+    "gyro_mag_std": 0.3814,
+    "step_freq_hz": 1.75,
+    "step_freq_share": 0.117,
+    "gravity_dir": [
+     0.116,
+     0.243,
+     0.963
+    ],
+    "gravity_mag_g": 0.9547,
+    "dominant_channel": "gyro_x",
+    "channel_std": {
+     "acc_x": 0.1637,
+     "acc_y": 0.2122,
+     "acc_z": 0.0727,
+     "gyro_x": 0.3274,
+     "gyro_y": 0.2642,
+     "gyro_z": 0.2094
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 166078.0,
+   "end_s": 167401.0,
+   "duration_s": 1323.0,
+   "observed_s": 92.0,
+   "n_segments": 23,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9974,
+    "acc_mag_std": 0.0621,
+    "dynamic_acc_std": 0.1119,
+    "gyro_mag_mean": 0.4288,
+    "gyro_mag_std": 0.5672,
+    "step_freq_hz": 2.25,
+    "step_freq_share": 0.094,
+    "gravity_dir": [
+     0.067,
+     0.299,
+     0.952
+    ],
+    "gravity_mag_g": 0.8359,
+    "dominant_channel": "gyro_z",
+    "channel_std": {
+     "acc_x": 0.3381,
+     "acc_y": 0.1828,
+     "acc_z": 0.3902,
+     "gyro_x": 0.3788,
+     "gyro_y": 0.422,
+     "gyro_z": 0.4276
+    }
+   }
+  },
+  {
+   "activity": "Standing in place",
+   "label": 5,
+   "start_s": 176147.0,
+   "end_s": 176198.0,
+   "duration_s": 51.0,
+   "observed_s": 8.0,
+   "n_segments": 2,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0235,
+    "acc_mag_std": 0.0171,
+    "dynamic_acc_std": 0.0485,
+    "gyro_mag_mean": 0.1929,
+    "gyro_mag_std": 0.1359,
+    "step_freq_hz": 3.5,
+    "step_freq_share": 0.105,
+    "gravity_dir": [
+     0.128,
+     0.988,
+     -0.085
+    ],
+    "gravity_mag_g": 1.0154,
+    "dominant_channel": "gyro_y",
+    "channel_std": {
+     "acc_x": 0.0606,
+     "acc_y": 0.0246,
+     "acc_z": 0.112,
+     "gyro_x": 0.1215,
+     "gyro_y": 0.1933,
+     "gyro_z": 0.0474
+    }
+   }
+  },
+  {
+   "activity": "Standing and moving",
+   "label": 6,
+   "start_s": 178829.0,
+   "end_s": 178964.0,
+   "duration_s": 135.0,
+   "observed_s": 12.0,
+   "n_segments": 3,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0179,
+    "acc_mag_std": 0.1152,
+    "dynamic_acc_std": 0.1815,
+    "gyro_mag_mean": 0.5108,
+    "gyro_mag_std": 0.5941,
+    "step_freq_hz": 2.5,
+    "step_freq_share": 0.119,
+    "gravity_dir": [
+     0.313,
+     0.95,
+     0.002
+    ],
+    "gravity_mag_g": 0.9128,
+    "dominant_channel": "gyro_z",
+    "channel_std": {
+     "acc_x": 0.304,
+     "acc_y": 0.2774,
+     "acc_z": 0.2166,
+     "gyro_x": 0.4446,
+     "gyro_y": 0.4439,
+     "gyro_z": 0.4556
+    }
+   }
+  },
+  {
+   "activity": "Walking",
+   "label": 2,
+   "start_s": 179115.0,
+   "end_s": 179340.0,
+   "duration_s": 225.0,
+   "observed_s": 16.0,
+   "n_segments": 4,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0256,
+    "acc_mag_std": 0.1277,
+    "dynamic_acc_std": 0.1419,
+    "gyro_mag_mean": 0.6816,
+    "gyro_mag_std": 0.3832,
+    "step_freq_hz": 1.5,
+    "step_freq_share": 0.15,
+    "gravity_dir": [
+     -0.37,
+     0.908,
+     -0.197
+    ],
+    "gravity_mag_g": 0.7491,
+    "dominant_channel": "acc_x",
+    "channel_std": {
+     "acc_x": 0.6364,
+     "acc_y": 0.2287,
+     "acc_z": 0.2227,
+     "gyro_x": 0.4734,
+     "gyro_y": 0.4443,
+     "gyro_z": 0.4303
+    }
+   }
+  },
+  {
+   "activity": "Standing and moving",
+   "label": 6,
+   "start_s": 179396.0,
+   "end_s": 179876.0,
+   "duration_s": 480.0,
+   "observed_s": 36.0,
+   "n_segments": 9,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0253,
+    "acc_mag_std": 0.1769,
+    "dynamic_acc_std": 0.2259,
+    "gyro_mag_mean": 0.8768,
+    "gyro_mag_std": 0.9811,
+    "step_freq_hz": 0.75,
+    "step_freq_share": 0.112,
+    "gravity_dir": [
+     0.224,
+     0.971,
+     0.087
+    ],
+    "gravity_mag_g": 0.6405,
+    "dominant_channel": "gyro_x",
+    "channel_std": {
+     "acc_x": 0.7546,
+     "acc_y": 0.1968,
+     "acc_z": 0.2529,
+     "gyro_x": 0.8341,
+     "gyro_y": 0.7408,
+     "gyro_z": 0.6809
+    }
+   }
+  },
+  {
+   "activity": "Standing and moving",
+   "label": 6,
+   "start_s": 180050.0,
+   "end_s": 180742.0,
+   "duration_s": 692.0,
+   "observed_s": 52.0,
+   "n_segments": 13,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.015,
+    "acc_mag_std": 0.0921,
+    "dynamic_acc_std": 0.1405,
+    "gyro_mag_mean": 0.7387,
+    "gyro_mag_std": 0.6123,
+    "step_freq_hz": 1.25,
+    "step_freq_share": 0.101,
+    "gravity_dir": [
+     0.636,
+     0.729,
+     0.253
+    ],
+    "gravity_mag_g": 0.8546,
+    "dominant_channel": "gyro_x",
+    "channel_std": {
+     "acc_x": 0.4398,
+     "acc_y": 0.191,
+     "acc_z": 0.2801,
+     "gyro_x": 0.7167,
+     "gyro_y": 0.4446,
+     "gyro_z": 0.3879
+    }
+   }
+  },
+  {
+   "activity": "Walking",
+   "label": 2,
+   "start_s": 180796.0,
+   "end_s": 181209.0,
+   "duration_s": 413.0,
+   "observed_s": 44.0,
+   "n_segments": 11,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0205,
+    "acc_mag_std": 0.267,
+    "dynamic_acc_std": 0.2125,
+    "gyro_mag_mean": 1.0254,
+    "gyro_mag_std": 0.7997,
+    "step_freq_hz": 1.75,
+    "step_freq_share": 0.225,
+    "gravity_dir": [
+     0.036,
+     0.432,
+     0.901
+    ],
+    "gravity_mag_g": 0.8864,
+    "dominant_channel": "gyro_x",
+    "channel_std": {
+     "acc_x": 0.1977,
+     "acc_y": 0.3376,
+     "acc_z": 0.4171,
+     "gyro_x": 0.8511,
+     "gyro_y": 0.7875,
+     "gyro_z": 0.5879
+    }
+   }
+  },
+  {
+   "activity": "Standing and moving",
+   "label": 6,
+   "start_s": 181239.0,
+   "end_s": 181376.0,
+   "duration_s": 137.0,
+   "observed_s": 16.0,
+   "n_segments": 4,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0535,
+    "acc_mag_std": 0.2552,
+    "dynamic_acc_std": 0.2309,
+    "gyro_mag_mean": 1.2123,
+    "gyro_mag_std": 1.0695,
+    "step_freq_hz": 1.75,
+    "step_freq_share": 0.143,
+    "gravity_dir": [
+     -0.015,
+     0.984,
+     -0.18
+    ],
+    "gravity_mag_g": 1.0046,
+    "dominant_channel": "gyro_x",
+    "channel_std": {
+     "acc_x": 0.1425,
+     "acc_y": 0.2738,
+     "acc_z": 0.2655,
+     "gyro_x": 1.2042,
+     "gyro_y": 0.9396,
+     "gyro_z": 0.5215
+    }
+   }
+  },
+  {
+   "activity": "Walking",
+   "label": 2,
+   "start_s": 181432.0,
+   "end_s": 181916.0,
+   "duration_s": 484.0,
+   "observed_s": 48.0,
+   "n_segments": 12,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0643,
+    "acc_mag_std": 0.4154,
+    "dynamic_acc_std": 0.3239,
+    "gyro_mag_mean": 1.5338,
+    "gyro_mag_std": 0.9235,
+    "step_freq_hz": 1.75,
+    "step_freq_share": 0.19,
+    "gravity_dir": [
+     0.133,
+     0.951,
+     0.28
+    ],
+    "gravity_mag_g": 0.7696,
+    "dominant_channel": "gyro_x",
+    "channel_std": {
+     "acc_x": 0.3299,
+     "acc_y": 0.5241,
+     "acc_z": 0.5739,
+     "gyro_x": 1.4069,
+     "gyro_y": 0.9184,
+     "gyro_z": 0.6119
+    }
+   }
+  },
+  {
+   "activity": "Standing and moving",
+   "label": 6,
+   "start_s": 181993.0,
+   "end_s": 182088.0,
+   "duration_s": 95.0,
+   "observed_s": 12.0,
+   "n_segments": 3,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0202,
+    "acc_mag_std": 0.1103,
+    "dynamic_acc_std": 0.1996,
+    "gyro_mag_mean": 0.8004,
+    "gyro_mag_std": 0.6714,
+    "step_freq_hz": 3.0,
+    "step_freq_share": 0.104,
+    "gravity_dir": [
+     0.328,
+     0.917,
+     0.225
+    ],
+    "gravity_mag_g": 0.6248,
+    "dominant_channel": "gyro_y",
+    "channel_std": {
+     "acc_x": 0.3384,
+     "acc_y": 0.3775,
+     "acc_z": 0.6369,
+     "gyro_x": 0.5645,
+     "gyro_y": 0.6943,
+     "gyro_z": 0.526
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 182164.0,
+   "end_s": 182793.0,
+   "duration_s": 629.0,
+   "observed_s": 44.0,
+   "n_segments": 11,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9977,
+    "acc_mag_std": 0.0835,
+    "dynamic_acc_std": 0.0758,
+    "gyro_mag_mean": 0.2024,
+    "gyro_mag_std": 0.303,
+    "step_freq_hz": 1.5,
+    "step_freq_share": 0.196,
+    "gravity_dir": [
+     0.276,
+     0.229,
+     0.934
+    ],
+    "gravity_mag_g": 0.8921,
+    "dominant_channel": "acc_y",
+    "channel_std": {
+     "acc_x": 0.3087,
+     "acc_y": 0.3111,
+     "acc_z": 0.12,
+     "gyro_x": 0.1921,
+     "gyro_y": 0.2279,
+     "gyro_z": 0.1999
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 183095.0,
+   "end_s": 186827.0,
+   "duration_s": 3732.0,
+   "observed_s": 260.0,
+   "n_segments": 65,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9892,
+    "acc_mag_std": 0.0486,
+    "dynamic_acc_std": 0.0822,
+    "gyro_mag_mean": 0.0989,
+    "gyro_mag_std": 0.5176,
+    "step_freq_hz": 2.75,
+    "step_freq_share": 0.08,
+    "gravity_dir": [
+     -0.004,
+     0.03,
+     1.0
+    ],
+    "gravity_mag_g": 0.9092,
+    "dominant_channel": "gyro_y",
+    "channel_std": {
+     "acc_x": 0.0998,
+     "acc_y": 0.1377,
+     "acc_z": 0.354,
+     "gyro_x": 0.2944,
+     "gyro_y": 0.4041,
+     "gyro_z": 0.1664
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 204526.0,
+   "end_s": 206314.0,
+   "duration_s": 1788.0,
+   "observed_s": 496.0,
+   "n_segments": 124,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9924,
+    "acc_mag_std": 0.0133,
+    "dynamic_acc_std": 0.0164,
+    "gyro_mag_mean": 0.034,
+    "gyro_mag_std": 0.1369,
+    "step_freq_hz": 1.5,
+    "step_freq_share": 0.082,
+    "gravity_dir": [
+     -0.014,
+     0.037,
+     0.999
+    ],
+    "gravity_mag_g": 0.992,
+    "dominant_channel": "gyro_y",
+    "channel_std": {
+     "acc_x": 0.0146,
+     "acc_y": 0.0216,
+     "acc_z": 0.0166,
+     "gyro_x": 0.0712,
+     "gyro_y": 0.091,
+     "gyro_z": 0.0801
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 208132.0,
+   "end_s": 209783.0,
+   "duration_s": 1651.0,
+   "observed_s": 456.0,
+   "n_segments": 114,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9936,
+    "acc_mag_std": 0.0227,
+    "dynamic_acc_std": 0.0284,
+    "gyro_mag_mean": 0.0455,
+    "gyro_mag_std": 0.2257,
+    "step_freq_hz": 2.5,
+    "step_freq_share": 0.081,
+    "gravity_dir": [
+     0.008,
+     0.092,
+     0.996
+    ],
+    "gravity_mag_g": 0.9827,
+    "dominant_channel": "gyro_y",
+    "channel_std": {
+     "acc_x": 0.0588,
+     "acc_y": 0.1293,
+     "acc_z": 0.0431,
+     "gyro_x": 0.123,
+     "gyro_y": 0.1628,
+     "gyro_z": 0.1065
+    }
+   }
+  },
+  {
+   "activity": "Standing and moving",
+   "label": 6,
+   "start_s": 209783.0,
+   "end_s": 209791.0,
+   "duration_s": 8.0,
+   "observed_s": 8.0,
+   "n_segments": 2,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9913,
+    "acc_mag_std": 0.0301,
+    "dynamic_acc_std": 0.0462,
+    "gyro_mag_mean": 0.2371,
+    "gyro_mag_std": 0.2498,
+    "step_freq_hz": 3.5,
+    "step_freq_share": 0.103,
+    "gravity_dir": [
+     0.157,
+     0.408,
+     0.899
+    ],
+    "gravity_mag_g": 0.9883,
+    "dominant_channel": "gyro_x",
+    "channel_std": {
+     "acc_x": 0.0532,
+     "acc_y": 0.0465,
+     "acc_z": 0.0422,
+     "gyro_x": 0.242,
+     "gyro_y": 0.2252,
+     "gyro_z": 0.0932
+    }
+   }
+  },
+  {
+   "activity": "Standing in place",
+   "label": 5,
+   "start_s": 209835.0,
+   "end_s": 209843.0,
+   "duration_s": 8.0,
+   "observed_s": 8.0,
+   "n_segments": 2,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9964,
+    "acc_mag_std": 0.059,
+    "dynamic_acc_std": 0.0862,
+    "gyro_mag_mean": 0.4285,
+    "gyro_mag_std": 0.3303,
+    "step_freq_hz": 2.25,
+    "step_freq_share": 0.103,
+    "gravity_dir": [
+     0.057,
+     0.397,
+     0.916
+    ],
+    "gravity_mag_g": 0.985,
+    "dominant_channel": "gyro_x",
+    "channel_std": {
+     "acc_x": 0.0878,
+     "acc_y": 0.1019,
+     "acc_z": 0.0895,
+     "gyro_x": 0.3615,
+     "gyro_y": 0.2898,
+     "gyro_z": 0.2782
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 209843.0,
+   "end_s": 209972.0,
+   "duration_s": 129.0,
+   "observed_s": 40.0,
+   "n_segments": 10,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.994,
+    "acc_mag_std": 0.0272,
+    "dynamic_acc_std": 0.059,
+    "gyro_mag_mean": 0.1193,
+    "gyro_mag_std": 0.2845,
+    "step_freq_hz": 3.0,
+    "step_freq_share": 0.094,
+    "gravity_dir": [
+     0.039,
+     0.199,
+     0.979
+    ],
+    "gravity_mag_g": 0.9601,
+    "dominant_channel": "acc_y",
+    "channel_std": {
+     "acc_x": 0.0819,
+     "acc_y": 0.2312,
+     "acc_z": 0.0822,
+     "gyro_x": 0.1814,
+     "gyro_y": 0.2043,
+     "gyro_z": 0.1429
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 211683.0,
+   "end_s": 211699.0,
+   "duration_s": 16.0,
+   "observed_s": 16.0,
+   "n_segments": 4,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0044,
+    "acc_mag_std": 0.1011,
+    "dynamic_acc_std": 0.1164,
+    "gyro_mag_mean": 0.3133,
+    "gyro_mag_std": 0.5424,
+    "step_freq_hz": 1.25,
+    "step_freq_share": 0.083,
+    "gravity_dir": [
+     0.049,
+     0.261,
+     0.964
+    ],
+    "gravity_mag_g": 0.9606,
+    "dominant_channel": "gyro_y",
+    "channel_std": {
+     "acc_x": 0.1015,
+     "acc_y": 0.2572,
+     "acc_z": 0.1409,
+     "gyro_x": 0.3624,
+     "gyro_y": 0.4205,
+     "gyro_z": 0.2895
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 428969.0,
+   "end_s": 428985.0,
+   "duration_s": 16.0,
+   "observed_s": 16.0,
+   "n_segments": 4,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.992,
+    "acc_mag_std": 0.0473,
+    "dynamic_acc_std": 0.1467,
+    "gyro_mag_mean": 0.3347,
+    "gyro_mag_std": 0.8347,
+    "step_freq_hz": 1.25,
+    "step_freq_share": 0.131,
+    "gravity_dir": [
+     0.008,
+     0.147,
+     0.989
+    ],
+    "gravity_mag_g": 0.9356,
+    "dominant_channel": "gyro_z",
+    "channel_std": {
+     "acc_x": 0.1453,
+     "acc_y": 0.2671,
+     "acc_z": 0.1359,
+     "gyro_x": 0.2159,
+     "gyro_y": 0.515,
+     "gyro_z": 0.695
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 430820.0,
+   "end_s": 431405.0,
+   "duration_s": 585.0,
+   "observed_s": 40.0,
+   "n_segments": 10,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9947,
+    "acc_mag_std": 0.0707,
+    "dynamic_acc_std": 0.0788,
+    "gyro_mag_mean": 0.2536,
+    "gyro_mag_std": 0.5153,
+    "step_freq_hz": 2.0,
+    "step_freq_share": 0.102,
+    "gravity_dir": [
+     -0.034,
+     0.209,
+     0.977
+    ],
+    "gravity_mag_g": 0.9572,
+    "dominant_channel": "gyro_y",
+    "channel_std": {
+     "acc_x": 0.1518,
+     "acc_y": 0.2109,
+     "acc_z": 0.1032,
+     "gyro_x": 0.289,
+     "gyro_y": 0.4412,
+     "gyro_z": 0.2214
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 431701.0,
+   "end_s": 432562.0,
+   "duration_s": 861.0,
+   "observed_s": 224.0,
+   "n_segments": 56,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0205,
+    "acc_mag_std": 0.019,
+    "dynamic_acc_std": 0.0035,
+    "gyro_mag_mean": 0.0062,
+    "gyro_mag_std": 0.0045,
+    "step_freq_hz": 0.5,
+    "step_freq_share": 0.079,
+    "gravity_dir": [
+     -0.006,
+     0.027,
+     -1.0
+    ],
+    "gravity_mag_g": 0.4545,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0115,
+     "acc_y": 0.0092,
+     "acc_z": 0.9138,
+     "gyro_x": 0.0016,
+     "gyro_y": 0.0017,
+     "gyro_z": 0.0068
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 433024.0,
+   "end_s": 437373.0,
+   "duration_s": 4349.0,
+   "observed_s": 1136.0,
+   "n_segments": 284,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9916,
+    "acc_mag_std": 0.0045,
+    "dynamic_acc_std": 0.0039,
+    "gyro_mag_mean": 0.0042,
+    "gyro_mag_std": 0.0062,
+    "step_freq_hz": 0.5,
+    "step_freq_share": 0.076,
+    "gravity_dir": [
+     -0.018,
+     0.027,
+     0.999
+    ],
+    "gravity_mag_g": 0.9916,
+    "dominant_channel": "gyro_x",
+    "channel_std": {
+     "acc_x": 0.0033,
+     "acc_y": 0.004,
+     "acc_z": 0.0045,
+     "gyro_x": 0.0063,
+     "gyro_y": 0.0017,
+     "gyro_z": 0.0036
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 437516.0,
+   "end_s": 437551.0,
+   "duration_s": 35.0,
+   "observed_s": 32.0,
+   "n_segments": 8,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.997,
+    "acc_mag_std": 0.0087,
+    "dynamic_acc_std": 0.0185,
+    "gyro_mag_mean": 0.0538,
+    "gyro_mag_std": 0.1009,
+    "step_freq_hz": 3.0,
+    "step_freq_share": 0.089,
+    "gravity_dir": [
+     0.01,
+     0.403,
+     0.915
+    ],
+    "gravity_mag_g": 0.9959,
+    "dominant_channel": "gyro_x",
+    "channel_std": {
+     "acc_x": 0.0276,
+     "acc_y": 0.0335,
+     "acc_z": 0.0166,
+     "gyro_x": 0.089,
+     "gyro_y": 0.049,
+     "gyro_z": 0.0508
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 439005.0,
+   "end_s": 440846.0,
+   "duration_s": 1841.0,
+   "observed_s": 512.0,
+   "n_segments": 128,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0314,
+    "acc_mag_std": 0.0038,
+    "dynamic_acc_std": 0.0033,
+    "gyro_mag_mean": 0.0087,
+    "gyro_mag_std": 0.0063,
+    "step_freq_hz": 0.75,
+    "step_freq_share": 0.076,
+    "gravity_dir": [
+     0.031,
+     0.028,
+     -0.999
+    ],
+    "gravity_mag_g": 1.0314,
+    "dominant_channel": "gyro_z",
+    "channel_std": {
+     "acc_x": 0.0033,
+     "acc_y": 0.0034,
+     "acc_z": 0.0038,
+     "gyro_x": 0.0019,
+     "gyro_y": 0.0026,
+     "gyro_z": 0.0062
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 444418.0,
+   "end_s": 446158.0,
+   "duration_s": 1740.0,
+   "observed_s": 352.0,
+   "n_segments": 88,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.99,
+    "acc_mag_std": 0.0042,
+    "dynamic_acc_std": 0.0045,
+    "gyro_mag_mean": 0.0071,
+    "gyro_mag_std": 0.0468,
+    "step_freq_hz": 1.25,
+    "step_freq_share": 0.075,
+    "gravity_dir": [
+     -0.022,
+     0.008,
+     1.0
+    ],
+    "gravity_mag_g": 0.99,
+    "dominant_channel": "gyro_y",
+    "channel_std": {
+     "acc_x": 0.0065,
+     "acc_y": 0.0039,
+     "acc_z": 0.0043,
+     "gyro_x": 0.0077,
+     "gyro_y": 0.0443,
+     "gyro_z": 0.0149
+    }
+   }
+  },
+  {
+   "activity": "Standing and moving",
+   "label": 6,
+   "start_s": 446158.0,
+   "end_s": 446166.0,
+   "duration_s": 8.0,
+   "observed_s": 8.0,
+   "n_segments": 2,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9943,
+    "acc_mag_std": 0.1228,
+    "dynamic_acc_std": 0.1588,
+    "gyro_mag_mean": 0.9103,
+    "gyro_mag_std": 1.1311,
+    "step_freq_hz": 1.5,
+    "step_freq_share": 0.107,
+    "gravity_dir": [
+     0.194,
+     0.234,
+     0.953
+    ],
+    "gravity_mag_g": 0.9517,
+    "dominant_channel": "gyro_y",
+    "channel_std": {
+     "acc_x": 0.1782,
+     "acc_y": 0.2312,
+     "acc_z": 0.1129,
+     "gyro_x": 0.78,
+     "gyro_y": 0.9081,
+     "gyro_z": 0.8141
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 448015.0,
+   "end_s": 450692.0,
+   "duration_s": 2677.0,
+   "observed_s": 736.0,
+   "n_segments": 184,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9902,
+    "acc_mag_std": 0.0118,
+    "dynamic_acc_std": 0.0194,
+    "gyro_mag_mean": 0.0215,
+    "gyro_mag_std": 0.1861,
+    "step_freq_hz": 1.0,
+    "step_freq_share": 0.078,
+    "gravity_dir": [
+     -0.009,
+     0.012,
+     1.0
+    ],
+    "gravity_mag_g": 0.9888,
+    "dominant_channel": "gyro_y",
+    "channel_std": {
+     "acc_x": 0.0321,
+     "acc_y": 0.0404,
+     "acc_z": 0.0178,
+     "gyro_x": 0.0931,
+     "gyro_y": 0.1322,
+     "gyro_z": 0.0947
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 453393.0,
+   "end_s": 453448.0,
+   "duration_s": 55.0,
+   "observed_s": 28.0,
+   "n_segments": 7,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9926,
+    "acc_mag_std": 0.0907,
+    "dynamic_acc_std": 0.1057,
+    "gyro_mag_mean": 0.5329,
+    "gyro_mag_std": 0.7173,
+    "step_freq_hz": 1.25,
+    "step_freq_share": 0.093,
+    "gravity_dir": [
+     0.04,
+     0.175,
+     0.984
+    ],
+    "gravity_mag_g": 0.9661,
+    "dominant_channel": "gyro_y",
+    "channel_std": {
+     "acc_x": 0.1286,
+     "acc_y": 0.1811,
+     "acc_z": 0.104,
+     "gyro_x": 0.5524,
+     "gyro_y": 0.6149,
+     "gyro_z": 0.3386
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 472184.0,
+   "end_s": 472258.0,
+   "duration_s": 74.0,
+   "observed_s": 32.0,
+   "n_segments": 8,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.986,
+    "acc_mag_std": 0.0033,
+    "dynamic_acc_std": 0.0031,
+    "gyro_mag_mean": 0.0055,
+    "gyro_mag_std": 0.0015,
+    "step_freq_hz": 1.25,
+    "step_freq_share": 0.082,
+    "gravity_dir": [
+     0.115,
+     -0.005,
+     0.993
+    ],
+    "gravity_mag_g": 0.986,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0031,
+     "acc_y": 0.0031,
+     "acc_z": 0.0033,
+     "gyro_x": 0.0016,
+     "gyro_y": 0.0014,
+     "gyro_z": 0.0015
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 472299.0,
+   "end_s": 472568.0,
+   "duration_s": 269.0,
+   "observed_s": 76.0,
+   "n_segments": 19,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9923,
+    "acc_mag_std": 0.0083,
+    "dynamic_acc_std": 0.0131,
+    "gyro_mag_mean": 0.005,
+    "gyro_mag_std": 0.0208,
+    "step_freq_hz": 2.25,
+    "step_freq_share": 0.09,
+    "gravity_dir": [
+     -0.017,
+     0.028,
+     0.999
+    ],
+    "gravity_mag_g": 0.992,
+    "dominant_channel": "acc_y",
+    "channel_std": {
+     "acc_x": 0.0045,
+     "acc_y": 0.022,
+     "acc_z": 0.0054,
+     "gyro_x": 0.0059,
+     "gyro_y": 0.002,
+     "gyro_z": 0.0205
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 472568.0,
+   "end_s": 472989.0,
+   "duration_s": 421.0,
+   "observed_s": 76.0,
+   "n_segments": 19,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0015,
+    "acc_mag_std": 0.0679,
+    "dynamic_acc_std": 0.1181,
+    "gyro_mag_mean": 0.2806,
+    "gyro_mag_std": 0.8273,
+    "step_freq_hz": 1.5,
+    "step_freq_share": 0.097,
+    "gravity_dir": [
+     0.346,
+     0.335,
+     0.876
+    ],
+    "gravity_mag_g": 0.6309,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.3406,
+     "acc_y": 0.3091,
+     "acc_z": 0.6309,
+     "gyro_x": 0.4227,
+     "gyro_y": 0.6052,
+     "gyro_z": 0.4669
+    }
+   }
+  },
+  {
+   "activity": "Standing in place",
+   "label": 5,
+   "start_s": 472989.0,
+   "end_s": 472997.0,
+   "duration_s": 8.0,
+   "observed_s": 8.0,
+   "n_segments": 2,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0322,
+    "acc_mag_std": 0.0074,
+    "dynamic_acc_std": 0.0265,
+    "gyro_mag_mean": 0.0911,
+    "gyro_mag_std": 0.104,
+    "step_freq_hz": 0.75,
+    "step_freq_share": 0.11,
+    "gravity_dir": [
+     0.11,
+     0.883,
+     -0.456
+    ],
+    "gravity_mag_g": 1.0282,
+    "dominant_channel": "gyro_x",
+    "channel_std": {
+     "acc_x": 0.0476,
+     "acc_y": 0.0296,
+     "acc_z": 0.072,
+     "gyro_x": 0.1053,
+     "gyro_y": 0.0658,
+     "gyro_z": 0.0343
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 473041.0,
+   "end_s": 473049.0,
+   "duration_s": 8.0,
+   "observed_s": 8.0,
+   "n_segments": 2,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0294,
+    "acc_mag_std": 0.0171,
+    "dynamic_acc_std": 0.029,
+    "gyro_mag_mean": 0.1191,
+    "gyro_mag_std": 0.0841,
+    "step_freq_hz": 2.75,
+    "step_freq_share": 0.191,
+    "gravity_dir": [
+     0.147,
+     0.892,
+     -0.428
+    ],
+    "gravity_mag_g": 1.0281,
+    "dominant_channel": "gyro_x",
+    "channel_std": {
+     "acc_x": 0.0316,
+     "acc_y": 0.0084,
+     "acc_z": 0.0428,
+     "gyro_x": 0.0931,
+     "gyro_y": 0.0875,
+     "gyro_z": 0.0416
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 473143.0,
+   "end_s": 473155.0,
+   "duration_s": 12.0,
+   "observed_s": 12.0,
+   "n_segments": 3,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0303,
+    "acc_mag_std": 0.0171,
+    "dynamic_acc_std": 0.0431,
+    "gyro_mag_mean": 0.155,
+    "gyro_mag_std": 0.144,
+    "step_freq_hz": 3.0,
+    "step_freq_share": 0.138,
+    "gravity_dir": [
+     0.165,
+     0.843,
+     -0.513
+    ],
+    "gravity_mag_g": 1.0255,
+    "dominant_channel": "gyro_y",
+    "channel_std": {
+     "acc_x": 0.079,
+     "acc_y": 0.0236,
+     "acc_z": 0.0578,
+     "gyro_x": 0.1067,
+     "gyro_y": 0.1544,
+     "gyro_z": 0.0886
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 473429.0,
+   "end_s": 474172.0,
+   "duration_s": 743.0,
+   "observed_s": 68.0,
+   "n_segments": 17,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0353,
+    "acc_mag_std": 0.0601,
+    "dynamic_acc_std": 0.1006,
+    "gyro_mag_mean": 0.104,
+    "gyro_mag_std": 0.494,
+    "step_freq_hz": 1.75,
+    "step_freq_share": 0.097,
+    "gravity_dir": [
+     0.024,
+     0.069,
+     -0.997
+    ],
+    "gravity_mag_g": 1.0174,
+    "dominant_channel": "gyro_x",
+    "channel_std": {
+     "acc_x": 0.1186,
+     "acc_y": 0.1286,
+     "acc_z": 0.098,
+     "gyro_x": 0.332,
+     "gyro_y": 0.2918,
+     "gyro_z": 0.2428
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 474239.0,
+   "end_s": 476343.0,
+   "duration_s": 2104.0,
+   "observed_s": 168.0,
+   "n_segments": 42,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0298,
+    "acc_mag_std": 0.022,
+    "dynamic_acc_std": 0.0304,
+    "gyro_mag_mean": 0.024,
+    "gyro_mag_std": 0.1641,
+    "step_freq_hz": 2.0,
+    "step_freq_share": 0.124,
+    "gravity_dir": [
+     0.06,
+     0.105,
+     -0.993
+    ],
+    "gravity_mag_g": 0.9692,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0738,
+     "acc_y": 0.1503,
+     "acc_z": 0.3058,
+     "gyro_x": 0.1136,
+     "gyro_y": 0.091,
+     "gyro_z": 0.0795
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 476392.0,
+   "end_s": 476466.0,
+   "duration_s": 74.0,
+   "observed_s": 8.0,
+   "n_segments": 2,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0351,
+    "acc_mag_std": 0.0033,
+    "dynamic_acc_std": 0.0033,
+    "gyro_mag_mean": 0.0049,
+    "gyro_mag_std": 0.0031,
+    "step_freq_hz": 0.5,
+    "step_freq_share": 0.109,
+    "gravity_dir": [
+     0.111,
+     0.25,
+     -0.962
+    ],
+    "gravity_mag_g": 1.0351,
+    "dominant_channel": "gyro_x",
+    "channel_std": {
+     "acc_x": 0.0031,
+     "acc_y": 0.0036,
+     "acc_z": 0.0034,
+     "gyro_x": 0.0042,
+     "gyro_y": 0.0032,
+     "gyro_z": 0.0023
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 476518.0,
+   "end_s": 476786.0,
+   "duration_s": 268.0,
+   "observed_s": 24.0,
+   "n_segments": 6,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0344,
+    "acc_mag_std": 0.0037,
+    "dynamic_acc_std": 0.0031,
+    "gyro_mag_mean": 0.0039,
+    "gyro_mag_std": 0.0019,
+    "step_freq_hz": 0.5,
+    "step_freq_share": 0.093,
+    "gravity_dir": [
+     0.112,
+     0.25,
+     -0.962
+    ],
+    "gravity_mag_g": 1.0344,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0031,
+     "acc_y": 0.003,
+     "acc_z": 0.0038,
+     "gyro_x": 0.0022,
+     "gyro_y": 0.0023,
+     "gyro_z": 0.003
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 476858.0,
+   "end_s": 476980.0,
+   "duration_s": 122.0,
+   "observed_s": 12.0,
+   "n_segments": 3,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0351,
+    "acc_mag_std": 0.0034,
+    "dynamic_acc_std": 0.003,
+    "gyro_mag_mean": 0.0037,
+    "gyro_mag_std": 0.0019,
+    "step_freq_hz": 3.5,
+    "step_freq_share": 0.111,
+    "gravity_dir": [
+     0.112,
+     0.252,
+     -0.961
+    ],
+    "gravity_mag_g": 1.0351,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0029,
+     "acc_y": 0.0028,
+     "acc_z": 0.0034,
+     "gyro_x": 0.0026,
+     "gyro_y": 0.0024,
+     "gyro_z": 0.002
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 477005.0,
+   "end_s": 491664.0,
+   "duration_s": 14659.0,
+   "observed_s": 1064.0,
+   "n_segments": 266,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0306,
+    "acc_mag_std": 0.0045,
+    "dynamic_acc_std": 0.0041,
+    "gyro_mag_mean": 0.0044,
+    "gyro_mag_std": 0.0109,
+    "step_freq_hz": 0.5,
+    "step_freq_share": 0.088,
+    "gravity_dir": [
+     0.053,
+     0.13,
+     -0.99
+    ],
+    "gravity_mag_g": 1.0294,
+    "dominant_channel": "acc_y",
+    "channel_std": {
+     "acc_x": 0.0268,
+     "acc_y": 0.0416,
+     "acc_z": 0.009,
+     "gyro_x": 0.0064,
+     "gyro_y": 0.0095,
+     "gyro_z": 0.003
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 491758.0,
+   "end_s": 493298.0,
+   "duration_s": 1540.0,
+   "observed_s": 108.0,
+   "n_segments": 27,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0203,
+    "acc_mag_std": 0.0161,
+    "dynamic_acc_std": 0.0054,
+    "gyro_mag_mean": 0.0038,
+    "gyro_mag_std": 0.005,
+    "step_freq_hz": 1.5,
+    "step_freq_share": 0.082,
+    "gravity_dir": [
+     0.11,
+     0.145,
+     -0.983
+    ],
+    "gravity_mag_g": 0.5084,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0913,
+     "acc_y": 0.0448,
+     "acc_z": 0.8789,
+     "gyro_x": 0.0037,
+     "gyro_y": 0.0038,
+     "gyro_z": 0.0033
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 493360.0,
+   "end_s": 495564.0,
+   "duration_s": 2204.0,
+   "observed_s": 152.0,
+   "n_segments": 38,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9939,
+    "acc_mag_std": 0.0033,
+    "dynamic_acc_std": 0.0028,
+    "gyro_mag_mean": 0.0032,
+    "gyro_mag_std": 0.0016,
+    "step_freq_hz": 1.5,
+    "step_freq_share": 0.073,
+    "gravity_dir": [
+     0.031,
+     0.111,
+     0.993
+    ],
+    "gravity_mag_g": 0.9939,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.0026,
+     "acc_y": 0.0026,
+     "acc_z": 0.0033,
+     "gyro_x": 0.0019,
+     "gyro_y": 0.0018,
+     "gyro_z": 0.0023
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 495631.0,
+   "end_s": 496404.0,
+   "duration_s": 773.0,
+   "observed_s": 56.0,
+   "n_segments": 14,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9947,
+    "acc_mag_std": 0.0063,
+    "dynamic_acc_std": 0.0084,
+    "gyro_mag_mean": 0.0095,
+    "gyro_mag_std": 0.0236,
+    "step_freq_hz": 2.25,
+    "step_freq_share": 0.094,
+    "gravity_dir": [
+     0.151,
+     0.188,
+     0.971
+    ],
+    "gravity_mag_g": 0.9775,
+    "dominant_channel": "acc_x",
+    "channel_std": {
+     "acc_x": 0.1643,
+     "acc_y": 0.0696,
+     "acc_z": 0.0455,
+     "gyro_x": 0.0206,
+     "gyro_y": 0.0145,
+     "gyro_z": 0.0032
+    }
+   }
+  },
+  {
+   "activity": "Lying down",
+   "label": 0,
+   "start_s": 496469.0,
+   "end_s": 499163.0,
+   "duration_s": 2694.0,
+   "observed_s": 184.0,
+   "n_segments": 46,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9935,
+    "acc_mag_std": 0.0316,
+    "dynamic_acc_std": 0.0477,
+    "gyro_mag_mean": 0.0355,
+    "gyro_mag_std": 0.3501,
+    "step_freq_hz": 1.5,
+    "step_freq_share": 0.094,
+    "gravity_dir": [
+     0.026,
+     0.101,
+     0.995
+    ],
+    "gravity_mag_g": 0.9846,
+    "dominant_channel": "gyro_y",
+    "channel_std": {
+     "acc_x": 0.0673,
+     "acc_y": 0.1098,
+     "acc_z": 0.044,
+     "gyro_x": 0.1551,
+     "gyro_y": 0.2822,
+     "gyro_z": 0.1418
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 500940.0,
+   "end_s": 512592.0,
+   "duration_s": 11652.0,
+   "observed_s": 780.0,
+   "n_segments": 195,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9914,
+    "acc_mag_std": 0.0044,
+    "dynamic_acc_std": 0.0052,
+    "gyro_mag_mean": 0.0046,
+    "gyro_mag_std": 0.0275,
+    "step_freq_hz": 2.75,
+    "step_freq_share": 0.073,
+    "gravity_dir": [
+     -0.009,
+     0.015,
+     1.0
+    ],
+    "gravity_mag_g": 0.9908,
+    "dominant_channel": "acc_y",
+    "channel_std": {
+     "acc_x": 0.0075,
+     "acc_y": 0.0334,
+     "acc_z": 0.0077,
+     "gyro_x": 0.0099,
+     "gyro_y": 0.0255,
+     "gyro_z": 0.0055
+    }
+   }
+  },
+  {
+   "activity": "Walking",
+   "label": 2,
+   "start_s": 512626.0,
+   "end_s": 512932.0,
+   "duration_s": 306.0,
+   "observed_s": 24.0,
+   "n_segments": 6,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.083,
+    "acc_mag_std": 0.4075,
+    "dynamic_acc_std": 0.3497,
+    "gyro_mag_mean": 1.6645,
+    "gyro_mag_std": 1.4324,
+    "step_freq_hz": 1.75,
+    "step_freq_share": 0.199,
+    "gravity_dir": [
+     -0.059,
+     0.994,
+     -0.09
+    ],
+    "gravity_mag_g": 0.9667,
+    "dominant_channel": "gyro_x",
+    "channel_std": {
+     "acc_x": 0.3035,
+     "acc_y": 0.4447,
+     "acc_z": 0.3385,
+     "gyro_x": 1.3658,
+     "gyro_y": 1.1964,
+     "gyro_z": 1.2185
+    }
+   }
+  },
+  {
+   "activity": "Standing and moving",
+   "label": 6,
+   "start_s": 513228.0,
+   "end_s": 513291.0,
+   "duration_s": 63.0,
+   "observed_s": 8.0,
+   "n_segments": 2,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0516,
+    "acc_mag_std": 0.1888,
+    "dynamic_acc_std": 0.2015,
+    "gyro_mag_mean": 1.5014,
+    "gyro_mag_std": 0.8672,
+    "step_freq_hz": 1.25,
+    "step_freq_share": 0.129,
+    "gravity_dir": [
+     -0.012,
+     0.987,
+     -0.16
+    ],
+    "gravity_mag_g": 1.0096,
+    "dominant_channel": "gyro_y",
+    "channel_std": {
+     "acc_x": 0.1668,
+     "acc_y": 0.195,
+     "acc_z": 0.2376,
+     "gyro_x": 1.0469,
+     "gyro_y": 1.2488,
+     "gyro_z": 0.5638
+    }
+   }
+  },
+  {
+   "activity": "Walking",
+   "label": 2,
+   "start_s": 513347.0,
+   "end_s": 513660.0,
+   "duration_s": 313.0,
+   "observed_s": 24.0,
+   "n_segments": 6,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0763,
+    "acc_mag_std": 0.3547,
+    "dynamic_acc_std": 0.2848,
+    "gyro_mag_mean": 1.3791,
+    "gyro_mag_std": 1.0826,
+    "step_freq_hz": 1.75,
+    "step_freq_share": 0.254,
+    "gravity_dir": [
+     -0.027,
+     0.98,
+     -0.197
+    ],
+    "gravity_mag_g": 1.0157,
+    "dominant_channel": "gyro_x",
+    "channel_std": {
+     "acc_x": 0.1652,
+     "acc_y": 0.3671,
+     "acc_z": 0.301,
+     "gyro_x": 1.4289,
+     "gyro_y": 0.9041,
+     "gyro_z": 0.4543
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 513707.0,
+   "end_s": 519098.0,
+   "duration_s": 5391.0,
+   "observed_s": 356.0,
+   "n_segments": 89,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.994,
+    "acc_mag_std": 0.0092,
+    "dynamic_acc_std": 0.0148,
+    "gyro_mag_mean": 0.0125,
+    "gyro_mag_std": 0.0966,
+    "step_freq_hz": 3.0,
+    "step_freq_share": 0.08,
+    "gravity_dir": [
+     0.018,
+     0.051,
+     0.999
+    ],
+    "gravity_mag_g": 0.965,
+    "dominant_channel": "acc_z",
+    "channel_std": {
+     "acc_x": 0.1052,
+     "acc_y": 0.1417,
+     "acc_z": 0.1606,
+     "gyro_x": 0.0623,
+     "gyro_y": 0.0687,
+     "gyro_z": 0.0298
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 519219.0,
+   "end_s": 524398.0,
+   "duration_s": 5179.0,
+   "observed_s": 320.0,
+   "n_segments": 80,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9936,
+    "acc_mag_std": 0.0186,
+    "dynamic_acc_std": 0.0125,
+    "gyro_mag_mean": 0.004,
+    "gyro_mag_std": 0.0051,
+    "step_freq_hz": 0.75,
+    "step_freq_share": 0.086,
+    "gravity_dir": [
+     -0.041,
+     0.054,
+     0.998
+    ],
+    "gravity_mag_g": 0.9884,
+    "dominant_channel": "acc_y",
+    "channel_std": {
+     "acc_x": 0.0308,
+     "acc_y": 0.0956,
+     "acc_z": 0.025,
+     "gyro_x": 0.0053,
+     "gyro_y": 0.0028,
+     "gyro_z": 0.0023
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 524604.0,
+   "end_s": 525103.0,
+   "duration_s": 499.0,
+   "observed_s": 28.0,
+   "n_segments": 7,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9942,
+    "acc_mag_std": 0.0032,
+    "dynamic_acc_std": 0.0029,
+    "gyro_mag_mean": 0.0064,
+    "gyro_mag_std": 0.0068,
+    "step_freq_hz": 3.5,
+    "step_freq_share": 0.087,
+    "gravity_dir": [
+     -0.05,
+     0.056,
+     0.997
+    ],
+    "gravity_mag_g": 0.994,
+    "dominant_channel": "acc_y",
+    "channel_std": {
+     "acc_x": 0.0086,
+     "acc_y": 0.0144,
+     "acc_z": 0.0033,
+     "gyro_x": 0.0067,
+     "gyro_y": 0.0058,
+     "gyro_z": 0.0027
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 525239.0,
+   "end_s": 527083.0,
+   "duration_s": 1844.0,
+   "observed_s": 116.0,
+   "n_segments": 29,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9936,
+    "acc_mag_std": 0.0033,
+    "dynamic_acc_std": 0.0028,
+    "gyro_mag_mean": 0.0043,
+    "gyro_mag_std": 0.0045,
+    "step_freq_hz": 1.5,
+    "step_freq_share": 0.083,
+    "gravity_dir": [
+     -0.035,
+     0.027,
+     0.999
+    ],
+    "gravity_mag_g": 0.9936,
+    "dominant_channel": "gyro_x",
+    "channel_std": {
+     "acc_x": 0.0034,
+     "acc_y": 0.0038,
+     "acc_z": 0.0033,
+     "gyro_x": 0.0042,
+     "gyro_y": 0.004,
+     "gyro_z": 0.0024
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 527226.0,
+   "end_s": 530004.0,
+   "duration_s": 2778.0,
+   "observed_s": 188.0,
+   "n_segments": 47,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9946,
+    "acc_mag_std": 0.0389,
+    "dynamic_acc_std": 0.0708,
+    "gyro_mag_mean": 0.0664,
+    "gyro_mag_std": 0.4621,
+    "step_freq_hz": 0.75,
+    "step_freq_share": 0.102,
+    "gravity_dir": [
+     -0.006,
+     0.094,
+     0.996
+    ],
+    "gravity_mag_g": 0.9536,
+    "dominant_channel": "gyro_y",
+    "channel_std": {
+     "acc_x": 0.0881,
+     "acc_y": 0.2363,
+     "acc_z": 0.1331,
+     "gyro_x": 0.2516,
+     "gyro_y": 0.3519,
+     "gyro_z": 0.1753
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 635995.0,
+   "end_s": 636815.0,
+   "duration_s": 820.0,
+   "observed_s": 52.0,
+   "n_segments": 13,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9982,
+    "acc_mag_std": 0.0878,
+    "dynamic_acc_std": 0.0828,
+    "gyro_mag_mean": 0.1625,
+    "gyro_mag_std": 0.3222,
+    "step_freq_hz": 1.5,
+    "step_freq_share": 0.099,
+    "gravity_dir": [
+     0.014,
+     0.349,
+     0.937
+    ],
+    "gravity_mag_g": 0.9274,
+    "dominant_channel": "acc_y",
+    "channel_std": {
+     "acc_x": 0.0695,
+     "acc_y": 0.3288,
+     "acc_z": 0.176,
+     "gyro_x": 0.2488,
+     "gyro_y": 0.2175,
+     "gyro_z": 0.1442
+    }
+   }
+  },
+  {
+   "activity": "Standing and moving",
+   "label": 6,
+   "start_s": 636871.0,
+   "end_s": 637115.0,
+   "duration_s": 244.0,
+   "observed_s": 20.0,
+   "n_segments": 5,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 1.0668,
+    "acc_mag_std": 0.2886,
+    "dynamic_acc_std": 0.32,
+    "gyro_mag_mean": 1.0644,
+    "gyro_mag_std": 1.4325,
+    "step_freq_hz": 0.5,
+    "step_freq_share": 0.091,
+    "gravity_dir": [
+     0.007,
+     0.314,
+     0.949
+    ],
+    "gravity_mag_g": 0.9355,
+    "dominant_channel": "gyro_y",
+    "channel_std": {
+     "acc_x": 0.3615,
+     "acc_y": 0.2701,
+     "acc_z": 0.3776,
+     "gyro_x": 0.9042,
+     "gyro_y": 1.4086,
+     "gyro_z": 0.5931
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 637172.0,
+   "end_s": 639118.0,
+   "duration_s": 1946.0,
+   "observed_s": 132.0,
+   "n_segments": 33,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9969,
+    "acc_mag_std": 0.0651,
+    "dynamic_acc_std": 0.0913,
+    "gyro_mag_mean": 0.2443,
+    "gyro_mag_std": 0.5858,
+    "step_freq_hz": 2.5,
+    "step_freq_share": 0.086,
+    "gravity_dir": [
+     0.031,
+     0.302,
+     0.953
+    ],
+    "gravity_mag_g": 0.9547,
+    "dominant_channel": "gyro_y",
+    "channel_std": {
+     "acc_x": 0.1657,
+     "acc_y": 0.2085,
+     "acc_z": 0.1252,
+     "gyro_x": 0.3325,
+     "gyro_y": 0.4319,
+     "gyro_z": 0.3251
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 639399.0,
+   "end_s": 639562.0,
+   "duration_s": 163.0,
+   "observed_s": 44.0,
+   "n_segments": 11,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9909,
+    "acc_mag_std": 0.004,
+    "dynamic_acc_std": 0.0039,
+    "gyro_mag_mean": 0.0031,
+    "gyro_mag_std": 0.0015,
+    "step_freq_hz": 0.5,
+    "step_freq_share": 0.09,
+    "gravity_dir": [
+     -0.011,
+     0.02,
+     1.0
+    ],
+    "gravity_mag_g": 0.9908,
+    "dominant_channel": "acc_y",
+    "channel_std": {
+     "acc_x": 0.0029,
+     "acc_y": 0.0049,
+     "acc_z": 0.004,
+     "gyro_x": 0.0015,
+     "gyro_y": 0.0015,
+     "gyro_z": 0.0026
+    }
+   }
+  },
+  {
+   "activity": "Sitting",
+   "label": 1,
+   "start_s": 639848.0,
+   "end_s": 639864.0,
+   "duration_s": 16.0,
+   "observed_s": 16.0,
+   "n_segments": 4,
+   "evidence": {
+    "modality": "Accelerometer, Gyroscope",
+    "channels": "All",
+    "acc_mag_mean": 0.9955,
+    "acc_mag_std": 0.0255,
+    "dynamic_acc_std": 0.036,
+    "gyro_mag_mean": 0.1407,
+    "gyro_mag_std": 0.184,
+    "step_freq_hz": 4.0,
+    "step_freq_share": 0.107,
+    "gravity_dir": [
+     0.061,
+     0.454,
+     0.889
+    ],
+    "gravity_mag_g": 0.9921,
+    "dominant_channel": "gyro_x",
+    "channel_std": {
+     "acc_x": 0.064,
+     "acc_y": 0.0422,
+     "acc_z": 0.0395,
+     "gyro_x": 0.1742,
+     "gyro_y": 0.1279,
+     "gyro_z": 0.081
+    }
+   }
+  }
+ ],
+ "totals_s": {
+  "Sitting": 104547.0,
+  "Standing in place": 438.0,
+  "Walking": 3071.0,
+  "Standing and moving": 4419.0,
+  "Lying down": 50231.0
+ },
+ "observed_s": {
+  "Sitting": 18956.0,
+  "Standing in place": 104.0,
+  "Walking": 276.0,
+  "Standing and moving": 424.0,
+  "Lying down": 8808.0
+ },
+ "counts": {
+  "Sitting": 98,
+  "Standing in place": 10,
+  "Walking": 13,
+  "Standing and moving": 20,
+  "Lying down": 53
+ },
+ "transitions": [
+  {
+   "from": "Sitting",
+   "to": "Sitting",
+   "at_s": 2171.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Standing in place",
+   "at_s": 2297.0
+  },
+  {
+   "from": "Standing in place",
+   "to": "Walking",
+   "at_s": 2419.0
+  },
+  {
+   "from": "Walking",
+   "to": "Sitting",
+   "at_s": 2534.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Walking",
+   "at_s": 3139.0
+  },
+  {
+   "from": "Walking",
+   "to": "Sitting",
+   "at_s": 5074.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Walking",
+   "at_s": 5616.0
+  },
+  {
+   "from": "Walking",
+   "to": "Sitting",
+   "at_s": 6509.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Sitting",
+   "at_s": 8514.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Sitting",
+   "at_s": 16233.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Standing and moving",
+   "at_s": 17006.0
+  },
+  {
+   "from": "Standing and moving",
+   "to": "Sitting",
+   "at_s": 17498.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Standing and moving",
+   "at_s": 17710.0
+  },
+  {
+   "from": "Standing and moving",
+   "to": "Sitting",
+   "at_s": 18566.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Sitting",
+   "at_s": 21060.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Sitting",
+   "at_s": 25175.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Standing in place",
+   "at_s": 25410.0
+  },
+  {
+   "from": "Standing in place",
+   "to": "Sitting",
+   "at_s": 25456.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Lying down",
+   "at_s": 45294.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Lying down",
+   "at_s": 45594.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Lying down",
+   "at_s": 46090.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Lying down",
+   "at_s": 46451.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Lying down",
+   "at_s": 48062.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Lying down",
+   "at_s": 48370.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Lying down",
+   "at_s": 48750.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Lying down",
+   "at_s": 54849.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Lying down",
+   "at_s": 55698.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Lying down",
+   "at_s": 57533.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Lying down",
+   "at_s": 57676.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Lying down",
+   "at_s": 58133.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Lying down",
+   "at_s": 58619.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Lying down",
+   "at_s": 59426.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Lying down",
+   "at_s": 59614.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Lying down",
+   "at_s": 60515.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Sitting",
+   "at_s": 60738.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Lying down",
+   "at_s": 60817.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Sitting",
+   "at_s": 60863.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Lying down",
+   "at_s": 60875.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Sitting",
+   "at_s": 61443.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Lying down",
+   "at_s": 61495.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Sitting",
+   "at_s": 61561.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Lying down",
+   "at_s": 61684.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Sitting",
+   "at_s": 61838.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Lying down",
+   "at_s": 61966.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Sitting",
+   "at_s": 61986.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Lying down",
+   "at_s": 62071.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Sitting",
+   "at_s": 62169.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Lying down",
+   "at_s": 62220.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Lying down",
+   "at_s": 62340.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Sitting",
+   "at_s": 62396.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Lying down",
+   "at_s": 62531.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Sitting",
+   "at_s": 62586.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Sitting",
+   "at_s": 64541.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Lying down",
+   "at_s": 64563.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Sitting",
+   "at_s": 64627.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Standing in place",
+   "at_s": 64743.0
+  },
+  {
+   "from": "Standing in place",
+   "to": "Sitting",
+   "at_s": 64755.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Lying down",
+   "at_s": 64977.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Sitting",
+   "at_s": 65588.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Lying down",
+   "at_s": 65709.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Sitting",
+   "at_s": 65895.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Lying down",
+   "at_s": 65950.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Sitting",
+   "at_s": 66011.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Sitting",
+   "at_s": 66064.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Lying down",
+   "at_s": 66309.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Sitting",
+   "at_s": 66425.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Lying down",
+   "at_s": 66683.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Sitting",
+   "at_s": 67125.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Lying down",
+   "at_s": 67176.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Sitting",
+   "at_s": 67376.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Lying down",
+   "at_s": 67384.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Lying down",
+   "at_s": 67581.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Sitting",
+   "at_s": 67694.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Lying down",
+   "at_s": 68177.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Sitting",
+   "at_s": 68249.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Standing in place",
+   "at_s": 70256.0
+  },
+  {
+   "from": "Standing in place",
+   "to": "Sitting",
+   "at_s": 76211.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Sitting",
+   "at_s": 79036.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Sitting",
+   "at_s": 87350.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Sitting",
+   "at_s": 90826.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Sitting",
+   "at_s": 98588.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Sitting",
+   "at_s": 105429.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Standing and moving",
+   "at_s": 106391.0
+  },
+  {
+   "from": "Standing and moving",
+   "to": "Sitting",
+   "at_s": 106451.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Standing in place",
+   "at_s": 106685.0
+  },
+  {
+   "from": "Standing in place",
+   "to": "Sitting",
+   "at_s": 106757.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Sitting",
+   "at_s": 108825.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Standing in place",
+   "at_s": 112358.0
+  },
+  {
+   "from": "Standing in place",
+   "to": "Sitting",
+   "at_s": 112366.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Standing and moving",
+   "at_s": 116005.0
+  },
+  {
+   "from": "Standing and moving",
+   "to": "Sitting",
+   "at_s": 116195.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Lying down",
+   "at_s": 116790.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Sitting",
+   "at_s": 116798.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Sitting",
+   "at_s": 116854.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Lying down",
+   "at_s": 117034.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Sitting",
+   "at_s": 117086.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Sitting",
+   "at_s": 120174.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Sitting",
+   "at_s": 122992.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Lying down",
+   "at_s": 125553.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Sitting",
+   "at_s": 125690.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Lying down",
+   "at_s": 125702.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Sitting",
+   "at_s": 125758.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Lying down",
+   "at_s": 125814.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Sitting",
+   "at_s": 125999.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Lying down",
+   "at_s": 126072.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Sitting",
+   "at_s": 126187.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Lying down",
+   "at_s": 126234.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Sitting",
+   "at_s": 126295.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Lying down",
+   "at_s": 126376.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Sitting",
+   "at_s": 143033.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Lying down",
+   "at_s": 143213.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Standing and moving",
+   "at_s": 144583.0
+  },
+  {
+   "from": "Standing and moving",
+   "to": "Sitting",
+   "at_s": 144735.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Lying down",
+   "at_s": 146688.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Standing and moving",
+   "at_s": 147147.0
+  },
+  {
+   "from": "Standing and moving",
+   "to": "Sitting",
+   "at_s": 147727.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Walking",
+   "at_s": 148556.0
+  },
+  {
+   "from": "Walking",
+   "to": "Sitting",
+   "at_s": 150053.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Standing and moving",
+   "at_s": 157153.0
+  },
+  {
+   "from": "Standing and moving",
+   "to": "Walking",
+   "at_s": 157582.0
+  },
+  {
+   "from": "Walking",
+   "to": "Walking",
+   "at_s": 157973.0
+  },
+  {
+   "from": "Walking",
+   "to": "Standing and moving",
+   "at_s": 158905.0
+  },
+  {
+   "from": "Standing and moving",
+   "to": "Standing in place",
+   "at_s": 159076.0
+  },
+  {
+   "from": "Standing in place",
+   "to": "Sitting",
+   "at_s": 159772.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Walking",
+   "at_s": 160337.0
+  },
+  {
+   "from": "Walking",
+   "to": "Sitting",
+   "at_s": 160777.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Standing and moving",
+   "at_s": 163347.0
+  },
+  {
+   "from": "Standing and moving",
+   "to": "Sitting",
+   "at_s": 163444.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Sitting",
+   "at_s": 163880.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Standing and moving",
+   "at_s": 164120.0
+  },
+  {
+   "from": "Standing and moving",
+   "to": "Walking",
+   "at_s": 164378.0
+  },
+  {
+   "from": "Walking",
+   "to": "Standing and moving",
+   "at_s": 164685.0
+  },
+  {
+   "from": "Standing and moving",
+   "to": "Sitting",
+   "at_s": 164914.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Sitting",
+   "at_s": 165286.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Sitting",
+   "at_s": 165638.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Sitting",
+   "at_s": 166078.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Standing in place",
+   "at_s": 176147.0
+  },
+  {
+   "from": "Standing in place",
+   "to": "Standing and moving",
+   "at_s": 178829.0
+  },
+  {
+   "from": "Standing and moving",
+   "to": "Walking",
+   "at_s": 179115.0
+  },
+  {
+   "from": "Walking",
+   "to": "Standing and moving",
+   "at_s": 179396.0
+  },
+  {
+   "from": "Standing and moving",
+   "to": "Standing and moving",
+   "at_s": 180050.0
+  },
+  {
+   "from": "Standing and moving",
+   "to": "Walking",
+   "at_s": 180796.0
+  },
+  {
+   "from": "Walking",
+   "to": "Standing and moving",
+   "at_s": 181239.0
+  },
+  {
+   "from": "Standing and moving",
+   "to": "Walking",
+   "at_s": 181432.0
+  },
+  {
+   "from": "Walking",
+   "to": "Standing and moving",
+   "at_s": 181993.0
+  },
+  {
+   "from": "Standing and moving",
+   "to": "Sitting",
+   "at_s": 182164.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Sitting",
+   "at_s": 183095.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Sitting",
+   "at_s": 204526.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Sitting",
+   "at_s": 208132.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Standing and moving",
+   "at_s": 209783.0
+  },
+  {
+   "from": "Standing and moving",
+   "to": "Standing in place",
+   "at_s": 209835.0
+  },
+  {
+   "from": "Standing in place",
+   "to": "Sitting",
+   "at_s": 209843.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Sitting",
+   "at_s": 211683.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Sitting",
+   "at_s": 428969.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Sitting",
+   "at_s": 430820.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Sitting",
+   "at_s": 431701.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Sitting",
+   "at_s": 433024.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Sitting",
+   "at_s": 437516.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Sitting",
+   "at_s": 439005.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Sitting",
+   "at_s": 444418.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Standing and moving",
+   "at_s": 446158.0
+  },
+  {
+   "from": "Standing and moving",
+   "to": "Sitting",
+   "at_s": 448015.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Sitting",
+   "at_s": 453393.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Lying down",
+   "at_s": 472184.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Sitting",
+   "at_s": 472299.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Lying down",
+   "at_s": 472568.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Standing in place",
+   "at_s": 472989.0
+  },
+  {
+   "from": "Standing in place",
+   "to": "Sitting",
+   "at_s": 473041.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Sitting",
+   "at_s": 473143.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Lying down",
+   "at_s": 473429.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Lying down",
+   "at_s": 474239.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Sitting",
+   "at_s": 476392.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Lying down",
+   "at_s": 476518.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Sitting",
+   "at_s": 476858.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Lying down",
+   "at_s": 477005.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Sitting",
+   "at_s": 491758.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Lying down",
+   "at_s": 493360.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Sitting",
+   "at_s": 495631.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Lying down",
+   "at_s": 496469.0
+  },
+  {
+   "from": "Lying down",
+   "to": "Sitting",
+   "at_s": 500940.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Walking",
+   "at_s": 512626.0
+  },
+  {
+   "from": "Walking",
+   "to": "Standing and moving",
+   "at_s": 513228.0
+  },
+  {
+   "from": "Standing and moving",
+   "to": "Walking",
+   "at_s": 513347.0
+  },
+  {
+   "from": "Walking",
+   "to": "Sitting",
+   "at_s": 513707.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Sitting",
+   "at_s": 519219.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Sitting",
+   "at_s": 524604.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Sitting",
+   "at_s": 525239.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Sitting",
+   "at_s": 527226.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Sitting",
+   "at_s": 635995.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Standing and moving",
+   "at_s": 636871.0
+  },
+  {
+   "from": "Standing and moving",
+   "to": "Sitting",
+   "at_s": 637172.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Sitting",
+   "at_s": 639399.0
+  },
+  {
+   "from": "Sitting",
+   "to": "Sitting",
+   "at_s": 639848.0
+  }
+ ],
+ "source": {
+  "kind": "known user",
+  "fold": 0,
+  "classifier": "RF + time of day + tuned thresholds (out-of-fold)",
+  "predictions": "Try_increase_accuracy/final_model/predictions.npz"
+ }
+}

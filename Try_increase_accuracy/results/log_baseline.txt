@@ -1,0 +1,8 @@
+
+=== baseline: RF exactly as in random_forest_model.ipynb ===
+  fold 0:    81s  213 feats | VAL F1 0.2744 | TEST acc 0.4730 F1 0.3340 bal 0.3740 kappa 0.1780
+  fold 1:    95s  213 feats | VAL F1 0.2961 | TEST acc 0.4571 F1 0.3092 bal 0.3610 kappa 0.1726
+  fold 2:    92s  213 feats | VAL F1 0.2251 | TEST acc 0.5013 F1 0.3724 bal 0.3871 kappa 0.2579
+  fold 3:    94s  213 feats | VAL F1 0.3295 | TEST acc 0.4497 F1 0.2918 bal 0.3181 kappa 0.2028
+  fold 4:   101s  213 feats | VAL F1 0.2434 | TEST acc 0.4842 F1 0.3354 bal 0.3856 kappa 0.1977
+  -> VAL F1 mean 0.2737 | POOLED TEST acc 0.4733 F1 0.3337 bal 0.3566 kappa 0.2096

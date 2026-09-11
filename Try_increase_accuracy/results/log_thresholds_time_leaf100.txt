@@ -1,0 +1,5 @@
+
+=== threshold tuning on top of 'time_leaf100' ===
+  argmax  VAL F1 0.3487 | POOLED TEST acc 0.6122 F1 0.3882 bal 0.4307 kappa 0.4368
+  prior   VAL F1 0.3773 | POOLED TEST acc 0.6775 F1 0.3958 bal 0.3628 kappa 0.4735
+  tuned   VAL F1 0.4266 | POOLED TEST acc 0.6666 F1 0.4422 bal 0.3999 kappa 0.4829

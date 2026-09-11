@@ -1,0 +1,5 @@
+
+=== threshold tuning on top of 'baseline' ===
+  argmax  VAL F1 0.2737 | POOLED TEST acc 0.4733 F1 0.3337 bal 0.3566 kappa 0.2096
+  prior   VAL F1 0.2962 | POOLED TEST acc 0.5155 F1 0.3042 bal 0.2867 kappa 0.1901
+  tuned   VAL F1 0.3866 | POOLED TEST acc 0.5088 F1 0.3882 bal 0.3454 kappa 0.2459

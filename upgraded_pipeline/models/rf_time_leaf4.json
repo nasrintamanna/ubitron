@@ -1,0 +1,36 @@
+{
+ "name": "rf_time_leaf4",
+ "use_time": true,
+ "n_features": 215,
+ "n_train": 597849,
+ "train_per_class": [
+  120000,
+  120000,
+  120000,
+  9348,
+  39960,
+  68541,
+  120000
+ ],
+ "rf_params": {
+  "n_estimators": 200,
+  "min_samples_leaf": 4,
+  "max_features": "sqrt",
+  "class_weight": "balanced",
+  "n_jobs": 24,
+  "random_state": 0
+ },
+ "class_weights": [
+  1.819700858609984,
+  1.3489628825916542,
+  0.39810717055349737,
+  0.8709635899560809,
+  0.16595869074375613,
+  1.148153621496883,
+  1.0232929922807543
+ ],
+ "weights_from": "Try_increase_accuracy/results/time__thresholds.json (geometric mean of 5 folds)",
+ "fit_seconds": 94.79493141174316,
+ "file_mb": 370.78360748291016,
+ "n_nodes_total": 14139506
+}

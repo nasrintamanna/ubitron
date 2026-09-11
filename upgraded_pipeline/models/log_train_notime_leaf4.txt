@@ -1,0 +1,3 @@
+  56/56 FDAA70A1   10,145 training segments
+training set (597849, 213) built in 53s
+fit 98s | saved rf_notime_leaf4.joblib: 398 MB, 15,201,270 tree nodes | weights [3.02, 1.38, 0.35, 0.56, 0.17, 1.05, 0.95]

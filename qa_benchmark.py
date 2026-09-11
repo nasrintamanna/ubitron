@@ -36,8 +36,11 @@ STATIC = {"Lying down", "Sitting", "Standing in place"}
 DYNAMIC = {"Walking", "Running", "Bicycling", "Standing and moving"}
 NA = "N/A"
 
-# what counts as "prolonged" for the open-world questions, in seconds
-PROLONGED_S = 600.0
+# Same definitions as slm_query_engine, or the benchmark would score the
+# engine against a different rule: "prolonged" = 8 min continuous, and an
+# activity only "happened" if an episode lasts at least one 60 s window.
+PROLONGED_S = 480.0
+MIN_EPISODE_S = 60.0
 
 
 @dataclass
@@ -138,7 +141,7 @@ def generate_questions(tl: dict, n_per_type: int = 6, seed: int = 0) -> list[dic
                "Accelerometer, Gyroscope", "All"),
         evidence_required=bool(lying))
 
-    cyc = [x for x in iv if x["activity"] == "Bicycling" and x["duration_s"] >= 120]
+    cyc = [x for x in iv if x["activity"] == "Bicycling" and x["duration_s"] >= MIN_EPISODE_S]
     add("open_world", "Was the user using a wheeled or pedal-based mode of movement?",
         _blank("Yes" if cyc else "No",
                "Unknown outdoor physical activity, consistent with cycling" if cyc else NA,
@@ -329,7 +332,7 @@ def answer_from_timeline(q: dict, tl: dict) -> dict:
         return _blank("Likely yes" if hits else "No", "Prolonged lying down",
                       [(x["start_s"], x["end_s"]) for x in hits[:3]] or None, ev_mod, ev_ch)
     if "wheeled" in ql or "pedal" in ql:
-        hits = [x for x in iv if x["activity"] == "Bicycling" and x["duration_s"] >= 120]
+        hits = [x for x in iv if x["activity"] == "Bicycling" and x["duration_s"] >= MIN_EPISODE_S]
         return _blank("Yes" if hits else "No",
                       "Unknown outdoor physical activity, consistent with cycling" if hits else NA,
                       [(x["start_s"], x["end_s"]) for x in hits[:3]] or None, ev_mod, ev_ch)

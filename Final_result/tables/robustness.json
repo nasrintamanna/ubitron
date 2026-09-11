@@ -1,0 +1,308 @@
+{
+ "noise": [
+  {
+   "level": 0.0,
+   "clf_accuracy": 0.6754189157863364,
+   "clf_macro_f1": 0.4795731712423252,
+   "qa_macro": 0.5289893617021277,
+   "qa_per_type": {
+    "identification": 0.6333333333333333,
+    "verification": 0.7083333333333334,
+    "duration": 0.08333333333333333,
+    "count": 0.14583333333333334,
+    "comparison": 0.8333333333333334,
+    "grounding": 0.3404255319148936,
+    "open_world": 0.9583333333333334
+   }
+  },
+  {
+   "level": 0.0005,
+   "clf_accuracy": 0.6800468589594992,
+   "clf_macro_f1": 0.4823783297557446,
+   "qa_macro": 0.5216480918608578,
+   "qa_per_type": {
+    "identification": 0.6166666666666667,
+    "verification": 0.6944444444444444,
+    "duration": 0.10416666666666667,
+    "count": 0.125,
+    "comparison": 0.8125,
+    "grounding": 0.3404255319148936,
+    "open_world": 0.9583333333333334
+   }
+  },
+  {
+   "level": 0.001,
+   "clf_accuracy": 0.6739866543034077,
+   "clf_macro_f1": 0.48372561446615386,
+   "qa_macro": 0.5210528537656197,
+   "qa_per_type": {
+    "identification": 0.6333333333333333,
+    "verification": 0.6944444444444444,
+    "duration": 0.10416666666666667,
+    "count": 0.10416666666666667,
+    "comparison": 0.8333333333333334,
+    "grounding": 0.3404255319148936,
+    "open_world": 0.9375
+   }
+  },
+  {
+   "level": 0.002,
+   "clf_accuracy": 0.5891148127297413,
+   "clf_macro_f1": 0.44539542346326005,
+   "qa_macro": 0.501806822019588,
+   "qa_per_type": {
+    "identification": 0.6166666666666667,
+    "verification": 0.7222222222222222,
+    "duration": 0.020833333333333332,
+    "count": 0.08333333333333333,
+    "comparison": 0.8333333333333334,
+    "grounding": 0.3404255319148936,
+    "open_world": 0.8958333333333334
+   }
+  },
+  {
+   "level": 0.005,
+   "clf_accuracy": 0.5200392423088386,
+   "clf_macro_f1": 0.39208613946452353,
+   "qa_macro": 0.48150540357987165,
+   "qa_per_type": {
+    "identification": 0.6,
+    "verification": 0.7222222222222222,
+    "duration": 0.020833333333333332,
+    "count": 0.16666666666666666,
+    "comparison": 0.6666666666666666,
+    "grounding": 0.3191489361702128,
+    "open_world": 0.875
+   }
+  },
+  {
+   "level": 0.01,
+   "clf_accuracy": 0.49211014339172765,
+   "clf_macro_f1": 0.35848358925367135,
+   "qa_macro": 0.45630699088145893,
+   "qa_per_type": {
+    "identification": 0.5833333333333334,
+    "verification": 0.7083333333333334,
+    "duration": 0.041666666666666664,
+    "count": 0.10416666666666667,
+    "comparison": 0.625,
+    "grounding": 0.3191489361702128,
+    "open_world": 0.8125
+   }
+  },
+  {
+   "level": 0.02,
+   "clf_accuracy": 0.4843361923369871,
+   "clf_macro_f1": 0.33483523180194324,
+   "qa_macro": 0.4582911178655859,
+   "qa_per_type": {
+    "identification": 0.5833333333333334,
+    "verification": 0.7222222222222222,
+    "duration": 0.0,
+    "count": 0.20833333333333334,
+    "comparison": 0.5833333333333334,
+    "grounding": 0.3191489361702128,
+    "open_world": 0.7916666666666666
+   }
+  },
+  {
+   "level": 0.05,
+   "clf_accuracy": 0.47052687353048317,
+   "clf_macro_f1": 0.2908351328607695,
+   "qa_macro": 0.4250928740290442,
+   "qa_per_type": {
+    "identification": 0.5666666666666667,
+    "verification": 0.7777777777777778,
+    "duration": 0.041666666666666664,
+    "count": 0.125,
+    "comparison": 0.5,
+    "grounding": 0.2978723404255319,
+    "open_world": 0.6666666666666666
+   }
+  }
+ ],
+ "dropout": [
+  {
+   "level": 0,
+   "clf_accuracy": 0.6754189157863364,
+   "clf_macro_f1": 0.4795731712423252,
+   "qa_macro": 0.5289893617021277,
+   "qa_per_type": {
+    "identification": 0.6333333333333333,
+    "verification": 0.7083333333333334,
+    "duration": 0.08333333333333333,
+    "count": 0.14583333333333334,
+    "comparison": 0.8333333333333334,
+    "grounding": 0.3404255319148936,
+    "open_world": 0.9583333333333334
+   }
+  },
+  {
+   "level": 10,
+   "clf_accuracy": 0.6740156306917906,
+   "clf_macro_f1": 0.47920737898967636,
+   "qa_macro": 0.518275075987842,
+   "qa_per_type": {
+    "identification": 0.6,
+    "verification": 0.7083333333333334,
+    "duration": 0.08333333333333333,
+    "count": 0.10416666666666667,
+    "comparison": 0.8333333333333334,
+    "grounding": 0.3404255319148936,
+    "open_world": 0.9583333333333334
+   }
+  },
+  {
+   "level": 25,
+   "clf_accuracy": 0.6718465410471239,
+   "clf_macro_f1": 0.47707120590787244,
+   "qa_macro": 0.5288542722053361,
+   "qa_per_type": {
+    "identification": 0.5833333333333334,
+    "verification": 0.7361111111111112,
+    "duration": 0.16666666666666666,
+    "count": 0.0625,
+    "comparison": 0.8541666666666666,
+    "grounding": 0.3617021276595745,
+    "open_world": 0.9375
+   }
+  },
+  {
+   "level": 50,
+   "clf_accuracy": 0.6619448951882637,
+   "clf_macro_f1": 0.45255860644500795,
+   "qa_macro": 0.5424181019925701,
+   "qa_per_type": {
+    "identification": 0.6166666666666667,
+    "verification": 0.7361111111111112,
+    "duration": 0.1875,
+    "count": 0.125,
+    "comparison": 0.8333333333333334,
+    "grounding": 0.3191489361702128,
+    "open_world": 0.9791666666666666
+   }
+  },
+  {
+   "level": 75,
+   "clf_accuracy": 0.6421871377951452,
+   "clf_macro_f1": 0.35484365159858006,
+   "qa_macro": 0.5350768321513002,
+   "qa_per_type": {
+    "identification": 0.6,
+    "verification": 0.7222222222222222,
+    "duration": 0.20833333333333334,
+    "count": 0.125,
+    "comparison": 0.8333333333333334,
+    "grounding": 0.3191489361702128,
+    "open_world": 0.9375
+   }
+  },
+  {
+   "level": 90,
+   "clf_accuracy": 0.6100109282379045,
+   "clf_macro_f1": 0.28251709252394247,
+   "qa_macro": 0.4587597095575819,
+   "qa_per_type": {
+    "identification": 0.48333333333333334,
+    "verification": 0.5972222222222222,
+    "duration": 0.125,
+    "count": 0.10416666666666667,
+    "comparison": 0.75,
+    "grounding": 0.2765957446808511,
+    "open_world": 0.875
+   }
+  }
+ ],
+ "rate": [
+  {
+   "level": 32,
+   "clf_accuracy": 0.6754189157863364,
+   "clf_macro_f1": 0.4795731712423252,
+   "qa_macro": 0.5289893617021277,
+   "qa_per_type": {
+    "identification": 0.6333333333333333,
+    "verification": 0.7083333333333334,
+    "duration": 0.08333333333333333,
+    "count": 0.14583333333333334,
+    "comparison": 0.8333333333333334,
+    "grounding": 0.3404255319148936,
+    "open_world": 0.9583333333333334
+   }
+  },
+  {
+   "level": 25,
+   "clf_accuracy": 0.6617668973739114,
+   "clf_macro_f1": 0.4608873216847024,
+   "qa_macro": 0.5256881121242823,
+   "qa_per_type": {
+    "identification": 0.5833333333333334,
+    "verification": 0.7361111111111112,
+    "duration": 0.16666666666666666,
+    "count": 0.10416666666666667,
+    "comparison": 0.8541666666666666,
+    "grounding": 0.2978723404255319,
+    "open_world": 0.9375
+   }
+  },
+  {
+   "level": 20,
+   "clf_accuracy": 0.6587657714342484,
+   "clf_macro_f1": 0.4561243879267051,
+   "qa_macro": 0.5294579533941237,
+   "qa_per_type": {
+    "identification": 0.6166666666666667,
+    "verification": 0.75,
+    "duration": 0.14583333333333334,
+    "count": 0.10416666666666667,
+    "comparison": 0.8333333333333334,
+    "grounding": 0.2978723404255319,
+    "open_world": 0.9583333333333334
+   }
+  },
+  {
+   "level": 15,
+   "clf_accuracy": 0.6519894360366923,
+   "clf_macro_f1": 0.43669141535876255,
+   "qa_macro": 0.514775413711584,
+   "qa_per_type": {
+    "identification": 0.5833333333333334,
+    "verification": 0.7222222222222222,
+    "duration": 0.14583333333333334,
+    "count": 0.0625,
+    "comparison": 0.8333333333333334,
+    "grounding": 0.2978723404255319,
+    "open_world": 0.9583333333333334
+   }
+  },
+  {
+   "level": 10,
+   "clf_accuracy": 0.6421623008908169,
+   "clf_macro_f1": 0.3802261017923619,
+   "qa_macro": 0.5316404930766633,
+   "qa_per_type": {
+    "identification": 0.5833333333333334,
+    "verification": 0.7361111111111112,
+    "duration": 0.20833333333333334,
+    "count": 0.08333333333333333,
+    "comparison": 0.8541666666666666,
+    "grounding": 0.2978723404255319,
+    "open_world": 0.9583333333333334
+   }
+  },
+  {
+   "level": 5,
+   "clf_accuracy": 0.62351392522436,
+   "clf_macro_f1": 0.3226989222252862,
+   "qa_macro": 0.5008147585275246,
+   "qa_per_type": {
+    "identification": 0.5333333333333333,
+    "verification": 0.6527777777777778,
+    "duration": 0.14583333333333334,
+    "count": 0.08333333333333333,
+    "comparison": 0.8541666666666666,
+    "grounding": 0.3404255319148936,
+    "open_world": 0.8958333333333334
+   }
+  }
+ ]
+}

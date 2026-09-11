@@ -1,0 +1,8 @@
+
+=== time_leaf100: RF on raw features + time of day, min_samples_leaf=100 ===
+  fold 0:    68s  215 feats | VAL F1 0.3587 | TEST acc 0.6263 F1 0.3864 bal 0.4827 kappa 0.4435
+  fold 1:    78s  215 feats | VAL F1 0.3577 | TEST acc 0.5913 F1 0.3648 bal 0.4825 kappa 0.3998
+  fold 2:    73s  215 feats | VAL F1 0.3239 | TEST acc 0.6169 F1 0.4106 bal 0.4478 kappa 0.4496
+  fold 3:    74s  215 feats | VAL F1 0.3690 | TEST acc 0.6099 F1 0.3582 bal 0.3892 kappa 0.4406
+  fold 4:    80s  215 feats | VAL F1 0.3340 | TEST acc 0.6231 F1 0.4040 bal 0.4679 kappa 0.4442
+  -> VAL F1 mean 0.3487 | POOLED TEST acc 0.6122 F1 0.3882 bal 0.4307 kappa 0.4368

@@ -1,0 +1,36 @@
+{
+ "name": "rf_notime_leaf4",
+ "use_time": false,
+ "n_features": 213,
+ "n_train": 597849,
+ "train_per_class": [
+  120000,
+  120000,
+  120000,
+  9348,
+  39960,
+  68541,
+  120000
+ ],
+ "rf_params": {
+  "n_estimators": 200,
+  "min_samples_leaf": 4,
+  "max_features": "sqrt",
+  "class_weight": "balanced",
+  "n_jobs": 24,
+  "random_state": 0
+ },
+ "class_weights": [
+  3.019951720402017,
+  1.3803842646028852,
+  0.3548133892335756,
+  0.5623413251903493,
+  0.16595869074375613,
+  1.0471285480508998,
+  0.9549925860214361
+ ],
+ "weights_from": "Try_increase_accuracy/results/baseline__thresholds.json (geometric mean of 5 folds)",
+ "fit_seconds": 98.1818585395813,
+ "file_mb": 397.55429553985596,
+ "n_nodes_total": 15201270
+}

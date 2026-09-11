@@ -1,27 +1,71 @@
-# ExtraSensory → 32 Hz Activity Recognition Dataset
+# UbiQ : Activity Question Answering from Wearable Signals
 
-Processing pipeline that turns the raw ExtraSensory accelerometer and gyroscope
-recordings into fixed-length, labelled, class-balanced training sets for 7-class
-human activity recognition.
+A system that answers plain-language questions about a person's day - *"How long
+did the user walk?"*, *"Did she lie down for a prolonged period?"* - from the
+accelerometer and gyroscope of a phone, and backs every answer with the stretch of
+signal it rests on. Built on the ExtraSensory dataset for CS60055 (Ubiquitous
+Computing), Hackathon Challenge 1: *Ask the Sensors*.
 
-All steps live in [`data_processing.ipynb`](data_processing.ipynb), cells 1–10.
-Every cell is idempotent and safe to re-run.
+**Results at a glance** (5-fold subject-wise cross-validation, every user tested once):
+
+| component | accuracy | macro-F1 |
+|---|---|---|
+| CNN classifier | 0.366 | 0.259 |
+| Random Forest classifier | 0.473 | 0.334 |
+| **Upgraded Random Forest** (+ time of day + tuned thresholds) | **0.660** | **0.438** |
+
+| question answering (1,720 questions, all 56 users) | overall QA accuracy |
+|---|---|
+| previous classifier + Qwen2.5-3B | 45.2% |
+| **upgraded classifier + Qwen2.5-3B** | **50.6%** |
 
 ---
 
-## Result
+## 1. Dataset pipeline
 
-| | |
-|---|---|
-| **Final artefact** | `balanced_folds/` — 5 cross-validation folds, ready to train |
-| **Segments** | 2,551,686 fixed 4-second windows (128 samples @ 32 Hz, 6 channels) |
-| **Users** | 56 |
-| **Classes** | 7, indexed 0–6 |
-| **Class balance** | 1.5 : 1 (from 120 : 1 in the source) |
+All data processing lives in [`data_processing.ipynb`](data_processing.ipynb)
+(guide per cell in section 6).
 
-### Activity classes
+```
+raw_acc/ + proc_gyro/        60 + 57 users, sampling rate varies per minute (13.8-233.9 Hz)
+   │  resample to 32 Hz
+acc_32Hz/ + gyro_32Hz/       one CSV per minute
+   │  put the accelerometer in g
+   │  merge gyroscope onto the accelerometer clock
+merged_acc_gyro/             56 users, 236,457,636 rows
+   │  attach the 7 activity labels
+labeled_acc_gyro/            288,340 labelled minutes
+   │  cut into 4-second segments
+segmented_4s/                2,551,686 segments of 128 samples x 6 channels
+   │  subject-wise folds, balance and augment the training data
+balanced_folds/              5 folds x (train / val / test)
+```
 
-| index | activity | source column | windows |
+- **Resampling to 32 Hz.** Minutes recorded below 32 Hz are linearly interpolated
+  up. Minutes above it are low-pass filtered first (zero-phase Butterworth,
+  14.4 Hz) so nothing aliases. Timestamp guards drop padding rows and split at
+  impossible gaps.
+- **Units.** 26 users logged acceleration in m/s² and 34 in g - exactly the
+  Android/iPhone split. 25 users were converted to g. One user (`BEF6C611`) was
+  dropped: its minutes disagree with each other on the unit, so no single factor
+  fixes it.
+- **Merging.** The gyroscope is interpolated onto the accelerometer's timestamps.
+  Where it has no samples (10.9% of rows), values are extrapolated with a stable
+  AR(16) model, which decays to the signal's mean instead of running away.
+- **Labels.** Five activities come from `feature_labels`, two from
+  `original_labels`. No minute carries more than one of the seven, so each gets a
+  single label. Minutes with none of the seven are dropped.
+- **Segments.** 128 samples = 4 s, stride 64. Evaluation uses the non-overlapping
+  subset (1,333,415 segments).
+- **Splits.** ExtraSensory's own subject-wise 5 folds, restricted to our 56 users,
+  plus 8 validation users per fold that must include at least 2 Running and 2
+  Bicycling users.
+- **Balancing (training data only).** The majority classes are undersampled with
+  equal per-user quotas. The minority classes are augmented with label-preserving
+  transforms: rotation about the gravity axis, time warping, scaling of the
+  dynamic component and jitter. The class ratio falls from 120:1 to 1.5:1.
+
+| index | activity | source column | labelled minutes |
 |---|---|---|---|
 | 0 | Lying down | `label:LYING_DOWN` | 98,639 |
 | 1 | Sitting | `label:SITTING` | 126,758 |
@@ -31,266 +75,273 @@ Every cell is idempotent and safe to re-run.
 | 5 | Standing in place | `original_label:STANDING_IN_PLACE` | 7,821 |
 | 6 | Standing and moving | `original_label:STANDING_AND_MOVING` | 28,003 |
 
-Labels 1–7 in the parquet folders, 0–6 in `balanced_folds/*.npy`.
-See `balanced_folds/label_map.json`.
+---
+
+## 2. CNN classifier
+
+[`cnn_model.ipynb`](cnn_model.ipynb) (PyTorch), one model per fold.
+
+- **Input:** a 4 s segment as 6 channels x 128 samples, normalised with the
+  fold's training statistics.
+- **Network:** two parallel convolution branches - kernel 5 for fast transients,
+  kernel 21 for a full gait cycle - joined, then two conv + max-pool blocks, global
+  average pooling, and a dense head (dropout 0.4) with 7 outputs.
+- **Training:** the balanced, augmented `balanced_folds` training set; class-weighted
+  cross-entropy; Adam (lr 1e-3, weight decay 1e-4); early stopping on validation
+  macro-F1 (patience 4).
+
+**Result:** accuracy **0.366**, macro-F1 **0.259** pooled (per fold 0.368 ± 0.046
+and 0.263 ± 0.030). Validation macro-F1 peaked after only 1-6 epochs: the network
+fits the training users quickly but does not transfer to new ones. It was set aside
+for the Random Forest.
 
 ---
 
-## Pipeline
+## 3. Random Forest classifier
 
-```
-raw_acc/ + proc_gyro/          60 + 57 users, variable sampling rate
-        │
-        ▼  cells 1-2   resample to a uniform 32 Hz grid
-acc_32Hz/ + gyro_32Hz/         60 + 57 users, 736,968 CSV files
-        │
-        ▼  cell 3      normalise accelerometer units to g
-acc_32Hz/                      59 users (1 dropped)
-        │
-        ▼  cell 5      merge acc + gyro on the accelerometer clock
-merged_acc_gyro/               56 users, 236,457,636 rows
-        │
-        ▼  cell 6      attach the 7 activity labels
-labeled_acc_gyro/              56 users, 288,340 windows
-        │
-        ▼  cell 7      cut into fixed 4 s segments
-segmented_4s/                  2,551,686 segments
-        │
-        ▼  cells 8-10  fold splits, undersample, augment, reindex
-balanced_folds/                5 folds × (train / val / test)
-```
+[`random_forest_model.ipynb`](random_forest_model.ipynb), one forest per fold.
 
-### 1 · Resample to 32 Hz — cells 1–2
+- **Features:** each segment becomes **213 numbers**. The six raw channels are
+  expanded to ten signals - adding acceleration and gyroscope magnitude (unaffected
+  by how the phone is held) and the vertical and horizontal parts of acceleration.
+  From these come distribution statistics, shape, jerk, spectral features
+  (dominant frequency, entropy, centroid), band energies, periodicity,
+  cross-axis correlations and the direction of gravity.
+- **Training data:** `segmented_4s` at its natural distribution, capped at 120,000
+  segments per class with equal per-user quotas, and **no augmentation** - trees
+  would split on near-duplicate synthetic segments.
+- **Model:** 200 trees, `min_samples_leaf=4`, `max_features="sqrt"`,
+  `class_weight="balanced"`. Validation and test come from `balanced_folds`.
 
-Source rates varied far more than the nominal figures: accelerometer
-13.8–233.9 Hz (median 34.7), gyroscope 14.8–202.3 Hz (median 40.0).
+**Result over all 7 activities** (pooled over 5 folds, 1,333,415 test segments):
 
-- **Below 32 Hz** (9.4% of acc files, 2.4% of gyro) → linear interpolation up.
-- **Above 32 Hz** → zero-phase 4th-order Butterworth low-pass at 14.4 Hz before
-  resampling, so content above the new 16 Hz Nyquist cannot alias back in.
-- Window length is preserved rather than forced, so no value is extrapolated.
+| metric | pooled | per fold (mean ± std) |
+|---|---|---|
+| accuracy | **0.4733** | 0.4731 ± 0.0207 |
+| macro-F1 | **0.3337** | 0.3286 ± 0.0305 |
+| balanced accuracy | 0.3566 | 0.3651 ± 0.0283 |
+| Cohen's kappa | 0.2096 | 0.2018 ± 0.0339 |
 
-**Timestamp guards.** Rows with `t <= 0` are dropped, the window is split at any
-gap larger than both 200× the median sample interval and 5 s (keeping the
-longest run), and a window whose span still exceeds 300 s is rejected. Without
-these, one all-zero padding row in a file using epoch timestamps implied a
-1.44-billion-second span and a 343 GiB allocation.
-
-### 2 · Normalise accelerometer units — cell 3
-
-ExtraSensory did not use one unit convention. **26 users logged m/s², 34 logged
-g** — the split is exactly Android vs iPhone. Mixing them makes every
-scale-sensitive feature ~9.8× larger for one group, which a model uses to
-identify the *user* rather than the activity.
-
-25 users were divided by 9.80665, in place, each file written to a temp and
-moved with `os.replace` so an interruption cannot leave a partial CSV.
-
-One user (`BEF6C611`) was **dropped**: only ~50% of its files agree on any single
-scale, with per-file magnitudes running continuously from 0.21 to 19.0. No single
-factor corrects it. Removed from both sensors; the raw source is untouched.
-
-### 3 · Merge accelerometer + gyroscope — cell 5
-
-Gyroscope is resampled onto the **accelerometer's timestamps**, which are left
-unchanged.
-
-The gyroscope covers only ~90.6% of the accelerometer's time span (49% for the
-worst user), so ~10.9% of rows fall outside its recorded range and must be
-extrapolated rather than interpolated.
-
-**AR extrapolation.** An AR(16) is fitted to the nearest 256 gyro samples and
-iterated forward on the gyroscope's own grid. Coefficients come from Yule-Walker
-solved by Levinson-Durbin, which always yields a **stable** model — so the
-forecast provably decays toward the signal's mean instead of diverging.
-
-Measured against the linear extrapolation it replaced:
-
-| \|gyro\| (rad/s) | measured | AR | linear |
+| activity | precision | recall | F1 |
 |---|---|---|---|
-| p99 | 2.831 | 0.859 | 19.513 |
-| p99.9 | 6.007 | 3.372 | 67.810 |
-| max | 21.95 | 32.57 | **203.17** |
+| Lying down | 0.634 | 0.255 | 0.364 |
+| Sitting | 0.520 | 0.713 | 0.601 |
+| Walking | 0.372 | 0.580 | 0.454 |
+| Running | 0.129 | 0.090 | 0.106 |
+| Bicycling | 0.522 | 0.608 | 0.562 |
+| Standing in place | 0.075 | 0.065 | 0.070 |
+| Standing and moving | 0.176 | 0.185 | 0.180 |
 
-Rows above 10 rad/s fell from 2.490% to 0.003% — below the measured rate of
-0.008%. `merged_acc_gyro/` carries a `gyro_extrapolated` boolean marking these
-rows.
-
-418 accelerometer windows have no gyroscope counterpart and are skipped.
-
-### 4 · Attach labels — cell 6
-
-Labels are per-minute, keyed by the epoch `timestamp` that is also each window's
-filename, so the join is direct.
-
-**Zero windows carry more than one of the 7 labels** — verified across all
-356,461 — so a single integer is unambiguous. The code raises if a multi-label
-window ever appears rather than silently choosing one.
-
-68,121 windows (19%) carry none of the 7 and are dropped.
-
-### 5 · Fixed 4-second segments — cell 7
-
-128 samples = 4.0 s at 32 Hz, stride 64 (50% overlap). Only 15 of 288,340
-windows were too short. Tails that don't fill a segment are dropped, never
-padded — padding recreates the flat-line artefact that distorts variance and
-energy features.
-
-`seg_start % 128 == 0` recovers the non-overlapping subset for evaluation, so no
-regeneration is needed to change stride.
-
-### 6 · Train / validation / test splits — cell 8
-
-Built on ExtraSensory's own `cv_5_folds/`: subject-wise, platform-stratified,
-every user in exactly one test fold.
-
-- Fold lists intersected with the 56 available users. The 4 missing users are
-  **all Android**, shifting platform balance from 26/34 to 22/34.
-- 8 validation users carved from each training pool, **requiring ≥2 Running and
-  ≥2 Bicycling users** — a random draw often contains zero Running, which makes
-  early stopping on macro-F1 meaningless.
-- Modest rare-class contributors are preferred for validation, keeping heavy
-  ones in training.
-
-Roughly 65 / 15 / 20 by users. Deterministic on `SEED = 1000`.
-
-### 7 · Balance and augment — cells 9–10
-
-**Training data only.** Validation and test keep the natural class distribution
-and non-overlapping segments.
-
-*Undersampling* — majority classes keep only non-overlapping segments, then an
-equal per-user quota with water-filling redistribution caps heavy contributors.
-Within a user, segments are picked spread across the session, not randomly.
-
-*Augmentation* — all label-preserving:
-
-1. **Rotation about the estimated gravity axis.** A free 3D rotation would move
-   gravity in the sensor frame and can turn Sitting into something resembling
-   Lying down while keeping the Sitting label. Rotating about gravity varies
-   only heading. Verified: gravity magnitude unchanged to 4 decimals.
-2. Small free rotation, ≤15°, for orientation tolerance.
-3. Time warping — cadence variation, directly relevant to Running and Bicycling.
-4. Scaling of the **dynamic component only** — scaling total acceleration would
-   make gravity read something other than 1 g.
-5. Jitter proportional to each channel's own standard deviation.
-
-Target 50,000 per class, capped at 6× the real count. Running is the only class
-that doesn't reach the target.
-
-| index | activity | fold 0 | fold 1 | fold 2 | fold 3 | fold 4 |
-|---|---|---|---|---|---|---|
-| 0 | Lying down | 50,000 | 50,000 | 50,000 | 50,000 | 50,000 |
-| 1 | Sitting | 50,000 | 50,000 | 50,000 | 50,000 | 50,000 |
-| 2 | Walking | 50,000 | 50,000 | 50,000 | 50,000 | 50,000 |
-| 3 | Running | 33,576 | 44,256 | 33,018 | 29,514 | 42,636 |
-| 4 | Bicycling | 50,000 | 50,000 | 50,000 | 50,000 | 50,000 |
-| 5 | Standing in place | 50,000 | 50,000 | 50,000 | 50,000 | 50,000 |
-| 6 | Standing and moving | 50,000 | 50,000 | 50,000 | 50,000 | 50,000 |
-| | **total** | 333,576 | 344,256 | 333,018 | 329,514 | 342,636 |
+The main weakness: **Lying down is mistaken for Sitting** - that single pair is
+47.6% of all the model's errors. A still phone looks the same either way.
 
 ---
 
-## Directory reference
+## 4. Upgraded Random Forest classifier
 
-| folder | size | contents |
+Developed in [`Try_increase_accuracy/`](Try_increase_accuracy/). The forest itself is
+unchanged - same features, settings, data and folds. Two things changed, each chosen
+on **validation** macro-F1 and only then reported on test.
+
+**Step 1 - time of day as two extra features.** From the true labels, **74.3% of
+lying-down minutes fall between 22:00 and 07:00, against 15.1% of sitting minutes**.
+Each segment's minute id is a UTC epoch; it is converted to San Diego local time and
+encoded as the sine and cosine of the hour (so 23:00 and 01:00 sit close together).
+This takes the features from 213 to 215. The training segments' timestamps had not
+been kept, so they were recovered by replaying the notebook's deterministic segment
+selection, and checked against the cached labels.
+
+**Step 2 - decision thresholds tuned for the real class balance.** The forest's
+probabilities treat all classes as equally common, but test data is 44% Sitting and
+0.4% Running. Each class's probability is multiplied by a weight before choosing the
+largest, with the weights tuned on validation to maximise macro-F1. The five folds
+agreed closely: Lying down x1.8-4.0, Walking x0.35, Bicycling x0.17.
+
+**Also tried, rejected:** stronger regularisation (`min_samples_leaf` 20-100),
+gradient boosting and a two-stage still/moving classifier all changed nothing.
+Per-user normalisation *hurt* (macro-F1 0.262), because each user's average motion
+reflects their lifestyle, not their sensor.
+
+**Result over all 7 activities** (pooled over 5 folds):
+
+| metric | Random Forest | **Upgraded** | change | per fold (mean ± std) |
+|---|---|---|---|---|
+| accuracy | 0.4733 | **0.6597** | +0.1864 | 0.6610 ± 0.0126 |
+| macro-F1 | 0.3337 | **0.4382** | +0.1045 | 0.4449 ± 0.0385 |
+| balanced accuracy | 0.3566 | **0.3979** | +0.0413 | 0.4193 ± 0.0394 |
+| Cohen's kappa | 0.2096 | **0.4744** | +0.2648 | 0.4740 ± 0.0209 |
+
+| activity | precision | recall | F1 | F1 before |
+|---|---|---|---|---|
+| Lying down | 0.796 | 0.724 | **0.758** | 0.364 |
+| Sitting | 0.667 | 0.796 | **0.726** | 0.601 |
+| Walking | 0.634 | 0.399 | **0.490** | 0.454 |
+| Running | 0.310 | 0.128 | **0.181** | 0.106 |
+| Bicycling | 0.913 | 0.446 | **0.600** | 0.562 |
+| Standing in place | 0.078 | 0.082 | **0.080** | 0.070 |
+| Standing and moving | 0.261 | 0.210 | **0.233** | 0.180 |
+
+**Every class's F1 improved.** Lying-down recall nearly tripled. Walking and
+Bicycling recall fell: the tuned weights make the model cautious about them, trading
+recall for precision, which raises their F1.
+
+> **Caveat:** most of the gain comes from time of day, which needs **wall-clock**
+> timestamps. On a recording that only gives seconds from its start, the pipeline
+> falls back to a model without it (RF + tuned thresholds alone: macro-F1 0.388).
+
+---
+
+## 5. From classifier to answers: the SLM pipeline
+
+```
+recording ─▶ classifier ─▶ activity timeline ──────────────┐
+             (4 s segments)  intervals, totals, counts,     │
+                             evidence features              ▼
+question ─▶ Qwen2.5-3B: parse the question ─▶ Python: compute the answer ─▶ required
+            into an intent                     from the timeline             output format
+```
+
+- **Timeline.** Per-segment predictions are smoothed (majority vote over 5
+  segments), merged into activity intervals and summarised as totals, counts and
+  transitions. An episode must last at least 60 s, so classifier blips cannot
+  create activities. Every interval carries signal evidence: acceleration and
+  gyroscope magnitude, step frequency and gravity direction.
+- **The SLM parses, Python computes.** Qwen turns the question into a structured
+  intent - identification, verification, duration, count, comparison, grounding,
+  open-world, or unsupported. All numbers are computed in Python from the timeline,
+  so a duration or count can never be invented. The full timeline (~171,000 tokens)
+  would not fit Qwen's 32,768-token context anyway.
+- **Explanations** cite only measured values. Questions the sensors cannot answer
+  ("heart rate?") return N/A in every field rather than a guess.
+
+**Evaluation, briefly.** On 1,720 questions over all 56 users, overall QA accuracy
+(macro over the 7 question types) is **50.6%** with the upgraded classifier, against
+45.2% with the previous one. Qwen parses 98.5% of questions correctly, and perfect
+parsing would reach only 51.4% - so the remaining errors come from the classifier,
+not the SLM. Duration and count answers are the weakest (about 10% each), because
+the predicted timeline is more fragmented than the truth. All five figures the brief
+requires are in [`Final_result/`](Final_result/README.md).
+
+---
+
+## 6. Guide to `data_processing.ipynb`
+
+| cell | what it does | output |
 |---|---|---|
-| `raw_acc/`, `proc_gyro/` | 56 GB | untouched source |
-| `acc_32Hz/`, `gyro_32Hz/` | 21 GB | 32 Hz per-minute CSVs, `timestamp,x,y,z` |
-| `merged_acc_gyro/` | 9.6 GB | acc+gyro fused, with `gyro_extrapolated` |
-| `labeled_acc_gyro/` | 7.5 GB | variable-length labelled windows |
-| `segmented_4s/` | 7.2 GB | fixed 128-sample segments |
-| `updated_cv_5_folds/` | 84 KB | train/val/test UUID lists + `splits.json` |
-| `balanced_folds/` | 12 GB | **train from here** |
+| **1** | Defines the resampler: raw accelerometer and gyroscope minutes to 32 Hz, with anti-aliasing and timestamp guards | (functions only) |
+| **2** | Runs the resampling for both sensors and checks every output is exactly 32 Hz | `acc_32Hz/`, `gyro_32Hz/` |
+| **3** | Converts the accelerometer to g for users who logged in m/s², and flags users whose units are inconsistent | `acc_32Hz/` (in place) |
+| **4** | Counts the resampled files per user and checks them against the raw folders | (report) |
+| **5** | Merges the gyroscope onto the accelerometer's timestamps, with AR extrapolation where the gyroscope is missing | `merged_acc_gyro/` |
+| **6** | Attaches the 7 activity labels from `feature_labels` and `original_labels`, dropping unlabelled minutes | `labeled_acc_gyro/` |
+| **7** | Cuts every labelled minute into fixed 4 s segments (128 samples, 50% overlap) | `segmented_4s/` |
+| **8** | Builds the train / validation / test user lists for the 5 folds | `updated_cv_5_folds/` |
+| **9** | Builds each fold's arrays: undersamples and augments the training data, keeps val/test natural | `balanced_folds/` |
+| **10** | Converts labels from 1-7 to 0-6 in `balanced_folds` | `balanced_folds/` |
+| **11** | Scratch cell for inspecting an array | - |
 
-### `balanced_folds/fold_<i>/`
-
-| file | shape | meaning |
-|---|---|---|
-| `X_train.npy` | (N, 128, 6) float32 | segments × timesteps × channels |
-| `y_train.npy` | (N,) int8 | class 0–6 |
-| `u_train.npy` | (N,) int16 | index into `report.json["users"]["train"]` |
-| `aug_train.npy` | (N,) bool | `True` = synthetic |
-| `X_val` / `X_test` + `y_`, `u_`, `w_` | | `w_` = parent window id |
-| `norm_mean.npy`, `norm_std.npy` | (6,) | fitted on **real training segments only** |
-| `class_weights.json`, `report.json` | | |
-
-Channel order: `acc_x, acc_y, acc_z, gyro_x, gyro_y, gyro_z`.
-There is no `w_train` — window identity is unused during training and augmented
-segments have no single parent.
+> **One step is not in the notebook.** Cell 3 *flags* `BEF6C611` but does not
+> remove it. It was removed afterwards with the command below. When rebuilding from
+> scratch, run it **after cell 3 and before cell 5**, or the results will not match:
+> ```bash
+> rm -rf acc_32Hz/BEF6C611-50DA-4971-A040-87FB979F3FC1 gyro_32Hz/BEF6C611-50DA-4971-A040-87FB979F3FC1
+> ```
 
 ---
 
-## How to use it
+## 7. Commands
 
-`fold_<i>/` is **one complete experiment**, not a fifth of the data. Train the
-same architecture five times from scratch:
+Run everything from the project folder. Notebooks run from the terminal with
+`jupyter execute`, which writes the results to files (use `--inplace` as well to keep
+the printed tables inside the notebook).
 
-```python
-for i in range(5):
-    model = build_model()                      # fresh weights each run
-    model.fit(fold_i.train, val=fold_i.val)    # early stop on macro-F1
-    preds[i] = model.predict(fold_i.X_test)
+### 7.1 Build the Random Forest and see its evaluation
+
+```bash
+jupyter execute random_forest_model.ipynb    # trains the 5 fold models -> rf_results/
+jupyter execute rf_evaluation_plots.ipynb    # confusion matrix + per-class chart
 ```
 
-Each model predicts only its own test fold — the users it never saw. The five
-test sets are disjoint and cover all 56 users exactly once, so **concatenate the
-five prediction sets into one confusion matrix**. Do not average five fold
-scores: fold 4's test set is 133k segments and fold 2's is 371k.
+The first run also extracts features into `rf_features/` (about 20 min); later runs
+reuse them and take about 8 min.
 
-**Do not ensemble the five models.** Four of them trained on any given fold's
-test users — averaging their predictions leaks.
+- **Confusion matrix:** `xdg-open rf_results/confusion_matrix.png`
+- **Per-class F1 / accuracy / balanced accuracy chart:** `xdg-open rf_results/per_class_metrics.png`
+- **Numbers:** `rf_results/pooled_metrics.json` (pooled, per class) and
+  `rf_results/folds.json` (per fold)
 
-For a deployable model afterwards, train once more on all 56 users. The
-cross-validation estimate already tells you what to expect from it.
+Or open the images in VS Code. To read the printed tables, run
+`jupyter execute --inplace random_forest_model.ipynb` and open the notebook.
 
-### Before the first run
+### 7.2 Build the upgraded Random Forest and see its evaluation
 
-1. **Apply normalisation** — `(X - norm_mean) / norm_std`, per fold. Not
-   pre-applied, so the arrays stay traceable to `segmented_4s`.
-2. **Class weights** — from `class_weights.json`. Running is the only class
-   lifted (1.11–1.60 across folds).
-3. **Load with `mmap_mode="r"`** — `X_train` is ~1 GB per fold.
-4. **Metric: macro-F1 or balanced accuracy.** Validation and test are at the
-   natural 120:1 distribution; a model predicting only Sitting and Lying down
-   scores 79% accuracy while being useless.
-5. **Fix torch/NumPy.** torch 2.2.0 is compiled against NumPy 1.x and
-   `torch.from_numpy` fails on NumPy 2.4.6 — every path from `.npy` into PyTorch
-   is blocked. Upgrade torch to 2.3+. TensorFlow 2.21 is unaffected.
+Needs `rf_features/` from 7.1.
+
+```bash
+cd Try_increase_accuracy
+python3 reconstruct_wtr.py                 # recover the training timestamps
+python3 run_experiments.py baseline time   # train both configurations, 5 folds
+python3 tune_thresholds.py baseline time   # tune the decision thresholds on validation
+python3 final_model.py                     # package the upgraded model and its metrics
+cd ..
+```
+
+About 20 min in total. `final_model.py` prints the per-fold and pooled metrics and the
+per-class comparison with the Random Forest.
+
+- **Confusion matrix:** `xdg-open Try_increase_accuracy/final_model/confusion_matrix.png`
+- **Confusion matrix with precision / recall / F1 beside it:** `xdg-open Final_result/figures/fig2_confusion_matrix.png`
+- **Numbers:** `Try_increase_accuracy/final_model/metrics.json`
+- **Every experiment compared:** `Try_increase_accuracy/results/summary.md` and
+  `results/comparison.png` (to regenerate: run all experiments listed by
+  `python3 run_experiments.py --list`, then `python3 summarize.py`)
+
+For the single **deployable** upgraded model used on new recordings - trained once
+on all 56 users - run (about 3 min each):
+
+```bash
+python3 upgraded_pipeline/train_final_model.py            # with time of day
+python3 upgraded_pipeline/train_final_model.py --no-time  # fallback without clock time
+```
+
+### 7.3 Ask the SLM (Qwen2.5-3B)
+
+```bash
+# one question about a user
+python3 upgraded_pipeline/ask_upgraded.py --user 00EABED2 "How long did the user walk?"
+
+# an interactive session - type questions, blank line to quit
+python3 upgraded_pipeline/ask_upgraded.py --user 00EABED2 -i
+
+# a new raw recording and a file of questions (needs the models from 7.2)
+python3 upgraded_pipeline/ask_upgraded.py --acc raw_acc/<uuid> --gyro proc_gyro/<uuid> \
+        -q questions.txt -o answers.txt
+```
+
+`--user` takes any of the 56 user ids, or a unique prefix of one. Add `--no-slm` to
+answer with keyword parsing only (no GPU), and `--stats` for latency and memory. The
+first run downloads Qwen2.5-3B-Instruct (about 6 GB). The previous system is still
+available as `python3 ask.py -u 00EABED2 "..."`. More in
+[`upgraded_pipeline/README.md`](upgraded_pipeline/README.md).
 
 ---
 
-## Known limitations
+## 8. Repository map
 
-**Running concentrates in individuals.** Only 25 of 56 users ever ran, and one
-supplies 36.9% of fold 0's training Running segments. Undersampling quotas
-cannot flatten a class with no surplus to trim. Report per-user metric
-distributions alongside the pooled number.
+| folder / file | contents |
+|---|---|
+| `data_processing.ipynb` | the dataset pipeline (section 6) |
+| `cnn_model.ipynb`, `cnn_results/` | CNN classifier and its results |
+| `random_forest_model.ipynb`, `rf_results/` | Random Forest and its results |
+| `rf_evaluation_plots.ipynb` | Random Forest confusion matrix and per-class chart |
+| `Try_increase_accuracy/` | the experiments behind the upgraded classifier |
+| `upgraded_pipeline/` | the complete upgraded system: ingest, classify, answer |
+| `Final_result/` | the five required figures and all QA metrics |
+| `activity_timeline.py` | predictions to activity timeline |
+| `slm_query_engine.py` | Qwen question parsing, answer computation, output format |
+| `ask.py`, `build_timelines.py`, `timelines/` | the previous system, kept unchanged |
+| `qa_benchmark.py` | question generator and scorer used during development |
 
-**Rare classes are thin per fold.** Bicycling appears in 23 of 56 users. Test
-folds hold 522–4,014 Running segments — an 8× spread — so single-fold rare-class
-numbers are noise. With ~5 test users per fold, the honest confidence interval on
-Running recall is roughly ±43 points; pooled across folds, ±19.
-
-**10.9% of gyroscope values are AR forecasts**, and the `gyro_extrapolated` flag
-was not carried past `merged_acc_gyro/`. Augmenting a rare-class segment whose
-gyro is partly synthetic multiplies a model artefact. Recovering the flag means
-rebuilding from cell 6 onward.
-
-**Augmentation preserves rare-class user skew.** Copies are drawn round-robin,
-which replicates the existing per-user distribution rather than flattening it.
-
-**Three users have accelerometer but no gyroscope** (`61359772`, `CCAF77F0`,
-`F50235E0`). They remain in `acc_32Hz/` and are usable for an
-accelerometer-only baseline with all 12 test users per fold.
-
----
-
-## Environment
-
-```
-numpy 2.4.6 · pandas 3.0.5 · scipy 1.17.1 · pyarrow 25.0.1 · Python 3.11.5
-```
-
-Cells parallelise across 24 workers. Full rebuild is roughly 1 hour;
-`balanced_folds` alone is ~25 minutes.
+Environment: Python 3.11, NumPy 2.4.6, pandas 3.0.5, scikit-learn 1.9.0, PyTorch
+2.5.1 (CUDA 12.1), transformers 5.16.1, bitsandbytes 0.50.2 (only for the quantised
+models in `Final_result/`). Measured on an NVIDIA RTX A4500 (20 GB).
