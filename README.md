@@ -3,44 +3,17 @@
 A system that answers plain-language questions about a person's day - *"How long
 did the user walk?"*, *"Did she lie down for a prolonged period?"* - from the
 accelerometer and gyroscope of a phone, and backs every answer with the stretch of
-signal it rests on. Built on the ExtraSensory dataset for CS60055 (Ubiquitous
-Computing), Hackathon Challenge 1: *Ask the Sensors*.
+signal it rests on.
 
-**Results at a glance** (5-fold subject-wise cross-validation, every user tested once):
-
-| component | accuracy | macro-F1 |
-|---|---|---|
-| CNN classifier | 0.366 | 0.259 |
-| Random Forest classifier | 0.473 | 0.334 |
-| **Upgraded Random Forest** (+ time of day + tuned thresholds) | **0.660** | **0.438** |
-
-| question answering (1,720 questions, all 56 users) | overall QA accuracy |
-|---|---|
-| previous classifier + Qwen2.5-3B | 45.2% |
-| **upgraded classifier + Qwen2.5-3B** | **50.6%** |
-
----
 
 ## 1. Dataset pipeline
 
 All data processing lives in [`data_processing.ipynb`](data_processing.ipynb)
 (guide per cell in section 6).
 
-```
-raw_acc/ + proc_gyro/        60 + 57 users, sampling rate varies per minute (13.8-233.9 Hz)
-   │  resample to 32 Hz
-acc_32Hz/ + gyro_32Hz/       one CSV per minute
-   │  put the accelerometer in g
-   │  merge gyroscope onto the accelerometer clock
-merged_acc_gyro/             56 users, 236,457,636 rows
-   │  attach the 7 activity labels
-labeled_acc_gyro/            288,340 labelled minutes
-   │  cut into 4-second segments
-segmented_4s/                2,551,686 segments of 128 samples x 6 channels
-   │  subject-wise folds, balance and augment the training data
-balanced_folds/              5 folds x (train / val / test)
-```
+<img width="700" height="500" alt="architecture" src="https://github.com/user-attachments/assets/b88a16e0-8696-4b75-8bb1-210af3e45be4" />
 
+<br><br>
 - **Resampling to 32 Hz.** Minutes recorded below 32 Hz are linearly interpolated
   up. Minutes above it are low-pass filtered first (zero-phase Butterworth,
   14.4 Hz) so nothing aliases. Timestamp guards drop padding rows and split at
@@ -192,14 +165,9 @@ recall for precision, which raises their F1.
 ---
 
 ## 5. From classifier to answers: the SLM pipeline
-
-```
-recording ─▶ classifier ─▶ activity timeline ──────────────┐
-             (4 s segments)  intervals, totals, counts,     │
-                             evidence features              ▼
-question ─▶ Qwen2.5-3B: parse the question ─▶ Python: compute the answer ─▶ required
-            into an intent                     from the timeline             output format
-```
+How one question is answered
+<img width="2299" height="944" alt="fig0b_answer_flow" src="https://github.com/user-attachments/assets/5ba536f4-5940-4dbf-a0b0-788e097c5c69" />
+<br><br>
 
 - **Timeline.** Per-segment predictions are smoothed (majority vote over 5
   segments), merged into activity intervals and summarised as totals, counts and
@@ -222,9 +190,23 @@ not the SLM. Duration and count answers are the weakest (about 10% each), becaus
 the predicted timeline is more fragmented than the truth. All five figures the brief
 requires are in [`Final_result/`](Final_result/README.md).
 
----
 
-## 6. Guide to `data_processing.ipynb`
+## 6. Results at a glance (5-fold subject-wise cross-validation, every user tested once):
+
+| component | accuracy | macro-F1 |
+|---|---|---|
+| CNN classifier | 0.366 | 0.259 |
+| Random Forest classifier | 0.473 | 0.334 |
+| **Upgraded Random Forest** (+ time of day + tuned thresholds) | **0.660** | **0.438** |
+
+| question answering (1,720 questions, all 56 users) | overall QA accuracy |
+|---|---|
+| previous classifier + Qwen2.5-3B | 45.2% |
+| **upgraded classifier + Qwen2.5-3B** | **50.6%** |
+
+
+
+## 7. Guide to `data_processing.ipynb`
 
 | cell | what it does | output |
 |---|---|---|
@@ -249,13 +231,13 @@ requires are in [`Final_result/`](Final_result/README.md).
 
 ---
 
-## 7. Commands
+## 8. Commands
 
 Run everything from the project folder. Notebooks run from the terminal with
 `jupyter execute`, which writes the results to files (use `--inplace` as well to keep
 the printed tables inside the notebook).
 
-### 7.1 Build the Random Forest and see its evaluation
+### 8.1 Build the Random Forest and see its evaluation
 
 ```bash
 jupyter execute random_forest_model.ipynb    # trains the 5 fold models -> rf_results/
@@ -273,7 +255,7 @@ reuse them and take about 8 min.
 Or open the images in VS Code. To read the printed tables, run
 `jupyter execute --inplace random_forest_model.ipynb` and open the notebook.
 
-### 7.2 Build the upgraded Random Forest and see its evaluation
+### 8.2 Build the upgraded Random Forest and see its evaluation
 
 Needs `rf_features/` from 7.1.
 
@@ -304,7 +286,7 @@ python3 upgraded_pipeline/train_final_model.py            # with time of day
 python3 upgraded_pipeline/train_final_model.py --no-time  # fallback without clock time
 ```
 
-### 7.3 Ask the SLM (Qwen2.5-3B)
+### 8.3 Ask the SLM (Qwen2.5-3B)
 
 ```bash
 # one question about a user
@@ -326,7 +308,7 @@ available as `python3 ask.py -u 00EABED2 "..."`. More in
 
 ---
 
-## 8. Repository map
+## 9. Repository map
 
 | folder / file | contents |
 |---|---|
