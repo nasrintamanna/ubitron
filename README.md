@@ -9,9 +9,10 @@ signal it rests on.
 ## 1. Dataset pipeline
 
 All data processing lives in [`data_processing.ipynb`](data_processing.ipynb)
-(guide per cell in section 6).
 
-<img width="700" height="500" alt="architecture" src="https://github.com/user-attachments/assets/b88a16e0-8696-4b75-8bb1-210af3e45be4" />
+
+<img width="800" height="500" alt="Gemini_Generated_Image_jqjcpsjqjcpsjqjc" src="https://github.com/user-attachments/assets/064f6d0e-8839-46ab-8c90-2e006831c917" />
+
 
 <br><br>
 - **Resampling to 32 Hz.** Minutes recorded below 32 Hz are linearly interpolated
