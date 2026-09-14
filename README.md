@@ -1,4 +1,4 @@
-# UbiQ : Activity Question Answering from Wearable Signals
+# UbiQ : Activity Question Answering from Wearable Signals 
 
 A system that answers plain-language questions about a person's day - *"How long
 did the user walk?"*, *"Did she lie down for a prolonged period?"* - from the
